@@ -1,0 +1,400 @@
+html {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.icon {
+    font-size: 40px;
+    color:  #c0df34;
+}
+
+.small-icon {
+    font-size: 16px;
+    color:  #ffffff;
+}
+
+body {
+    margin: 0px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+#header {
+    padding: 20px;
+    /* background: #f0f8ff; #f5fffa*/
+    width: 100%;
+    height: 150px;
+    display: flex;
+}
+
+#header-logo {
+    width: 50%;
+}
+
+#header-nav-bar {
+    width: 50%;
+    color: #224750;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#intro {
+    min-height: 600px;
+    background: #53AFB1;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
+
+#intro-content {
+    padding-top: 0px;
+    width: 40%;
+    align-items: center;
+    color: #ffffff;
+}
+
+#key-benefits {
+    background-color: #ffffff;
+    height: auto;
+}
+
+#benefits-header {
+    width: 100%;
+    text-align: center;
+    color: #224750;
+    border-bottom: 0px;
+}
+
+#benefits-body {
+    color: #224750;
+    display: flex;
+    justify-content: space-around;
+}
+
+.benefit {
+    width: 33%;
+    padding: 15px;
+    align-items: center;
+    border: 20px;
+    text-align: center;
+    padding: 50px;
+}
+
+.signup-signin-container {
+    position: relative;
+    display: flex;
+    height: auto;
+    width: 100%;
+}
+
+.signup-section, .signin-section {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #224750;
+    height: 600px;
+    overflow: hidden; 
+}
+
+.signup-section {
+    left: 0;
+    z-index: 1; 
+}
+
+.signin-section {
+    right: 0;
+    /* z-index: 1;  */
+}
+
+
+/* .overlay-section {
+    position: relative;
+    width: 100%;
+} */
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transform: translateY(-50%); */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.overlay-panel {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    background-color: #53AFB1;
+    height: 600px;
+    /* border-radius: 25px; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.overlay-toggle-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#welcome-prompt, #welcome-back-prompt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-field input {
+    width: 360px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+
+.form-field label {
+    display: none;
+}
+
+#access-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 900px;
+    cursor: pointer;
+}
+
+.filled-button, .outlined-button {
+    min-width: 120px;
+    margin-left: 20px;
+}
+
+.filled-button, .filled-button-large, .filler-button {
+    color: white;
+    background-color: #c0df34;
+    border: none;
+}
+
+.filled-button {
+    padding: 7px;
+}
+
+.filled-button-large {
+    min-width: 180px;
+    font-size: 18px;
+    padding: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.outlined-button {
+    color: #c0df34;
+    background-color: #ffffff;
+    border: 2px solid #c0df34;
+    padding: 7px;
+}
+
+#intro-content h1 {
+    color: #ffffff;
+    font-size: 100px;
+    font-weight: 200;
+    line-height: 120px;
+    margin: 10px;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+#intro-content h4 {
+    color: #ffffff;
+    font-weight: 300;
+    margin: 10px;
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#signup-form h2, #signin-form h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 0px;
+}
+
+#signup-form button.filled-button, #signin-form button.filled-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.overlay-panel h2, .overlay-panel p, .overlay-panel button {
+    color: #ffffff;
+    /* padding: 10px; */
+}
+
+.overlay-panel button {
+    padding: 10px;
+}
+
+.overlay-panel h2{
+    margin-bottom: 0px;
+}
+
+#our-doctors {
+    background-color: #ffffff;
+    /* height: auto; */
+    margin-top: 630px;
+}
+
+#doctors-header {
+    width: 100%;
+    text-align: center;
+    color: #224750;
+    border-bottom: 0px;
+}
+
+#doctors-body {
+    color: #224750;
+    display: flex;
+    margin-bottom: -50px;
+    justify-content: space-around;
+}
+
+.doctors {
+    width: 33%;
+    padding: 15px;
+    align-items: center;
+    border: 20px;
+    text-align: center;
+    padding: 50px;
+}
+
+.doctors img {
+    /* border: 1px solid #224750; */
+    border-radius: 50%;
+}
+
+#our-doctors .filled-button {
+    text-align: center;
+    padding: 10px;
+    background-color: #c0df34;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 20%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 0 auto;
+    display: block;
+}
+
+/* #footer {
+    background: #53AFB1;
+    margin-top: 50px;
+}
+
+#social-media, #contact-us, #our-services {
+    width: 33%;
+    padding: 15px;
+    border: 20px;
+    padding: 50px;
+
+}
+
+.facebook, .instagram, .X {
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer h3, #footer  h4 {
+    color: #ffffff;
+    display: flex;
+} */
+
+#footer {
+    margin-top: 50px;
+    background-color: #224750;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#footer h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#footer .small-icon {
+    margin-right: 10px;
+}
+
+#footer .instagram,
+#footer .facebook,
+#footer .twitter,
+#footer .e-mail,
+#footer .phone-number {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#footer h4 {
+    margin: 5px 0;
+    line-height: 2;
+}
+
+#legal-information {
+    background-color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+#legal-information p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #777;
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astra Health | Home</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <nav id="header">
+        <div id="header-logo">
+            <img src="./images/Astra Health Logo (Transparent) .png" alt="Astra Health logo" width="150">
+        </div>
+        <div id="header-nav-bar">
+            <h4>HOME</h4>
+            <h4>OUR DOCTORS</h4>
+            <h4>APPOINTMENTS</h4>
+            <h4>CONTACT US</h4>
+            <h4>MY PROFILE</h4>
+        </div>
+    </nav>
+    <div id="intro">
+        <div id="access-buttons">
+            <button class="outlined-button">SIGN IN</button>
+            <button class="filled-button">SIGN UP</button>
+        </div>
+        <div id="intro-content">
+            <h1>Your Pocket Doctor</h1>
+            <h3>Instant access to top-quality care, anytime, anywhere. Say goodbye to waiting rooms and hello to hassle-free healthcare</h3>
+            <button class="filled-button-large">GET STARTED</button>
+        </div>
+    </div>
+    <div id="key-benefits">
+        <section id="benefits-header">
+            <h2>Key Benefits</h2>
+        </section>
+        <section id="benefits-body">
+            <div class="benefit">
+                <i class="fa-solid fa-hourglass icon"></i>
+                <h3>Easy 24/7 Access</h3>
+                <h4>Seamlessly connect with top-tier doctors at the tap of a button. Whether you're at home, work, or on-the-go, our platform ensures healthcare is always within reach, eliminating the hassle of traditional appointments.</h4>
+            </div>
+            <div class="benefit">
+                <i class="fa-solid fa-stethoscope icon"></i>
+                <h3>Quality Service</h3>
+                <h4>Experience peace of mind knowing you're in expert hands. Our platform brings together a network of trusted professionals, ensuring you receive the highest standard of care, no matter your healthcare needs.</h4>
+            </div>
+            <div class="benefit">
+                <i class="fa-solid fa-house-medical icon"></i>
+                <h3>Flexible Schedule</h3>
+                <h4>We offers the freedom to schedule consultations at times that suit you best, empowering you to prioritize your well-being without sacrificing your schedule.</h4>
+            </div>
+        </section>
+    </div>
+    <div class="signup-signin-container">
+        <section class="form-section signup-section">
+            <form id="signup-form">
+                <h2>Sign Up</h2>
+                <div class="form-field">
+                    <input type="text" placeholder="First Name" name="first_name" />
+                    <label></label>
+                </div>
+                <div class="form-field">
+                    <input type="text" placeholder="Last Name" name="last_name" />
+                    <label></label>
+                </div>
+                <div class="form-field">
+                    <input type="email" placeholder="Email" name="email" />
+                    <label></label>
+                </div>
+                <div class="form-field">
+                    <input type="tel" placeholder="Phone Number" name="phone" pattern="\+?\d{1,3}[-.]?\d{3}[-.]?\d{3}[-.]?\d{4}" />
+                    <label></label>
+                </div>
+                <div class="form-field">
+                    <input type="password" placeholder="Password" name="password" />
+                    <label></label>
+                </div>
+                <div class="form-field">
+                    <input type="password" placeholder="Confirm Password" name="confirm_password" />
+                    <label></label>
+                </div>
+                <button class="filled-button" type="submit">SIGN UP</button>
+            </form>
+        </section>
+        <section class="form-section signin-section">
+            <form id="signin-form">
+                <h2>Sign in</h2>
+                <div class="form-field">
+                    <input type="email" placeholder="Email" name="email"/>
+                    <label></label>
+                </div>
+                <div class="form-field">
+                    <input type="password" placeholder="Password" />
+                    <label></label>
+                </div>
+                <!-- <a href="#" class="forgot">Forgot your password?</a> -->
+                <button class="filled-button" type="submit">SIGN IN</button>
+            </form>
+        </section>
+        <section class="overlay-section">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <div id="welcome-prompt">
+                        <h2>Welcome!</h2>
+                        <p>Begin your Astra Health journey here</p>
+                        <button class="filled-button" id="signup-button">SIGN UP</button>
+                    </div>
+                </div>
+                <div class="overlay-panel overlay-left">
+                    <div id="welcome-back-prompt">
+                        <h2>Welcome back!</h2>
+                        <p>We're glad you're back. We've missed you!</p>
+                        <button class="filled-button" id="signin-button">SIGN IN</button>
+                    </div>   
+                </div>
+            </div>
+            <button class="overlay-toggle-btn"></button>
+        </section>
+    </div>
+    <div id="our-doctors">
+        <section id="doctors-header">
+            <h2>Our Doctors</h2>
+        </section>
+        <section id="doctors-body">
+            <div class="doctors">
+                <img src="./images/doc 1.png" alt="Female Doctor" width="300">
+                <h3>Dr. Funke Adeokun</h3>
+                <h4>With extensive experience as a general practitioner, Dr. Funke prioritizes holistic care for patients of all ages, emphasizing preventive medicine and patient education.</h4>
+            </div>
+            <div class="doctors">
+                <img src="./images/doc 3.png" alt="Female Doctor" width="300">
+                <h3>Dr. Chidi Okoli</h3>
+                <h4>Dr. Chidi is a compassionate general practitioner known for his personalized approach to treatment, building strong rapport with patients through open communication and tailored care plans.</h4>
+            </div>
+            <div class="doctors">
+                <img src="./images/doc 2.png" alt="Female Doctor" width="300">
+                <h3>Dr. Fatima Garba</h3>
+                <h4>Dr. Fatima is a dedicated general practitioner focused on family-centered healthcare, fostering an inclusive environment where patients feel empowered and valued in their wellness journey.</h4>
+            </div>
+        </section>
+        <section class="filled-button">SCHEDULE APPOINTMENT</section>
+    </div>
+    <footer id="footer">
+        <div id="social-media">
+            <h3>Follow Us</h3>
+            <div class="instagram">
+                <i class="fa-brands fa-instagram small-icon"></i>
+                <h4>@astrahealth</h4>
+            </div>
+            <div class="facebook">
+                <i class="fa-brands fa-facebook-f small-icon"></i>
+                <h4>@astrahealth</h4>
+            </div>
+            <div class="twitter">
+                <i class="fa-brands fa-x-twitter small-icon"></i>
+                <h4>@astrahealth</h4>
+            </div>
+        </div>
+        <div id="contact-us">
+            <h3>Contact Us</h3>
+            <div class="e-mail">
+                <i class="fa-solid fa-envelope small-icon"></i>
+                <h4>support@atrahealth.com</h4>
+            </div>
+            <div class="phone-number">
+                <i class="fa-solid fa-phone-volume small-icon"></i>
+                <h4>@astrahealth</h4>
+            </div>
+        </div>
+        <div id="our-services">
+            <h3>Our Services</h3>
+            <h4>Sign Up</h4>
+            <h4>Sign In</h4>
+            <h4>Schedule Appointment</h4>
+            <h4>Our Doctors</h4>
+        </div>
+    </footer>
+    <section id="legal-information">
+        <p>&copy; 2024 Astra Health. All rights reserved.</p>
+    </section>    
+    <script src="index.js"></script>
+</body>
+</html>

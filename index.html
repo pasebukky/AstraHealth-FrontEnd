@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astra Health | Home</title>
+    <link rel="icon" href="images/astra health small icon.png">
     <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,50 +13,57 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
-    <nav id="header">
-        <div id="header-logo">
-            <img src="./images/Astra Health Logo (Transparent) .png" alt="Astra Health logo" width="150">
-        </div>
-        <div id="header-nav-bar">
-            <h4>HOME</h4>
-            <h4>OUR DOCTORS</h4>
-            <h4>APPOINTMENTS</h4>
-            <h4>CONTACT US</h4>
-            <h4>MY PROFILE</h4>
-        </div>
-    </nav>
-    <div id="intro">
-        <div id="access-buttons">
-            <button class="outlined-button">SIGN IN</button>
-            <button class="filled-button">SIGN UP</button>
-        </div>
-        <div id="intro-content">
-            <h1>Your Pocket Doctor</h1>
-            <h3>Instant access to top-quality care, anytime, anywhere. Say goodbye to waiting rooms and hello to hassle-free healthcare</h3>
-            <button class="filled-button-large">GET STARTED</button>
+    <div class="container">
+        <nav id="header">
+            <div id="header-logo">
+                <img src="./images/Astra Health Logo (Transparent) .png" alt="Astra Health logo" width="150">
+            </div>
+            <ul class="header-nav-bar">
+                <li class="header-nav-items"><a href="index.html" class="current-page">HOME</a></li>
+                <li class="header-nav-items"><a href="#">OUR DOCTORS</a></li>
+                <li class="header-nav-items"><a href="#">APPOINTMENTS</a></li>
+                <li class="header-nav-items"><a href="#">MY PROFILE</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="teal-container">
+        <div class="container">
+            <div id="intro">
+                <div id="access-buttons">
+                    <button class="outlined-button">SIGN IN</button>
+                    <button class="filled-button">SIGN UP</button>
+                </div>
+                <div id="intro-content">
+                    <h1>Your Pocket Doctor</h1>
+                    <h4>Instant access to top-quality care, anytime, anywhere. Say goodbye to waiting rooms and hello to hassle-free healthcare</h4>
+                    <button class="filled-button-large">GET STARTED</button>
+                </div>
+            </div>
         </div>
     </div>
-    <div id="key-benefits">
-        <section id="benefits-header">
-            <h2>Key Benefits</h2>
-        </section>
-        <section id="benefits-body">
-            <div class="benefit">
-                <i class="fa-solid fa-hourglass icon"></i>
-                <h3>Easy 24/7 Access</h3>
-                <h4>Seamlessly connect with top-tier doctors at the tap of a button. Whether you're at home, work, or on-the-go, our platform ensures healthcare is always within reach, eliminating the hassle of traditional appointments.</h4>
-            </div>
-            <div class="benefit">
-                <i class="fa-solid fa-stethoscope icon"></i>
-                <h3>Quality Service</h3>
-                <h4>Experience peace of mind knowing you're in expert hands. Our platform brings together a network of trusted professionals, ensuring you receive the highest standard of care, no matter your healthcare needs.</h4>
-            </div>
-            <div class="benefit">
-                <i class="fa-solid fa-house-medical icon"></i>
-                <h3>Flexible Schedule</h3>
-                <h4>We offers the freedom to schedule consultations at times that suit you best, empowering you to prioritize your well-being without sacrificing your schedule.</h4>
-            </div>
-        </section>
+    <div class="container">
+        <div id="key-benefits">
+            <section id="benefits-header">
+                <h2>Key Benefits</h2>
+            </section>
+            <section id="benefits-body">
+                <div class="benefit">
+                    <i class="fa-solid fa-hourglass icon"></i>
+                    <h3>Easy 24/7 Access</h3>
+                    <p>Seamlessly connect with top-tier doctors at the tap of a button. Whether you're at home, work, or on-the-go, our platform ensures healthcare is always within reach, eliminating the hassle of traditional appointments.</p>
+                </div>
+                <div class="benefit">
+                    <i class="fa-solid fa-stethoscope icon"></i>
+                    <h3>Quality Service</h3>
+                    <p>Experience peace of mind knowing you're in expert hands. Our platform brings together a network of trusted professionals, ensuring you receive the highest standard of care, no matter your healthcare needs.</p>
+                </div>
+                <div class="benefit">
+                    <i class="fa-solid fa-house-medical icon"></i>
+                    <h3>Flexible Schedule</h3>
+                    <p>We understand the importance of flexibility in scheduling consultations. Our goal is to empower you to prioritize your well-being without sacrificing your schedule, offering the freedom to choose appointment times that suit you best.</p>
+                </div>
+            </section>
+        </div>
     </div>
     <div class="signup-signin-container">
         <section class="form-section signup-section">
@@ -123,63 +131,69 @@
             <button class="overlay-toggle-btn"></button>
         </section>
     </div>
-    <div id="our-doctors">
-        <section id="doctors-header">
-            <h2>Our Doctors</h2>
-        </section>
-        <section id="doctors-body">
-            <div class="doctors">
-                <img src="./images/doc 1.png" alt="Female Doctor" width="300">
-                <h3>Dr. Funke Adeokun</h3>
-                <h4>With extensive experience as a general practitioner, Dr. Funke prioritizes holistic care for patients of all ages, emphasizing preventive medicine and patient education.</h4>
-            </div>
-            <div class="doctors">
-                <img src="./images/doc 3.png" alt="Female Doctor" width="300">
-                <h3>Dr. Chidi Okoli</h3>
-                <h4>Dr. Chidi is a compassionate general practitioner known for his personalized approach to treatment, building strong rapport with patients through open communication and tailored care plans.</h4>
-            </div>
-            <div class="doctors">
-                <img src="./images/doc 2.png" alt="Female Doctor" width="300">
-                <h3>Dr. Fatima Garba</h3>
-                <h4>Dr. Fatima is a dedicated general practitioner focused on family-centered healthcare, fostering an inclusive environment where patients feel empowered and valued in their wellness journey.</h4>
-            </div>
-        </section>
-        <section class="filled-button">SCHEDULE APPOINTMENT</section>
+    <div class="container">
+        <div id="our-doctors">
+            <section id="doctors-header">
+                <h2>Our Doctors</h2>
+            </section>
+            <section id="doctors-body">
+                <div class="doctors">
+                    <img src="./images/doc 1.png" alt="Female Doctor" width="240">
+                    <h3>Dr. Funke Adeokun</h3>
+                    <p>With extensive experience as a general practitioner, Dr. Funke prioritizes holistic care for patients of all ages, emphasizing preventive medicine and patient education.</p>
+                </div>
+                <div class="doctors">
+                    <img src="./images/doc 3.png" alt="Fe male Doctor" width="240">
+                    <h3>Dr. Chidi Okoli</h3>
+                    <p>Dr. Chidi is a general practitioner known for his personalized approach to treatment, building strong rapport with patients through open communication and tailored care plans.</p>
+                </div>
+                <div class="doctors">
+                    <img src="./images/doc 2.png" alt="Female Doctor" width="240">
+                    <h3>Dr. Fatima Garba</h3>
+                    <p>Dr. Fatima is a dedicated general practitioner focused on family-centered healthcare, fostering an inclusive environment where patients feel empowered.</p>
+                </div>
+            </section>
+            <section class="filled-button">SCHEDULE APPOINTMENT</section>
+        </div>
     </div>
     <footer id="footer">
-        <div id="social-media">
-            <h3>Follow Us</h3>
-            <div class="instagram">
-                <i class="fa-brands fa-instagram small-icon"></i>
-                <h4>@astrahealth</h4>
+        <div class="dark-green-container">
+            <div class="container footer-container">
+                <div id="social-media">
+                    <h4>Follow Us</h4>
+                    <div class="instagram">
+                        <i class="fa-brands fa-instagram small-icon"></i>
+                        <p>@astrahealth</p>
+                    </div>
+                    <div class="facebook">
+                        <i class="fa-brands fa-facebook-f small-icon"></i>
+                        <p>@astrahealth</p>
+                    </div>
+                    <div class="twitter">
+                        <i class="fa-brands fa-x-twitter small-icon"></i>
+                        <p>@astrahealth</p>
+                    </div>
+                </div>
+                <div id="contact-us">
+                    <h4>Contact Us</h4>
+                    <div class="e-mail">
+                        <i class="fa-solid fa-envelope small-icon"></i>
+                        <p>support@atrahealth.com</p>
+                    </div>
+                    <div class="phone-number">
+                        <i class="fa-solid fa-phone-volume small-icon"></i>
+                        <p>@astrahealth</p>
+                    </div>
+                </div>
+                <div id="our-services">
+                    <h4>Our Services</h4>
+                    <!-- <p>sign up</p>
+                    <p>sign in</p> -->
+                    <p>Appointment</p>
+                    <p>Our doctors</p>
+                </div>
             </div>
-            <div class="facebook">
-                <i class="fa-brands fa-facebook-f small-icon"></i>
-                <h4>@astrahealth</h4>
-            </div>
-            <div class="twitter">
-                <i class="fa-brands fa-x-twitter small-icon"></i>
-                <h4>@astrahealth</h4>
-            </div>
-        </div>
-        <div id="contact-us">
-            <h3>Contact Us</h3>
-            <div class="e-mail">
-                <i class="fa-solid fa-envelope small-icon"></i>
-                <h4>support@atrahealth.com</h4>
-            </div>
-            <div class="phone-number">
-                <i class="fa-solid fa-phone-volume small-icon"></i>
-                <h4>@astrahealth</h4>
-            </div>
-        </div>
-        <div id="our-services">
-            <h3>Our Services</h3>
-            <h4>Sign Up</h4>
-            <h4>Sign In</h4>
-            <h4>Schedule Appointment</h4>
-            <h4>Our Doctors</h4>
-        </div>
+        </div>   
     </footer>
     <section id="legal-information">
         <p>&copy; 2024 Astra Health. All rights reserved.</p>

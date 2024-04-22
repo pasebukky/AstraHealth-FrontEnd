@@ -1,27 +1,33 @@
 document.getElementById('signin-button').addEventListener('click', function() {
-    let welcomePrompt = document.getElementById('welcome-back-prompt');
-    let signinContainer = document.querySelector('.signin-section');
-    let signupContainer = document.querySelector('.signup-section');
-    let welcomeContainer = document.getElementById('welcome-prompt');
-    let overlaySection = document.querySelector('.overlay-section');
-
-    welcomePrompt.style.zIndex = "1";
-    signinContainer.style.zIndex = "1";
-    signupContainer.style.zIndex = "0";
-    welcomeContainer.style.zIndex = "0";
-    overlaySection.style.flexDirection = "row-reverse";
+    document.querySelector('.overlay-panel.overlay-right').style.zIndex = "1";
+    document.querySelector('.signin-section').style.zIndex = "1";
+    document.querySelector('.signup-section').style.zIndex = "0";
+    document.querySelector('.overlay-panel.overlay-left').style.zIndex = "0";
+    document.querySelector('.overlay-section').style.flexDirection = "row-reverse";
+    document.querySelector('.dual-container').style.background = "linear-gradient(to right, #53AFB1 0%, #53AFB1 50%, #224750 50%, #224750 100%)";
 });
 
 document.getElementById('signup-button').addEventListener('click', function() {
-    let welcomePrompt = document.getElementById('welcome-back-prompt');
-    let signinContainer = document.querySelector('.signin-section');
-    let signupContainer = document.querySelector('.signup-section');
-    let welcomeContainer = document.getElementById('welcome-prompt');
-    let overlaySection = document.querySelector('.overlay-section');
+    document.querySelector('.overlay-panel.overlay-right').style.zIndex = "0";
+    document.querySelector('.signin-section').style.zIndex = "0";
+    document.querySelector('.signup-section').style.zIndex = "1";
+    document.querySelector('.overlay-panel.overlay-left').style.zIndex = "1";
+    document.querySelector('.overlay-section').style.flexDirection = "row";
+    document.querySelector('.dual-container').style.background = "linear-gradient(to left, #53AFB1 0%, #53AFB1 50%, #224750 50%, #224750 100%)";
+});
 
-    welcomePrompt.style.zIndex = "0";
-    signinContainer.style.zIndex = "0";
-    signupContainer.style.zIndex = "1";
-    welcomeContainer.style.zIndex = "1";
-    overlaySection.style.flexDirection = "row";
+document.addEventListener('DOMContentLoaded', function() {
+    const roleButtons = document.querySelectorAll('.role-button');
+
+    roleButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            roleButtons.forEach(btn => {
+                if (btn !== this) {
+                    btn.classList.remove('filled');
+                }
+            });
+            this.classList.toggle('filled');
+        });
+    });
 });

@@ -1,3 +1,59 @@
+// // Function that allows transition from the welcome-back prompt to the sign-in form
+// document.getElementById('mobile-signin-prompt-button').addEventListener('click', function() {
+//     document.querySelector('.mobile-overlay-panel.mobile-overlay-top').style.zIndex = "1";
+//     document.querySelector('.mobile-signin-section').style.zIndex = "1";
+//     document.querySelector('.mobile-signup-section').style.zIndex = "0";
+//     document.querySelector('.mobile-overlay-panel.mobile-overlay-bottom').style.zIndex = "0";
+//     document.querySelector('.mobile-overlay-section').style.flexDirection = "row-reverse";
+//     document.querySelector('.mobile-container').style.background = "linear-gradient(to top, #53AFB1 0%, #53AFB1 40%, #224750 40%, #224750 100%)";
+// });
+
+// // Function that allows transition from the welcome prompt to the sign-up form
+// document.getElementById('mobile-signup-prompt-button').addEventListener('click', function() {
+//     document.querySelector('.mobile-overlay-panel.mobile-overlay-top').style.zIndex = "0";
+//     document.querySelector('.mobile-signin-section').style.zIndex = "0";
+//     document.querySelector('.mobile-signup-section').style.zIndex = "1";
+//     document.querySelector('.mobile-overlay-panel.mobile-overlay-bottom').style.zIndex = "1";
+//     document.querySelector('.mobile-overlay-section').style.flexDirection = "row";
+//     document.querySelector('.mobile-container').style.background = "linear-gradient(to bottom, #53AFB1 0%, #53AFB1 60%, #224750 60%, #224750 100%)";
+// });
+
+// // Function that handles transition from the welcome-back prompt to the sign-in form
+// document.getElementById('mobile-signin-prompt-button').addEventListener('click', function() {
+//     // Adjust the z-index to bring the sign-in section and top overlay to the front
+//     document.querySelector('.mobile-overlay-panel.mobile-overlay-top').style.zIndex = "1";
+//     document.querySelector('.mobile-signin-section').style.zIndex = "1";
+
+//     // Hide the sign-up section and bottom overlay
+//     document.querySelector('.mobile-signup-section').style.zIndex = "0";
+//     document.querySelector('.mobile-overlay-panel.mobile-overlay-bottom').style.zIndex = "0";
+
+//     // Adjust the layout to reverse the direction of the overlays
+//     document.querySelector('.mobile-overlay-section').style.flexDirection = "row-reverse";
+
+//     // Adjust the background gradient accordingly
+//     document.querySelector('.mobile-container').style.background = "linear-gradient(to top, #53AFB1 0%, #53AFB1 40%, #224750 40%, #224750 100%)";
+// });
+
+// // Function that handles transition from the welcome prompt to the sign-up form
+// document.getElementById('mobile-signup-prompt-button').addEventListener('click', function() {
+//     // Adjust the z-index to bring the sign-up section and bottom overlay to the front
+//     document.querySelector('.mobile-overlay-panel.mobile-overlay-top').style.zIndex = "0";
+//     document.querySelector('.mobile-signin-section').style.zIndex = "0";
+
+//     // Hide the sign-in section and top overlay
+//     document.querySelector('.mobile-signup-section').style.zIndex = "1";
+//     document.querySelector('.mobile-overlay-panel.mobile-overlay-bottom').style.zIndex = "1";
+
+//     // Adjust the layout to the default direction of the overlays
+//     document.querySelector('.mobile-overlay-section').style.flexDirection = "row";
+
+//     // Adjust the background gradient accordingly
+//     document.querySelector('.mobile-container').style.background = "linear-gradient(to bottom, #53AFB1 0%, #53AFB1 60%, #224750 60%, #224750 100%)";
+// });
+
+
+
 // Function that allows transition from the welcome-back prompt to the sign-in form
 document.getElementById('signin-prompt-button').addEventListener('click', function() {
     document.querySelector('.overlay-panel.overlay-right').style.zIndex = "1";

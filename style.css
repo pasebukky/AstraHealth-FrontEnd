@@ -50,7 +50,6 @@ body {
     width: 100%;
 }
 
-
 .teal-container {
     background-color: #53AFB1;
 }
@@ -70,6 +69,23 @@ body {
     position: relative;
     display: flex;
 }
+
+/* .mobile-container {
+    background: linear-gradient(
+        to bottom,
+        #224750 0%,
+        #224750 60%,
+        #53AFB1 60%,
+        #53AFB1 100%
+    );
+    display: none;
+} */
+
+.mobile-container {
+    background-color: #224750;
+    display: none;
+}
+
 
 /*======================
     Header Styles
@@ -137,11 +153,11 @@ body {
 }
 
 .mobile-menu li {
-    width: 100%:
+    width: 100%;
 }
 
 .mobile-menu a {
-    width: 100%:
+    width: 100%;
 }
 
 .header-nav-items {
@@ -226,6 +242,7 @@ body {
     padding: 3em 0;
 }
 
+
 .signup-section {
     left: 0;
     z-index: 1; 
@@ -293,7 +310,7 @@ body {
     padding: 10px 20px;
     margin-right: 10px;
     background-color: transparent; 
-    border: 1px solid #FFFFFF;
+    border: 2px solid #FFFFFF;
     color: #FFFFFF;
     border-radius: 30px;
     cursor: pointer;
@@ -344,7 +361,6 @@ body {
 .overlay-panel button {
     padding: 0.625em;
 }
-
 /*======================
     Our Doctors Section
 =======================*/
@@ -562,17 +578,16 @@ h4 {
 
 /* Screens less than 639px */
 @media (max-width: 639px) {
+    .header-nav-items{
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
     .astra-health-logo {
-        width: 75%;
-    }
-
-    .header-nav-bar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .header-nav-items {
-        margin: 1em 0;
+        width: 6em;
     }
 
     #intro-content {
@@ -597,14 +612,6 @@ h4 {
     .benefit, .doctors {
         width: 100%;
         margin-bottom: 1.25em;
-    }
-
-    .signup-section, .signin-section {
-        padding: 2em 0;
-    }
-
-    .role-button {
-        margin-bottom: 1em;
     }
 
     .doctors {
@@ -644,41 +651,102 @@ h4 {
         margin-bottom: 20px; 
     }
 
-    .header-nav-bar {
-        display: none;
-    }
-
-    #header {
-        padding: 10px 0 25px;
-    }
-
-    .container {
-        flex-direction: column;
-    }
-    .signup-section, .signin-section {
-        position: relative; /* Make both sections relative for overlapping */
-        z-index: 2; /* Ensure they are above the overlay */
-        padding: 2em 0; /* Adjust padding */
-    }
-    .overlay-section {
-        position: relative; /* Make overlay section relative for proper stacking */
-        z-index: 1; /* Ensure it's below signup and signin sections */
-    }
-    .overlay {
+    .mobile-signup-section, .mobile-signin-section {
+        flex: 1;
         display: flex;
+        flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        background-color: #224750;
+        padding: 3em 0;
+    }
+
+    .mobile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    #mobile-signup-form h2, #mobile-signin-form h2 {
+        text-align: center;
+        color: #FFFFFF;
+        margin-top: 0px;
+    }
+    
+    .mobile-form-field {
+        margin-bottom: 15px;
+    }
+    
+    .mobile-signin-section {
+        bottom: 0; /* Align the sign-in section to the bottom */
+    }
+    
+    
+
+    /* .mobile-signup-section {
+        left: 0;
+        z-index: 1; 
+    }
+    
+    .mobile-signin-section {
+        bottom: 0;
+    }  */
+
+    .mobile-form-container {
+        position: relative; /* Ensure relative positioning for overlay sections */
+    }
+
+    .mobile-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* Stack child elements vertically */
+        justify-content: space-between; /* Adjust as needed */
+        align-items: center;
+    }
+    
+    .mobile-overlay-panel {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #53AFB1;
+        z-index: -1;
+       }
+
+    .mobile-overlay-section{
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
-    .overlay-panel {
-        width: 100%;
-        height: 100%;
+    
+    .mobile-overlay-top {
+        position: absolute;
+        height: 678.196px;
+        padding-top: 48px;
+        padding-bottom: 48px;
     }
-    #welcome-prompt, #welcome-back-prompt {
+
+    .mobile-overlay-bottom {
+        position: absolute;
+        height: 453.911px;
+        padding-top: 48px;
+        padding-bottom: 48px;
+        margin-top: 678.196px;
+    }
+    
+    #mobile-welcome-prompt, #mobile-welcome-back-prompt {
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -686,117 +754,282 @@ h4 {
         align-items: center;
         text-align: center;
         padding: 0 20px;
-        height: 100%;
-        width: 100%;
     }
-    .dual-container {
-        diaplay: none;
+    
+    .mobile-form-field {
+        margin-bottom: 20px;
     }
-    .form-field input {
-        width: 100%; /* Reduce input width by 20% */
-        font-size: 0.75rem; /* Reduce font size */
+    
+    .mobile-form-field input {
+        width: 300px;
+        padding: 12px;
+        border: 1px solid #CCCCCC;
+        border-radius: 30px;
+        box-sizing: border-box;
     }
-
-    /* Additional adjustments for form labels */
-    .form-field label {
-        font-size: 12px; /* Reduce font size */
+    
+    .mobile-form-field label {
+        display: none;
     }
-
-    #doctor_patient {
+    
+    #access-buttons {
         display: flex;
-        flex-wrap: wrap;
+        justify-content: flex-end;
     }
-
-    .form-field input {
-        width: 80%; /* Reduce input width by 20% */
-        font-size: 14px; /* Reduce font size */
+    
+    .role-button {
+        padding: 10px 20px;
+        margin-right: 10px;
+        background-color: transparent; 
+        border: 2px solid #FFFFFF;
+        color: #FFFFFF;
+        border-radius: 30px;
+        cursor: pointer;
     }
-
-    /* Additional adjustments for form labels */
-    .form-field label {
-        font-size: 12px; /* Reduce font size */
+    
+    .role-button.filled {
+        background-color: #53AFB1;
+        color: white;
     }
-
-    /* JavaScript adjustments */
-    .overlay-section {
-        flex-direction: column; /* Change direction to column for smaller screens */
+    
+    .role-button:hover {
+        background-color: #53AFB1; 
+        color: white;
     }
-
-    .overlay-panel.overlay-right {
-        z-index: 1; /* Ensure signup section overlays signin section */
+    
+    .role-button:focus {
+        outline: none;
     }
-
-    .signin-section {
-        z-index: 1; /* Ensure signin section overlays signup section */
+    
+    .mobile-form-field label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+        color: #FFFFFF; 
     }
-
-    .signup-section {
-        z-index: 0; /* Lower z-index to keep it below signin section */
+    
+    .outlined-button {
+        color: #C0DF34;
+        background-color: #FFFFFF;
+        border: 2px solid #C0DF34;
     }
-
-    .overlay-panel.overlay-left {
-        z-index: 0; /* Lower z-index to keep it below signin section */
+    
+    #mobile-signup-form button.filled-button, #mobile-signin-form button.filled-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        position: relative;
+        left: 45%;
+        transform: translateX(-50%);
     }
-
+    
+    .mobile-overlay-panel h2, .mobile-overlay-panel p, .mobile-overlay-panel button {
+        color: #FFFFFF;
+    }
+    
+    .mobile-overlay-panel button {
+        padding: 0.625em;
+    }
     .dual-container {
-        background: linear-gradient(to right, #53AFB1 0%, #53AFB1 50%, #224750 50%, #224750 100%);
-        /* Adjust background gradient for smaller screens */
+        display: none;
     }
-}
 
+}
 
 /* Screens from 640px to 768px */
 @media (min-width: 640px) and (max-width: 768px) {
-
-    .form-field input {
-        width: 90%; /* Reduce input width by 20% */
-        font-size: 14px; /* Reduce font size */
+    .dual-container {
+        display: none;
     }
 
-    #doctor_patient {
-        font-size: 0.825rem;
+    /* .mobile-container {
         display: flex;
-        flex-wrap: wrap;
+    } */
+
+    .mobile-signup-section, .mobile-signin-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #224750;
+        padding: 3em 0;
+    }
+
+    .mobile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    #mobile-signup-form h2, #mobile-signin-form h2 {
+        text-align: center;
+        color: #FFFFFF;
+        margin-top: 0px;
+    }
+    
+    .mobile-form-field {
+        margin-bottom: 15px;
+    }
+    
+    .mobile-signin-section {
+        bottom: 0; /* Align the sign-in section to the bottom */
+    }
+    
+    
+
+    /* .mobile-signup-section {
+        left: 0;
+        z-index: 1; 
+    }
+    
+    .mobile-signin-section {
+        bottom: 0;
+    }  */
+
+    .mobile-form-container {
+        position: relative; /* Ensure relative positioning for overlay sections */
+    }
+
+    .mobile-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* Stack child elements vertically */
+        justify-content: space-between; /* Adjust as needed */
         align-items: center;
     }
-
-    #doctor_patient .role-button {
-        font-size: 0.825rem;
-        /* Add other styles as needed */
-    }
-
-    /* Additional adjustments for form labels */
-    .form-field label {
-        font-size: 12px; /* Reduce font size */
-    }
-
-    /* JavaScript adjustments */
-    .overlay-section {
-        flex-direction: column; /* Change direction to column for smaller screens */
-    }
-
-    .overlay-panel.overlay-right {
-        z-index: 1; /* Ensure signup section overlays signin section */
-    }
-
-    .signin-section {
-        z-index: 1; /* Ensure signin section overlays signup section */
-    }
-
-    .signup-section {
-        z-index: 0; /* Lower z-index to keep it below signin section */
-    }
-
-    .overlay-panel.overlay-left {
-        z-index: 0; /* Lower z-index to keep it below signin section */
-    }
-
-    .dual-container {
-        background: linear-gradient(to right, #53AFB1 0%, #53AFB1 50%, #224750 50%, #224750 100%);
-        /* Adjust background gradient for smaller screens */
-    }
-
     
+    .mobile-overlay-panel {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #53AFB1;
+        z-index: -1;
+       }
+
+    .mobile-overlay-section{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .mobile-overlay-top {
+        position: absolute;
+        height: 678.196px;
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .mobile-overlay-bottom {
+        position: absolute;
+        height: 453.911px;
+        padding-top: 48px;
+        padding-bottom: 48px;
+        margin-top: 678.196px;
+    }
+    
+    #mobile-welcome-prompt, #mobile-welcome-back-prompt {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+    }
+    
+    .mobile-form-field {
+        margin-bottom: 20px;
+    }
+    
+    .mobile-form-field input {
+        width: 300px;
+        padding: 12px;
+        border: 1px solid #CCCCCC;
+        border-radius: 30px;
+        box-sizing: border-box;
+    }
+    
+    .mobile-form-field label {
+        display: none;
+    }
+    
+    #access-buttons {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .role-button {
+        padding: 10px 20px;
+        margin-right: 10px;
+        background-color: transparent; 
+        border: 2px solid #FFFFFF;
+        color: #FFFFFF;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    
+    .role-button.filled {
+        background-color: #53AFB1;
+        color: white;
+    }
+    
+    .role-button:hover {
+        background-color: #53AFB1; 
+        color: white;
+    }
+    
+    .role-button:focus {
+        outline: none;
+    }
+    
+    .mobile-form-field label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+        color: #FFFFFF; 
+    }
+    
+    .outlined-button {
+        color: #C0DF34;
+        background-color: #FFFFFF;
+        border: 2px solid #C0DF34;
+    }
+    
+    #mobile-signup-form button.filled-button, #mobile-signin-form button.filled-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        position: relative;
+        left: 45%;
+        transform: translateX(-50%);
+    }
+    
+    .mobile-overlay-panel h2, .mobile-overlay-panel p, .mobile-overlay-panel button {
+        color: #FFFFFF;
+    }
+    
+    .mobile-overlay-panel button {
+        padding: 0.625em;
+    }
+
     .header-nav-items{
         display: none;
     }
@@ -851,15 +1084,6 @@ h4 {
 
     h4 {
         font-size: 1rem;
-    }
-
-    #signup-form h2, #signin-form h2 {
-        font-size: 1.5rem;
-        margin-top: 0;
-    }
-
-    .overlay-panel h2 {
-        margin-bottom: 0;
     }
 
     .doctors h3 {

@@ -75,6 +75,86 @@
             </section>
         </div>
     </div>
+    <div class="mobile-container" id="mobile-container">
+        <div class="mobile-form-container">
+            <section class="mobile-form-section mobile-signup-section">
+                <form id="mobile-signup-form">
+                    <h2>Sign Up</h2>
+                    <div class="mobile-form-field">
+                        <label for="doctor_patient">Are you a doctor or a patient?</label>
+                        <div id="doctor_patient">
+                            <button class="role-button outlined" data-role="doctor">I am a doctor</button>
+                            <button class="role-button outlined" data-role="patient">I am a patient</button>
+                        </div>
+                    </div>                                                   
+                    <div class="mobile-form-field">
+                        <input type="text" placeholder="First Name" name="first_name" />
+                        <label></label>
+                    </div>
+                    <div class="mobile-form-field">
+                        <input type="text" placeholder="Last Name" name="last_name" />
+                        <label></label>
+                    </div>
+                    <div class="mobile-form-field">
+                        <input type="email" placeholder="Email" name="email" />
+                        <label></label>
+                    </div>
+                    <div class="mobile-form-field">
+                        <input type="tel" placeholder="Phone Number" name="phone" pattern="\+?\d{1,3}[-.]?\d{3}[-.]?\d{3}[-.]?\d{4}" />
+                        <label></label>
+                    </div>
+                    <div class="mobile-form-field">
+                        <input type="password" placeholder="Password" name="password" />
+                        <label></label>
+                    </div>
+                    <div class="mobile-form-field">
+                        <input type="password" placeholder="Confirm Password" name="confirm_password" />
+                        <label></label>
+                    </div>
+                    <button class="filled-button" type="submit">SIGN UP</button>
+                </form>
+            </section>
+            <section class="mobile-form-section mobile-signin-section">
+                <form id="mobile-signin-form">
+                    <h2>Sign in</h2>
+                    <div class="mobile-form-field">
+                        <label for="doctor_patient">Are you a doctor or a patient?</label>
+                        <div id="doctor_patient">
+                            <button class="role-button outlined" data-role="doctor">I am a doctor</button>
+                            <button class="role-button outlined" data-role="patient">I am a patient</button>
+                        </div>
+                    </div>     
+                    <div class="mobile-form-field">
+                        <input type="email" placeholder="Email" name="email"/>
+                        <label></label>
+                    </div>
+                    <div class="mobile-form-field">
+                        <input type="password" placeholder="Password" />
+                        <label></label>
+                    </div>
+                    <button class="filled-button" type="submit">SIGN IN</button>
+                </form>
+            </section>
+            <!-- <section class="mobile-overlay-section">
+                <div class="mobile-overlay">
+                    <div class="mobile-overlay-panel mobile-overlay-top">
+                        <div id="mobile-welcome-prompt">
+                            <h2>Welcome!</h2>
+                            <p>Begin your Astra Health journey here</p>
+                            <button class="filled-button" id="mobile-signup-prompt-button">SIGN UP</button>
+                        </div>
+                    </div>
+                    <div class="mobile-overlay-panel mobile-overlay-bottom">
+                        <div id="mobile-welcome-back-prompt">
+                            <h2>Welcome back!</h2>
+                            <p>We're glad you're back. We've missed you!</p>
+                            <button class="filled-button" id="mobile-signin-prompt-button">SIGN IN</button>
+                        </div>   
+                    </div>
+                </div>
+            </section> -->
+        </div>
+    </div>
     <div class="dual-container" id="container">
         <div class="container">
             <section class="form-section signup-section">

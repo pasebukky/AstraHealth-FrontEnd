@@ -1,4 +1,5 @@
-document.getElementById('signin-button').addEventListener('click', function() {
+// Function that allows transition from the welcome-back prompt to the sign-in form
+document.getElementById('signin-prompt-button').addEventListener('click', function() {
     document.querySelector('.overlay-panel.overlay-right').style.zIndex = "1";
     document.querySelector('.signin-section').style.zIndex = "1";
     document.querySelector('.signup-section').style.zIndex = "0";
@@ -7,7 +8,8 @@ document.getElementById('signin-button').addEventListener('click', function() {
     document.querySelector('.dual-container').style.background = "linear-gradient(to right, #53AFB1 0%, #53AFB1 50%, #224750 50%, #224750 100%)";
 });
 
-document.getElementById('signup-button').addEventListener('click', function() {
+// Function that allows transition from the welcome prompt to the sign-up form
+document.getElementById('signup-prompt-button').addEventListener('click', function() {
     document.querySelector('.overlay-panel.overlay-right').style.zIndex = "0";
     document.querySelector('.signin-section').style.zIndex = "0";
     document.querySelector('.signup-section').style.zIndex = "1";
@@ -16,6 +18,7 @@ document.getElementById('signup-button').addEventListener('click', function() {
     document.querySelector('.dual-container').style.background = "linear-gradient(to left, #53AFB1 0%, #53AFB1 50%, #224750 50%, #224750 100%)";
 });
 
+// Function that allows users select their roles i.e patient or doctor
 document.addEventListener('DOMContentLoaded', function() {
     const roleButtons = document.querySelectorAll('.role-button');
 
@@ -31,3 +34,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Function that leads users to the sign-up / sign-in section of the landing page
+document.addEventListener('DOMContentLoaded', function() {
+    const getStartedButtons = document.querySelectorAll('.access-button');
+    const dualContainer = document.querySelector('.dual-container');
+
+    getStartedButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            dualContainer.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+});
+
+//Function to show menu bar on mobile devices and tablets
+ function showMenu() {
+    const menubar = document.querySelector('.mobile-menu')
+    menubar.style.display = 'flex'
+ }
+
+ //Function to hide menu bar on mobile devices and tablets
+ function hideMenu() {
+    const menubar = document.querySelector('.mobile-menu')
+    menubar.style.display = 'none'
+ }

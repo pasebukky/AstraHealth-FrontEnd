@@ -1,3 +1,7 @@
+/*======================
+  Reset and Base Styles
+=======================*/
+
 html {
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
@@ -5,25 +9,30 @@ html {
 
 .icon {
     font-size: 3rem;
-    color:  #c0df34;
+    color:  #C0DF34;
 }
 
 .small-icon {
     font-size: 1rem;
-    color:  #ffffff;
+    color:  #FFFFFF;
+}
+
+.menu-button {
+    display: none;
 }
 
 body {
     margin: 0px;
     padding: 0px;
-    /* min-height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat; */
 }
 
 *, *:before, *:after {
     box-sizing: inherit;
 }
+
+/*======================
+    Containers
+=======================*/
 
 .container {
     position: relative;
@@ -33,16 +42,21 @@ body {
     display: flex;
 }
 
+.white-container {
+    background-color: #FFFFFF;
+    z-index: 2;
+    position: fixed;
+    height: 150px;
+    width: 100%;
+}
+
+
 .teal-container {
     background-color: #53AFB1;
 }
 
 .dark-green-container {
     background-color: #224750;
-}
-
-.footer-container {
-    padding: 2em 0 2em 0;
 }
 
 .dual-container {
@@ -56,6 +70,151 @@ body {
     position: relative;
     display: flex;
 }
+
+/*======================
+    Header Styles
+=======================*/
+
+#header {
+    opacity: 1;
+    z-index: 3;
+    width: 90%;
+    position: fixed;
+    max-width: 1200px;
+    height: 150px;
+    display: flex;
+    text-align: center;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.header-nav-bar {
+    color: #224750;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    padding: 20px 0;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#header-nav-bar {
+    display: flex;
+    list-style: none;
+}
+
+.mobile-menu {
+    position: fixed;
+    display: none;
+    top: 0; 
+    right: 0;
+    margin: 0;
+    height: 100vh;
+    width: 240px;
+    z-index: 999;
+    background-color: #224750;
+    list-style: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 1em 2em;
+    line-height: 3em;
+    border-radius:  2.5em 0 0 2.5em;
+}
+
+.mobile-nav-items a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1em;
+}
+
+.mobile-nav-items a:hover, 
+.mobile-nav-items a:focus {
+    color: #F0F0F0;
+    font-weight: 500;
+}
+
+.mobile-menu li {
+    width: 100%:
+}
+
+.mobile-menu a {
+    width: 100%:
+}
+
+.header-nav-items {
+    margin-left: 2em;
+}
+
+.header-nav-items a {
+    text-decoration: none;
+    color: #224750;
+    padding: .25em 0;
+}
+
+.header-nav-items a:hover, 
+.header-nav-items a:focus {
+    color: #53AFB1;
+    font-weight: 500;
+}
+
+.current-page {
+    border-bottom: 2px solid #53AFB1;
+    color: #53AFB1;
+    font-weight: 500;
+}
+
+/*======================
+    Introduction Section
+=======================*/
+
+#intro {
+    min-height: 600px;
+    height: auto;
+    padding: 170px 0 20px 0;
+}
+
+#intro-content {
+    padding-top: 0px;
+    width: 60%;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+/*======================
+    Key Benefits Section
+=======================*/
+
+#key-benefits {
+    background-color: #FFFFFF;
+    padding: 3em 0 3em 0;
+}
+
+#benefits-header {
+    text-align: center;
+    color: #224750;
+}
+
+#benefits-body {
+    display: flex;
+    flex-wrap: wrap;
+    color: #224750;
+    display: flex;
+    justify-content: space-between;
+}
+
+.benefit {
+    width: calc(33.333% - 2.25em);
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 30px; 
+}
+
+/*======================
+    Sign Up/ Sign In
+=======================*/
 
 .signup-section, .signin-section {
     flex: 1;
@@ -111,7 +270,6 @@ body {
 
 .form-field {
     margin-bottom: 20px;
-
 }
 
 .form-field input {
@@ -126,251 +284,17 @@ body {
     display: none;
 }
 
-#header {
-    display: flex;
-    flex: 1;
-    padding: 20px 0;
-    height: 150px;
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-}
-
-.header-nav-bar {
-    color: #224750;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.header-nav-items {
-    margin-left: 2em;
-}
-
-.header-nav-items a {
-    text-decoration: none;
-    color: #224750;
-    padding: .25em 0;
-}
-
-.header-nav-items a:hover, 
-.header-nav-items a:focus {
-    color: #53AFB1;
-    font-weight: bold;
-}
-
-.current-page {
-    border-bottom: 2px solid #53AFB1;
-    color: #53AFB1;
-    font-weight: 500;
-}
- 
-#intro {
-    min-height: 600px;
-    height: auto;
-    padding: 20px 0;
-}
-
-#intro-content {
-    padding-top: 0px;
-    width: 60%;
-    align-items: center;
-    color: #ffffff;
-}
-
-#key-benefits {
-    background-color: #ffffff;
-    padding: 3em 0 3em 0;
-}
-
-#benefits-header {
-    text-align: center;
-    color: #224750;
-}
-
-#benefits-body {
-    color: #224750;
-    display: flex;
-    justify-content: space-between;
-}
-
-.benefit {
-    width: 30%;
-    padding: 15px;
-    text-align: center;
-}
-
 #access-buttons {
     display: flex;
     justify-content: flex-end;
-}
-
-button {
-    border-radius: 30px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.filled-button, .outlined-button {
-    min-width: 120px;
-    margin-left: 1em;
-    padding: .5em 1.25em;
-}
-
-.filled-button, .filled-button-large, .filler-button {
-    color: white;
-    background-color: #c0df34;
-    border: none;
-}
-
-.filled-button-large {
-    min-width: 180px;
-    font-size: 1.125rem;
-    padding: .5em 1.25em;
-    margin-top: 1.5em;
-}
-
-.outlined-button {
-    color: #c0df34;
-    background-color: #ffffff;
-    border: 2px solid #c0df34;
-}
-
-#intro-content h1 {
-    color: #ffffff;
-    font-size: 6.5rem;
-    font-weight: normal;
-    line-height: 7.5rem;
-    margin: 0.5em 0 0 0;
-}
-
-#benefits-header h2 {
-    margin: 0 0 .75em 0;
-}
-
-.benefit h3 {
-    margin-bottom: 0.5em;
-}
-
-h2 {
-    font-size: 2.5rem;
-    font-weight: 500;
-}
-
-h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-#intro-content h4 {
-    color: #ffffff;
-    font-size: 1.25rem;
-    font-weight: 300;
-    margin: 10px;
-}
-
-h4 {
-    font-size: 1.25rem;
-    font-weight: 400;
-    font-style: normal;
-}
-
-#signup-form h2, #signin-form h2 {
-    text-align: center;
-    color: #ffffff;
-    margin-top: 0px;
-}
-
-#signup-form button.filled-button, #signin-form button.filled-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    position: relative;
-    left: 45%;
-    transform: translateX(-50%);
-}
-
-.overlay-panel h2, .overlay-panel p, .overlay-panel button {
-    color: #ffffff;
-}
-
-.overlay-panel button {
-    padding: 10px;
-}
-
-.overlay-panel h2{
-    margin-bottom: 0px;
-}
-
-#our-doctors {
-    background-color: #ffffff;
-    padding: 3em 0 3em 0;
-}
-
-#doctors-header {
-    width: 100%;
-    text-align: center;
-    color: #224750;
-}
-
-#doctors-body {
-    color: #224750;
-    display: flex;
-    justify-content: space-between;
-}
-
-.doctors {
-    width: 30%;
-    padding: 15px;
-    align-items: center;
-    border: 20px;
-    text-align: center;
-}
-
-.doctors h3 {
-    margin-bottom: .5em;
-}
-
-#doctors-header h2 {
-    margin-top: 0;
-}
-
-.doctors img {
-    border-radius: 50%;
-}
-
-#our-doctors .filled-button {
-    text-align: center;
-    padding: 10px;
-    background-color: #c0df34;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    width: 20%;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    margin: 0 auto;
-    display: block;
-}
-
-#doctor_patient {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 .role-button {
     padding: 10px 20px;
     margin-right: 10px;
     background-color: transparent; 
-    border: 2px solid #ffffff;
-    color: #ffffff;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
     border-radius: 30px;
     cursor: pointer;
 }
@@ -394,9 +318,92 @@ h4 {
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
-    color: #ffffff; 
+    color: #FFFFFF; 
 }
 
+.outlined-button {
+    color: #C0DF34;
+    background-color: #FFFFFF;
+    border: 2px solid #C0DF34;
+}
+
+#signup-form button.filled-button, #signin-form button.filled-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    left: 45%;
+    transform: translateX(-50%);
+}
+
+.overlay-panel h2, .overlay-panel p, .overlay-panel button {
+    color: #FFFFFF;
+}
+
+.overlay-panel button {
+    padding: 0.625em;
+}
+
+/*======================
+    Our Doctors Section
+=======================*/
+
+#our-doctors {
+    background-color: #FFFFFF;
+    padding: 3em 0 3em 0;
+}
+
+#doctors-header {
+    width: 100%;
+    text-align: center;
+    color: #224750;
+}
+
+#doctors-body {
+    color: #224750;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.doctors {
+    width: calc(33.333% - 2.25em);
+    padding: 15px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2.25em;
+    box-sizing: border-box;
+}
+
+.doctors img {
+    border-radius: 50%;
+    max-width: 100%;
+}
+
+#our-doctors .filled-button {
+    text-align: center;
+    padding: 0.625em 1.25em;
+    background-color: #C0DF34;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto;
+    display: block;
+}
+
+#doctor_patient {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*======================
+    Footer Styles
+=======================*/
 
 #footer {
     background-color: #224750;
@@ -405,6 +412,7 @@ h4 {
 
 #footer h4 {
     margin-bottom: .5em;
+    font-weight: 500;
 }
 
 #footer .small-icon {
@@ -413,7 +421,9 @@ h4 {
 
 .footer-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    padding: 2em 0 2em 0;
 }
 
 #footer .instagram,
@@ -439,7 +449,7 @@ h4 {
 }
 
 #legal-information {
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     padding: .5em;
     text-align: center;
 }
@@ -450,11 +460,429 @@ h4 {
     color: #777;
 }
 
-@media (max-width: 992px) {
+/*======================
+        Buttons
+=======================*/
+
+button {
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.filled-button, .outlined-button {
+    min-width: 120px;
+    margin-left: 1em;
+    padding: .5em 1.25em;
+}
+
+.filled-button, .filled-button-large, .filler-button {
+    color: white;
+    background-color: #C0DF34;
+    border: none;
+}
+
+.filled-button-large {
+    min-width: 180px;
+    font-size: 1.125rem;
+    padding: .5em 1.25em;
+    margin: 1.5em 0;
+}
+
+/*======================
+    Typography
+=======================*/
+
+#intro-content h1 {
+    color: #FFFFFF;
+    font-size: 6.5rem;
+    font-weight: normal;
+    line-height: 7.5rem;
+    margin: 0.25em 0 0 0;
+}
+
+#benefits-header h2 {
+    margin: 0 0 .75em 0;
+}
+
+.benefit h3 {
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#intro-content h4 {
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin: 10px;
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#signup-form h2, #signin-form h2 {
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 0px;
+}
+
+.overlay-panel h2{
+    margin-bottom: 0px;
+}
+
+.doctors h3 {
+    margin-bottom: .5em;
+}
+
+#doctors-header h2 {
+    margin-top: 0;
+}
+
+/*======================
+    Media Queries
+=======================*/
+
+@media (max-width: 450px) {
+    .mobile-menu {
+        width: 100%;
+    }
+}
+
+/* Screens less than 639px */
+@media (max-width: 639px) {
+    .astra-health-logo {
+        width: 75%;
+    }
+
     .header-nav-bar {
         flex-direction: column;
+        align-items: flex-start;
     }
-    .header {
+
+    .header-nav-items {
+        margin: 1em 0;
+    }
+
+    #intro-content {
+        padding-top: 1.5em;
+        width: 100%;
+        text-align: left;
+    }
+
+    #intro h1 {
+        font-size: 4rem;
+        line-height: 5rem;
+    }
+
+    #intro h4 {
+        font-size: 1rem;
+    }
+
+    .filled-button-large {
+        margin-top: 1em;
+    }
+
+    .benefit, .doctors {
+        width: 100%;
+        margin-bottom: 1.25em;
+    }
+
+    .signup-section, .signin-section {
+        padding: 2em 0;
+    }
+
+    .role-button {
+        margin-bottom: 1em;
+    }
+
+    .doctors {
+        width: 100%;
+    }
+
+    #footer .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #footer p {
+        font-size: 0.85rem;
         text-align: center;
+    }
+
+    #footer .instagram,
+    #footer .facebook,
+    #footer .twitter,
+    #footer .e-mail,
+    #footer .phone-number {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #social-media, #contact-us, #our-services {
+        text-align: center;
+    }
+
+    .footer-container h4 {
+        padding-bottom: 0.75em;
+    }
+
+    .benefit, .doctors {
+        width: 100%;
+        margin-bottom: 20px; 
+    }
+
+    .header-nav-bar {
+        display: none;
+    }
+
+    #header {
+        padding: 10px 0 25px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+    .signup-section, .signin-section {
+        position: relative; /* Make both sections relative for overlapping */
+        z-index: 2; /* Ensure they are above the overlay */
+        padding: 2em 0; /* Adjust padding */
+    }
+    .overlay-section {
+        position: relative; /* Make overlay section relative for proper stacking */
+        z-index: 1; /* Ensure it's below signup and signin sections */
+    }
+    .overlay {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .overlay-panel {
+        width: 100%;
+        height: 100%;
+    }
+    #welcome-prompt, #welcome-back-prompt {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+        height: 100%;
+        width: 100%;
+    }
+    .dual-container {
+        diaplay: none;
+    }
+    .form-field input {
+        width: 100%; /* Reduce input width by 20% */
+        font-size: 0.75rem; /* Reduce font size */
+    }
+
+    /* Additional adjustments for form labels */
+    .form-field label {
+        font-size: 12px; /* Reduce font size */
+    }
+
+    #doctor_patient {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .form-field input {
+        width: 80%; /* Reduce input width by 20% */
+        font-size: 14px; /* Reduce font size */
+    }
+
+    /* Additional adjustments for form labels */
+    .form-field label {
+        font-size: 12px; /* Reduce font size */
+    }
+
+    /* JavaScript adjustments */
+    .overlay-section {
+        flex-direction: column; /* Change direction to column for smaller screens */
+    }
+
+    .overlay-panel.overlay-right {
+        z-index: 1; /* Ensure signup section overlays signin section */
+    }
+
+    .signin-section {
+        z-index: 1; /* Ensure signin section overlays signup section */
+    }
+
+    .signup-section {
+        z-index: 0; /* Lower z-index to keep it below signin section */
+    }
+
+    .overlay-panel.overlay-left {
+        z-index: 0; /* Lower z-index to keep it below signin section */
+    }
+
+    .dual-container {
+        background: linear-gradient(to right, #53AFB1 0%, #53AFB1 50%, #224750 50%, #224750 100%);
+        /* Adjust background gradient for smaller screens */
+    }
+}
+
+
+/* Screens from 640px to 768px */
+@media (min-width: 640px) and (max-width: 768px) {
+
+    .form-field input {
+        width: 90%; /* Reduce input width by 20% */
+        font-size: 14px; /* Reduce font size */
+    }
+
+    #doctor_patient {
+        font-size: 0.825rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    #doctor_patient .role-button {
+        font-size: 0.825rem;
+        /* Add other styles as needed */
+    }
+
+    /* Additional adjustments for form labels */
+    .form-field label {
+        font-size: 12px; /* Reduce font size */
+    }
+
+    /* JavaScript adjustments */
+    .overlay-section {
+        flex-direction: column; /* Change direction to column for smaller screens */
+    }
+
+    .overlay-panel.overlay-right {
+        z-index: 1; /* Ensure signup section overlays signin section */
+    }
+
+    .signin-section {
+        z-index: 1; /* Ensure signin section overlays signup section */
+    }
+
+    .signup-section {
+        z-index: 0; /* Lower z-index to keep it below signin section */
+    }
+
+    .overlay-panel.overlay-left {
+        z-index: 0; /* Lower z-index to keep it below signin section */
+    }
+
+    .dual-container {
+        background: linear-gradient(to right, #53AFB1 0%, #53AFB1 50%, #224750 50%, #224750 100%);
+        /* Adjust background gradient for smaller screens */
+    }
+
+    
+    .header-nav-items{
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .benefit, .doctors {
+        width: calc(50% - 1.25em);
+        margin-bottom: 1.25; 
+    }
+
+    #benefits-body, #doctors-body {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    #benefits-body, #doctors-body {
+        display: flex;
+        justify-content: center; /* Center items horizontally */
+        flex-wrap: wrap;
+    }
+
+    #intro-content h1 {
+        font-size: 5rem;
+        line-height: 6rem;
+    }
+
+    #benefits-header h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5em;
+    }
+
+    .benefit h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.25em;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    #intro-content h4 {
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    #signup-form h2, #signin-form h2 {
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+
+    .overlay-panel h2 {
+        margin-bottom: 0;
+    }
+
+    .doctors h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5em;
+    }
+
+    #doctors-header h2 {
+        margin-top: 0;
+    }
+}
+
+/* Screens from 769px to 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header-nav-bar {
+        display: flex;
+    }
+
+    #benefits-body, #doctors-body {
+        justify-content: center;
+    }
+
+    .benefit, .doctors {
+        width: calc(50% - 2.25em);
     }
 }

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Function that leads users to the sign-up / sign-in section of the landing page
+// Function that leads users to the sign-up / sign-in section of the desktop landing page
 document.addEventListener('DOMContentLoaded', function() {
     const getStartedButtons = document.querySelectorAll('.access-button');
     const dualContainer = document.querySelector('.dual-container');
@@ -44,6 +44,18 @@ document.addEventListener('DOMContentLoaded', function() {
     getStartedButtons.forEach(button => {
         button.addEventListener('click', function() {
             dualContainer.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+});
+
+// Function that leads users to the sign-up / sign-in section of the mobile landing page
+document.addEventListener('DOMContentLoaded', function() {
+    const getStartedButtons = document.querySelectorAll('.access-button');
+    const mobileContainer = document.querySelector('.mobile-container');
+
+    getStartedButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            mobileContainer.scrollIntoView({ behavior: 'smooth' });
         });
     });
 });

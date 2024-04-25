@@ -6,6 +6,7 @@
     <title>Astra Health</title>
     <link rel="icon" href="Images_Assets/Images/astra_health_small_icon.png">
     <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/our_doctors_style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -13,22 +14,25 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
+    <div><a href="patient_profile.html"></a></div>
     <div class="white-container">
         <div class="container">
             <nav id="header">
                 <div id="header-logo">
-                    <img class="astra-health-logo" src="Images_Assets/Images/Astra_Health_Logo_1.png" alt="Astra Health logo" width="150">
+                    <a href="index.html">
+                        <img class="astra-health-logo" src="Images_Assets/Images/Astra_Health_Logo_1.png" alt="Astra Health logo" width="150">
+                    </a>                    
                 </div>
                 <ul class="mobile-menu" id="mobile-nav-bar">
                     <li onclick=hideMenu()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
                     <li class="mobile-nav-items"><a href="index.html" class="current-page">HOME</a></li>
-                    <li class="mobile-nav-items"><a href="#">OUR DOCTORS</a></li>
+                    <li class="mobile-nav-items"><a href="our_doctors.html">OUR DOCTORS</a></li>
                     <li class="mobile-nav-items"><a href="#">APPOINTMENTS</a></li>
                     <li class="mobile-nav-items"><a href="#">MY PROFILE</a></li>
                 </ul>
                 <ul class="header-nav-bar" id="header-nav-bar">
                     <li class="header-nav-items"><a href="index.html" class="current-page">HOME</a></li>
-                    <li class="header-nav-items"><a href="#">OUR DOCTORS</a></li>
+                    <li class="header-nav-items"><a href="our_doctors.html">OUR DOCTORS</a></li>
                     <li class="header-nav-items"><a href="#">APPOINTMENTS</a></li>
                     <li class="header-nav-items"><a href="#">MY PROFILE</a></li>
                     <li class="menu-button" onclick=showMenu()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="#224750" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></i></a></li>
@@ -258,7 +262,7 @@
                     <p>Dr. Fatima is a dedicated general practitioner focused on family-centered healthcare, fostering an inclusive environment where patients feel empowered.</p>
                 </div>
             </section>
-            <section class="filled-button">SCHEDULE APPOINTMENT</section>
+            <section class="filled-button" onclick="window.location.href = 'our_doctors.html';">DISCOVER OUR DOCTORS</section>
         </div>
     </div>
     <footer id="footer">
@@ -302,5 +306,6 @@
         <p>&copy; 2024 Astra Health. All rights reserved.</p>
     </section>    
     <script src="JavaScript/script.js"></script>
+    <script src="JavaScript/our_doctors_script.js"></script>
 </body>
 </html>

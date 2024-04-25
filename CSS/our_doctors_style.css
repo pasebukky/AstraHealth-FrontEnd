@@ -1,0 +1,185 @@
+/*======================
+     General Style
+=======================*/
+
+#doc-intro {
+    min-height: 500px;
+    height: auto;
+    padding: 170px 0 20px 0;
+}
+
+#doc-intro-content {
+    padding-top: 0px;
+    width: 60%;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+#our-doctors-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 2em;
+}
+
+.card {
+   position: relative;
+   width: 300px;
+   height: 620px;
+   background: #FFFFF;
+   overflow: hidden;
+   border-radius: 30px;
+   margin: 20px;
+   background: linear-gradient(
+        to bottom,
+        #FFFFFF 0%,
+        #FFFFFF 41%,
+        #224750 41%,
+        #224750 100%
+    );
+}
+
+.card .circle {
+   position: absolute;
+   color: #FFFFFF;
+   top: -190px;
+   left: 50%;
+   width: 500px;
+   height: 500px;
+   transform: translateX(-50%);
+   clip-path: circle();
+}
+
+.card .circle::before {
+   content: '';
+   position: absolute;
+   color: white;
+   top: -8px;
+   left: -16px;
+   width: 100%;
+   height: 100%;
+   box-shadow: 0 0 0 20px #53AFB1;
+   border-radius: 50%;
+   z-index: 2;
+   pointer-events: none;
+}
+
+.circle .image-box {
+   position: absolute;
+   background: #FFFFFF;
+   left: 50%;
+   bottom: 0;
+   transform: translateX(-50%);
+   width: 340px;
+   height: 300px;
+}
+
+.image-box img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   object-fit: cover;
+   object-position: top;
+   width: 100%;
+   height: 100%;
+   transition: all 0.5s;
+}
+
+.image-box img:hover {
+   transform: scale(1.2);
+}
+
+.card .our-doc-content {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 320px;
+   padding: 20px 30px;
+}
+
+/*======================
+    Typography
+=======================*/
+
+#doc-intro-content h1 {
+    color: #FFFFFF;
+    font-size: 6.5rem;
+    font-weight: normal;
+    line-height: 7.5rem;
+    margin: 0.25em 0 0 0;
+}
+
+#doc-intro-content h4 {
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin: 10px;
+}
+
+.our-doc-content h3 {
+    font-size: 1.4 rem;
+    color: #FFFFFF;
+    margin-top: 7px;
+    margin-bottom: 2px;
+    text-align: center;
+ }
+ 
+ .our-doc-content p {
+    font-size: 1 rem;
+    color: #FFFFFF;
+    margin-top: 7px;
+    margin-bottom: 2px;
+    text-align: center;
+ }
+
+/*======================
+        Buttons
+=======================*/
+
+ .appointment-button {
+    position: absolute;
+    bottom: 20px;
+    left: 45%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-width: 180px;
+    padding: 0.75em 1.25em;
+    color: #FFFFFF;
+    font-weight: 500;
+    background-color: #C0DF34;
+    border: none;
+}
+
+
+/*======================
+      Media Query
+=======================*/
+
+/* Screens less than 639px */
+@media (max-width: 639px) {
+    #doc-intro-content {
+        padding-top: 1.5em;
+        width: 100%;
+        text-align: left;
+    }
+
+    #doc-intro h1 {
+        font-size: 4rem;
+        line-height: 5rem;
+    }
+
+    #doc-intro h4 {
+        font-size: 1rem;
+    }
+}
+
+/* Screens from 640px to 843px */
+@media (min-width: 640px) and (max-width: 843px) {
+    #doc-intro-content h1 {
+        font-size: 5rem;
+        line-height: 6rem;
+    }
+}

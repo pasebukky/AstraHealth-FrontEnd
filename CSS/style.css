@@ -493,7 +493,7 @@ button {
 }
 
 .filled-button, .filled-button-large, .filler-button {
-    color: white;
+    color: #FFFFFF;
     background-color: #C0DF34;
     border: none;
 }

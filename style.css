@@ -827,8 +827,8 @@ h4 {
 
 }
 
-/* Screens from 640px to 768px */
-@media (min-width: 640px) and (max-width: 768px) {
+/* Screens from 640px to 843px */
+@media (min-width: 640px) and (max-width: 843px) {
     .dual-container {
         display: none;
     }
@@ -1070,8 +1070,8 @@ h4 {
     }
 }
 
-/* Screens from 769px to 1024px */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* Screens from 844px to 1024px */
+@media (min-width: 844px) and (max-width: 1024px) {
     .header-nav-bar {
         display: flex;
     }

@@ -1,0 +1,230 @@
+/*======================
+     General Style
+=======================*/
+
+.profile-intro {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.profile-card {
+    position: relative;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-top: 10.625em;
+    margin-bottom: -5.625em;
+    padding: 0.125em;
+    background-color: #53AFB1;
+}
+
+.profile-card .profile-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 0.125em solid #FFFFFF;
+}
+
+.patient-info {
+    padding: 7.5em 0 1.25em 0;
+}
+
+.personal-info-item {
+    border-bottom: 1px solid #224750;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.profile-full-name {
+    color: #FFFFFF;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 0.25em;
+}
+
+.all-information {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.25em;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.25em 0;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Adding transition for smooth effect */
+}
+
+.profile-section:hover {
+    transform: scale(1.05); /* Scale up the card slightly on hover */
+}
+
+.profile-section h2 {
+    background-color:  #224750;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 1em 1.25em;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: 180px;
+    height: 300px;
+    display: flex;
+    align-items: right;
+    justify-content: center;
+}
+
+.profile-section h2 span {
+    display: flex;
+    align-items: center;
+}
+
+.profile-info {
+    padding: 0.625em;
+    width: 270px;
+    margin: 0 auto;
+    
+}
+
+.info-item {
+    margin-bottom: 0.5em;
+}
+
+.info-item label {
+    font-weight: bold;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: right;
+    padding-top: 1.5em;
+    padding-right: 0;
+}
+
+/*======================
+    Buttons
+=======================*/
+
+.edit-profile-button {
+    border-radius: 30px;
+    background-color: #FFFFFF;
+    border: 3px solid #224750;
+    color: #224750;
+    font-weight: 500;
+    padding: 0.625em 1.25em;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: background-color 0.3s ease;
+}
+
+.edit-profile-button:hover {
+    background-color: #224750;
+    color: #FFFFFF;
+    border: none;
+}
+
+/*======================
+    Typography
+=======================*/
+
+.profile-card h3 {
+    color: #FFFFFF;
+    font-weight: 300;
+    margin: 10px;
+}
+
+.patient-info h4 {
+    font-size: 1.4rem;
+    color: #224750;
+    margin-top: 7px;
+    margin-bottom: 2px;
+ }
+ 
+ .patient-info p {
+    font-size: 1rem;
+    color: #224750;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+ }
+
+/*======================
+      Media Query
+=======================*/
+
+/* Screens less than 639px */
+@media (max-width: 639px) {
+    .profile-card {
+        width: 120px;
+        height: 120px;
+        margin-bottom: -60px;
+    }
+
+    .all-information {
+        padding-top: 40px;
+    }
+    
+    .profile-section h2 {
+        width: 90px;
+        height: 270px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+    }
+
+    .profile-section h2 span {
+        display: inline-block;
+        transform: rotate(-90deg);
+        transform-origin: center;
+        text-align: center;
+    }
+    
+    .profile-info {
+        width: 240px;
+    }
+
+    .patient-info h4 {
+        font-size: 1.2 rem;
+     }
+     
+     .patient-info p {
+        font-size: 0.75 rem;
+     }
+
+     .profile-full-name {
+        font-size: 1.25rem;
+        margin-bottom: 0.25em;
+     }
+
+     .edit-profile-button {
+        border-radius: 30px;
+        background-color: #FFFFFF;
+        border: 3px solid #224750;
+        color: #224750;
+        font-weight: 500;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+    
+    .edit-profile-button:hover {
+        background-color: #224750;
+        color: #FFFFFF;
+        border: none;
+    }
+}

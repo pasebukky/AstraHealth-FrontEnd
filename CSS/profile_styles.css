@@ -63,8 +63,8 @@
     justify-content: center;
     margin: 1.25em 0;
     background-color: #FFFFFF;
-    border-radius: 30px;
-    box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease; 
 }
 
@@ -75,12 +75,12 @@
 .profile-section h2 {
     background-color:  #224750;
     color: #FFFFFF;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin: 0;
     padding: 1em 1.25em;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    width: 180px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: 150px;
     height: 300px;
     display: flex;
     align-items: right;
@@ -95,7 +95,8 @@
 .profile-info {
     padding: 0.625em;
     width: 270px;
-    margin: 0 auto;  
+    margin: 0 auto; 
+    margin-bottom: -2em; 
 }
 
 .info-item {
@@ -104,6 +105,13 @@
 
 .info-item label {
     font-weight: bold;
+}
+
+p {
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 2em;
+    margin
 }
 
 .button-container {
@@ -147,13 +155,6 @@
     margin: 10px;
 }
 
-.patient-info h4 {
-    font-size: 1.4rem;
-    color: #224750;
-    margin-top: 7px;
-    margin-bottom: 2px;
- }
- 
  .patient-info p {
     font-size: 1rem;
     color: #224750;
@@ -168,9 +169,9 @@
 /* Screens less than 639px */
 @media (max-width: 639px) {
     .profile-card {
-        width: 120px;
-        height: 120px;
-        margin-bottom: -60px;
+        width: 150px;
+        height: 150px;
+        margin-bottom: -75px;
     }
 
     .all-information {
@@ -183,27 +184,31 @@
     }
 
     .profile-section h2 {
-        border-top-left-radius: 30px;
-        border-top-right-radius: 30px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
         border-bottom-left-radius: 0px;
         width: 100%;
         height: auto; 
         justify-content: center;
+        font-size: 1rem;
     }
     
     .profile-info {
         width: 240px;
         margin: 0;
-        justify-content: flex-start; 
+        text-align: left;
+        justify-content: flex-start;
+        margin-top: 2em; 
     }
-    
-    .patient-info h4 {
-        font-size: 1.2 rem;
-     }
-     
-     .patient-info p {
-        font-size: 0.75 rem;
-     }
+
+    .patient-info p {
+        font-size: 0.75rem;
+    }
+
+     .info-item {
+        margin-bottom: 0.125em;
+        margin-top: 0.125em;
+    }
 
      .info-item {
         justify-content: flex-start;
@@ -220,9 +225,9 @@
         border: 3px solid #224750;
         color: #224750;
         font-weight: 500;
-        padding: 10px 20px;
+        padding: 7.5px 15px;
         cursor: pointer;
-        font-size: 1rem;
+        font-size: 0.875rem;
         transition: background-color 0.3s ease;
     }
     

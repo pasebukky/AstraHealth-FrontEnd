@@ -123,6 +123,46 @@ p {
     padding-right: 0;
 }
 
+.editable {
+    background-color: #f2F2F2;;
+    padding: 0.25em;
+    border-radius: 0.5em;
+}
+
+.info-item input {
+    border: 2px solid #F2F2F2;
+    margin-bottom: 1.5em;
+    padding: 0.25em;
+    border-radius: 0.5em;
+    font-size: 1rem; /* Set font size */
+}
+
+/* Style the placeholder text in italics */
+input::placeholder {
+    font-style: italic;
+}
+
+
+.info-item input:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #224750;/* Change border color on focus */
+    box-shadow: 0 0 0 2px rgba(0, 0 , 0, 0, 0.2); /* Add box shadow on focus */
+}
+
+.profile-info input {
+    padding-left: 0.25em;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.error-message {
+    color: red; 
+    font-size: 0.825rem;
+}
+
 /*======================
     Buttons
 =======================*/
@@ -218,6 +258,10 @@ p {
         font-size: 1.25rem;
         margin-bottom: 0.25em;
      }
+
+    .error-message {
+        font-size: 0.75rem;
+    }
 
      .edit-profile-button {
         border-radius: 30px;

@@ -67,7 +67,7 @@
                     </div>
                     <div class="info-item">
                         <label>Phone Number:</label>
-                        <p>+234 806 544 3782</p>
+                        <p>08065443782</p>
                     </div>
                 </div>
             </section>
@@ -75,16 +75,19 @@
                 <h2><span>Personal Information</span></h2>
                 <div class="profile-info">
                     <div class="info-item">
-                        <label>Date of Birth:</label>
-                        <p>August 1, 1997</p>
+                        <label>Date of Birth (DD-MM-YY):</label>
+                        <p id="dobInfo">nil</p>
+                        <input type="text" id="dobInput" class="hidden" placeholder="DD-MM-YYYY">
+                    </div>                    
+                    <div class="info-item">
+                        <label>Height (in cm):</label>
+                        <p id="heightInfo">nil</p>
+                        <input type="text" id="heightInput" class="hidden" placeholder="(30 - 250)">
                     </div>
                     <div class="info-item">
-                        <label>Height:</label>
-                        <p>167 cm</p>
-                    </div>
-                    <div class="info-item">
-                        <label>Weight:</label>
-                        <p>70 kg</p>
+                        <label>Weight (in kg):</label>
+                        <p id="weightInfo">nil</p>
+                        <input type="text" id="weightInput" class="hidden" placeholder="(5 - 500)">
                     </div>
                 </div>
             </section>
@@ -93,11 +96,13 @@
                 <div class="profile-info">
                     <div class="info-item">
                         <label>Name:</label>
-                        <p>Janet Edo</p>
+                        <p id="emergencyNameInfo">nil</p>
+                        <input type="text" id="emergencyNameInput" class="hidden" placeholder="Firstname Surname">
                     </div>
                     <div class="info-item">
                         <label>Phone Number:</label>
-                        <p>+234 816 994 3754</p>
+                        <p id="emergencyPhoneInfo">nil</p>
+                        <input type="text" id="emergencyPhoneInput" class="hidden" placeholder="11-digit number">
                     </div>
                 </div>
             </section>
@@ -105,7 +110,8 @@
                 <h2><span>Medical History</span></h2>
                 <div class="profile-info">
                     <div class="info-item">
-                        <p>No significant medical history.</p>
+                        <p id="medicalHistoryInfo">No significant medical history</p>
+                        <input type="text" id="medicalHistoryInput" class="hidden" placeholder="Enter medical history here">
                     </div>
                 </div>
             </section>

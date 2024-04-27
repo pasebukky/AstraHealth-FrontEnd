@@ -63,13 +63,13 @@
     justify-content: center;
     margin: 1.25em 0;
     background-color: #FFFFFF;
-    border-radius: 15px;
+    border-radius: 30px;
     box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease; /* Adding transition for smooth effect */
+    transition: transform 0.3s ease; 
 }
 
 .profile-section:hover {
-    transform: scale(1.05); /* Scale up the card slightly on hover */
+    transform: scale(1.05); 
 }
 
 .profile-section h2 {
@@ -78,8 +78,8 @@
     font-size: 1.5rem;
     margin: 0;
     padding: 1em 1.25em;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
     width: 180px;
     height: 300px;
     display: flex;
@@ -95,8 +95,7 @@
 .profile-info {
     padding: 0.625em;
     width: 270px;
-    margin: 0 auto;
-    
+    margin: 0 auto;  
 }
 
 .info-item {
@@ -177,26 +176,27 @@
     .all-information {
         padding-top: 40px;
     }
-    
-    .profile-section h2 {
-        width: 90px;
-        height: 270px;
-        display: flex;
-        align-items: center;
-        color: #FFFFFF;
+
+    .profile-section {
+        flex-direction: column;
+        width: 90%;
     }
 
-    .profile-section h2 span {
-        display: inline-block;
-        transform: rotate(-90deg);
-        transform-origin: center;
-        text-align: center;
+    .profile-section h2 {
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 0px;
+        width: 100%;
+        height: auto; 
+        justify-content: center;
     }
     
     .profile-info {
         width: 240px;
+        margin: 0;
+        justify-content: flex-start; 
     }
-
+    
     .patient-info h4 {
         font-size: 1.2 rem;
      }
@@ -204,6 +204,10 @@
      .patient-info p {
         font-size: 0.75 rem;
      }
+
+     .info-item {
+        justify-content: flex-start;
+    }
 
      .profile-full-name {
         font-size: 1.25rem;

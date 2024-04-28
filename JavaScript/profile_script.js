@@ -1,28 +1,36 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const editProfileButton = document.querySelector(".edit-profile-button");
+    const editProfileButton = document.querySelector(".edit-profile-button"); 
     const profileInfoItems = document.querySelectorAll(".profile-info .info-item");
     const medicalHistoryInput = document.getElementById('medicalHistoryInput');
+    const charCount = document.getElementById('charCount');
     const inputFields = {
         "dobInput": validateDOB,
         "heightInput": validateHeight,
         "weightInput": validateWeight,
+        "genderInput": validateGender,
         "emergencyNameInput": validateEmergencyName,
         "emergencyPhoneInput": validateEmergencyPhone,
         "medicalHistoryInput": validateMedicalHistory
     };
 
-    editProfileButton.addEventListener("click", function() {
-        // Toggle contentEditable attribute of profile info items
+    editProfileButton.addEventListener("click", function() { 
         profileInfoItems.forEach(function(item) {
-            const input = item.querySelector('input');
+            const input = item.querySelector('input, textarea'); 
             const info = item.querySelector('p');
             if (input && info) {
                 if (!input.classList.contains('hidden')) {
-                    input.classList.add('hidden');
-                    info.textContent = input.value || "nil";
-                    info.classList.remove('hidden');
-                } else {
+                    const validationFunction = inputFields[input.id]; 
 
+                    if (validationFunction && validationFunction(input.value)) {
+                        input.classList.add('hidden');
+                        info.textContent = input.value;
+                        info.classList.remove('hidden');
+                    } else {
+                        info.textContent = "nil";
+                        info.classList.remove('hidden');
+                        input.classList.add('hidden');
+                    }
+                } else {
                     info.classList.add('hidden');
                     input.value = info.textContent !== "nil" ? info.textContent : ""; 
                     input.classList.remove('hidden');
@@ -30,22 +38,18 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        if (editProfileButton.textContent === "Edit Profile") {
+        if (editProfileButton.textContent === "Update Profile") {
             editProfileButton.textContent = "Save Changes";
             profileInfoItems.forEach(function(item) {
-                const input = item.querySelector('input');
+                const input = item.querySelector('input, textarea'); 
                 if (input) {
                     input.placeholder = input.getAttribute('placeholder');
                 }
             });
         } else {
             if (validateProfile()) {
-                editProfileButton.textContent = "Edit Profile";
+                editProfileButton.textContent = "Update Profile";
             }
-        }
-
-        if (medicalHistoryInput.value.trim() === "") {
-            medicalHistoryInput.value = "No significant medical history";
         }
     });
 
@@ -64,12 +68,12 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
     });
-
+    
     function validateAndSetBorderColor(inputElement, validationFunction) {
         if (validationFunction(inputElement.value)) {
             inputElement.style.borderColor = "green";
         } else {
-            inputElement.style.borderColor = "";
+            inputElement.style.borderColor = "red";
         }
     }
 
@@ -86,6 +90,11 @@ document.addEventListener("DOMContentLoaded", function() {
     function validateWeight(weight) {
         const regex = /^(?:[5-9]\d{0,2}|[1-4]\d{2}|500)(?:\.\d{1,2})?$/; 
         return regex.test(weight);
+    }
+
+    function validateGender(gender) {
+        const regex = /^(male|female|m|f)$/i; 
+        return regex.test(gender);
     }
 
     function validateEmergencyName(name) {
@@ -106,4 +115,17 @@ document.addEventListener("DOMContentLoaded", function() {
     function validateProfile() {
         return true; 
     }
+
+    medicalHistoryInput.addEventListener('input', function() {
+        const remainingChars = 270 - medicalHistoryInput.value.length;
+        charCount.textContent = 'Characters remaining: ' + remainingChars;
+    });
+
+    function toggleCharCountVisibility() {
+        charCount.classList.toggle('hidden', editProfileButton.textContent !== "Save Changes");
+    }
+
+    editProfileButton.addEventListener('click', toggleCharCountVisibility);
+    toggleCharCountVisibility();
+    
 });

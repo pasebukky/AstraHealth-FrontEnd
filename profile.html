@@ -52,7 +52,7 @@
     </div>
     <div class="container">
         <div class="button-container">
-            <section class="edit-profile-button">Edit Profile</section>
+            <section class="edit-profile-button">Update Profile</section>
         </div>
     </div>
     <div class="container">
@@ -78,7 +78,12 @@
                         <label>Date of Birth (DD-MM-YY):</label>
                         <p id="dobInfo">nil</p>
                         <input type="text" id="dobInput" class="hidden" placeholder="DD-MM-YYYY">
-                    </div>                    
+                    </div>  
+                    <div class="info-item">
+                        <label>Gender:</label>
+                        <p id="genderInfo">nil</p>
+                        <input type="text" id="genderInput" class="hidden" placeholder="(Male or Female)">
+                    </div>                  
                     <div class="info-item">
                         <label>Height (in cm):</label>
                         <p id="heightInfo">nil</p>
@@ -110,8 +115,9 @@
                 <h2><span>Medical History</span></h2>
                 <div class="profile-info">
                     <div class="info-item">
-                        <p id="medicalHistoryInfo">No significant medical history</p>
-                        <input type="text" id="medicalHistoryInput" class="hidden" placeholder="Enter medical history here">
+                        <p id="medicalHistoryInfo">nil</p>
+                        <textarea id="medicalHistoryInput" class="hidden" maxlength="270" wrap="soft" placeholder="Enter medical history here"></textarea>
+                        <div id="charCount" class="hidden">Characters remaining: 270</div>
                     </div>
                 </div>
             </section>

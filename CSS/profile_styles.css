@@ -81,7 +81,7 @@
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     width: 150px;
-    height: 300px;
+    height: 360px;
     display: flex;
     align-items: right;
     justify-content: center;
@@ -123,30 +123,28 @@ p {
     padding-right: 0;
 }
 
-.editable {
-    background-color: #f2F2F2;;
-    padding: 0.25em;
-    border-radius: 0.5em;
-}
-
 .info-item input {
     border: 2px solid #F2F2F2;
     margin-bottom: 1.5em;
     padding: 0.25em;
     border-radius: 0.5em;
-    font-size: 1rem; /* Set font size */
+    font-size: 1rem;
+    box-sizing: content-box;
 }
 
-/* Style the placeholder text in italics */
 input::placeholder {
+    font-style: italic;
+}
+
+#medicalHistoryInput::placeholder {
     font-style: italic;
 }
 
 
 .info-item input:focus {
-    outline: none; /* Remove default focus outline */
-    border-color: #224750;/* Change border color on focus */
-    box-shadow: 0 0 0 2px rgba(0, 0 , 0, 0, 0.2); /* Add box shadow on focus */
+    outline: none; 
+    border-color: #224750;
+    box-shadow: 0 0 0 2px rgba(0, 0 , 0, 0, 0.2); 
 }
 
 .profile-info input {
@@ -157,11 +155,33 @@ input::placeholder {
     display: none;
 }
 
-
-.error-message {
-    color: red; 
-    font-size: 0.825rem;
+#medicalHistoryInput {
+    font-family: "Poppins", sans-serif;
+    border: 2px solid #F2F2F2;
+    margin-bottom: 0.25em;
+    padding: 0.25em;
+    border-radius: 0.5em;
+    font-size: 1rem;
+    resize: none;
+    width: 100%;
+    position: relative;
+    height: 15em;
 }
+
+p {
+    overflow-wrap: break-word;
+}
+
+
+#charCount {
+    color: #224750;
+    font-size: 0.75rem;
+    text-align: right;
+    /* padding-right: 3em; */
+    font-weight: 500;
+    font-style: italic;
+}
+
 
 /*======================
     Buttons
@@ -172,18 +192,18 @@ input::placeholder {
     background-color: #FFFFFF;
     border: 3px solid #224750;
     color: #224750;
-    font-weight: 500;
+    font-weight: 600;
     padding: 0.625em 1.25em;
     cursor: pointer;
-    font-size: 1.25rem;
+    font-size: 1rem;
     transition: background-color 0.3s ease;
 }
 
-.edit-profile-button:hover {
+/* .edit-profile-button:hover {
     background-color: #224750;
     color: #FFFFFF;
     border: none;
-}
+} */
 
 /*======================
     Typography
@@ -257,10 +277,6 @@ input::placeholder {
      .profile-full-name {
         font-size: 1.25rem;
         margin-bottom: 0.25em;
-     }
-
-    .error-message {
-        font-size: 0.75rem;
     }
 
      .edit-profile-button {
@@ -275,9 +291,7 @@ input::placeholder {
         transition: background-color 0.3s ease;
     }
     
-    .edit-profile-button:hover {
-        background-color: #224750;
-        color: #FFFFFF;
-        border: none;
+    #medicalHistoryInput {
+        height: 12em;
     }
 }

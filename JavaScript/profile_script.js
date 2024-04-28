@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const profileInfoItems = document.querySelectorAll(".profile-info .info-item");
     const medicalHistoryInput = document.getElementById('medicalHistoryInput');
     const charCount = document.getElementById('charCount');
+    const profileImage = document.querySelector(".profile-image");
+    const uploadImageButton = document.getElementById('upload-icon');
+    const profileImageInput = document.getElementById('profileImageInput');
     const inputFields = {
         "dobInput": validateDOB,
         "heightInput": validateHeight,
@@ -40,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (editProfileButton.textContent === "Update Profile") {
             editProfileButton.textContent = "Save Changes";
+            profileImage.style.opacity = "0.5";
+            uploadImageButton.style.display = 'block';
             profileInfoItems.forEach(function(item) {
                 const input = item.querySelector('input, textarea'); 
                 if (input) {
@@ -49,6 +54,8 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             if (validateProfile()) {
                 editProfileButton.textContent = "Update Profile";
+                profileImage.style.opacity = "1";
+                uploadImageButton.style.display = 'none';
             }
         }
     });
@@ -127,5 +134,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     editProfileButton.addEventListener('click', toggleCharCountVisibility);
     toggleCharCountVisibility();
-    
+      
+    profileImageInput.addEventListener( 'change' , function() {
+        const newImage = this.files[0];
+        if (newImage) {
+            const reader = new FileReader();
+
+            reader.addEventListener( 'load' , function(){
+                profileImage.setAttribute('src', reader.result);
+            });
+        reader.readAsDataURL (newImage);
+        }
+    });    
 });

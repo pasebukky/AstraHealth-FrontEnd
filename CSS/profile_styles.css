@@ -182,6 +182,24 @@ p {
     font-style: italic;
 }
 
+#upload-icon {
+    position: absolute;
+    font-size: 1.5em;
+    top: 0.5em;
+    right: 0.5em;
+    color: #53AFB1;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+    display: none;
+    background-color: #FFFFFF;
+}
+
+#profileImageInput {
+    display: none; 
+}
+
 
 /*======================
     Buttons
@@ -293,5 +311,19 @@ p {
     
     #medicalHistoryInput {
         height: 12em;
+    }
+
+    #upload-icon {
+        position: absolute;
+        font-size: 1em;
+        top: 0.5em;
+        right: 0.5em;
+        color: #53AFB1;
+        border-radius: 50%;
+        width: 1.5em;
+        height: 1.5em;
+        cursor: pointer;
+        display: none;
+        background-color: #FFFFFF;
     }
 }

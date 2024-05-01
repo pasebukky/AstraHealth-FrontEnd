@@ -19,7 +19,7 @@
     width: 100%; 
 }
 
-.papp-section {
+.appointment-section {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -27,7 +27,7 @@
     margin-top: 2em;
 }
 
-.papp-card {
+.appointment-card {
     width: 100%;
     height: 100%;
     display: flex;
@@ -35,7 +35,7 @@
     align-items: center;
 }
 
-.papp-date-card {
+.appointment-date {
     width: 17.5%;
     height: 100%;
     background-color: #53AFB1;
@@ -45,7 +45,7 @@
     padding: 0.5em;
 }
 
-.papp-border {
+.appointment-information {
     width: 77.5%;
     height: 100%;
     padding: 0.25em;
@@ -56,46 +56,46 @@
     margin: 0.5em 0;
 }
 
-.papp-info {
+.appointment-information-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.papp-info h3 {
+.appointment-information-card h3 {
     padding: 0.25em 0 0 0;
     margin: 0 0.5em;
 }
 
-.papp-info p {
+.appointment-information-card p {
     margin: 0 0.75em;
     padding: 0;
 }
 
-.papp-management {
+.appointment-management {
     padding: 2em 0.5em;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.papp-date-card h3 {
+.appointment-date h3 {
     margin: 0 auto;
     font-size: 1.25rem;
     font-weight: 300;
 }
 
-.papp-date-card p {
+.appointment-date p {
     margin: 0 auto;
     font-size: 1.125rem;
 }
 
-.papp-date-card h2 {
+.appointment-date h2 {
     margin: 0 auto;
     font-size: 3.25rem;
 }
 
-.papp-manage-button {
+.appointment-management-button {
     background-color: #53AFB1;
     color: #FFFFFF;
     border-radius: 50%;
@@ -181,17 +181,17 @@
         font-size: 2.5rem;
     }
 
-    .papp-section {
+    .appointment-section {
         height: 120px;
         margin-top: 1.5em;
     }
 
-    .papp-date-card {
+    .appointment-date {
         display: none;
     }
     
     
-    .papp-border {
+    .appointment-information {
         width: 100%;
         padding: 0.1em;
         border: 1.5px solid #53AFB1;
@@ -199,34 +199,34 @@
         margin: 0.25em 0;
     }
     
-    .papp-info h3 {
+    .appointment-information-card h3 {
         padding: 0.1em 0 0 0;
         margin: 0 0.25em;
         font-size: 1.25rem;
     }
     
-    .papp-info p {
+    .appointment-information-card p {
         margin: 0 0.5em;
         font-size: 0.825em;
     }
     
-    .papp-management {
+    .appointment-management {
         padding: 1.25em 0.25em;
     }
     
-    .papp-date-card h3 {
+    .appointment-date h3 {
         font-size: 1rem;
     }
     
-    .papp-date-card p {
+    .appointment-date p {
         font-size: 0.75rem;
     }
     
-    .papp-date-card h2 {
+    .appointment-date h2 {
         font-size: 2.25rem;
     }
 
-    .papp-manage-button {
+    .appointment-management-button {
         width: 2em;
         height: 2em;
         font-size: 1rem;
@@ -249,18 +249,18 @@
         font-size: 1.25rem;
     }
 
-    .papp-section {
+    .appointment-section {
         height: 100px;
         margin-top: 1.75em;
     }
 
-    .papp-date-card {
+    .appointment-date {
         width: 18.75%;
         border-radius: 1.75em;
         padding: 0.375em;
     }
     
-    .papp-border {
+    .appointment-information {
         width: 80%;
         padding: 0.125em;
         border: 1.75px solid #53AFB1;
@@ -268,32 +268,32 @@
         margin: 0.375em 0;
     }
     
-    .papp-info h3 {
+    .appointment-information-card h3 {
         padding: 0.125em 0 0 0;
         margin: 0 0.375em;
     }
     
-    .papp-info p {
+    .appointment-information-card p {
         margin: 0 0.625em;
     }
     
-    .papp-management {
+    .appointment-management {
         padding: 1.5em 0.375em;
     }
     
-    .papp-date-card h3 {
+    .appointment-date h3 {
         font-size: 1.125rem;
     }
     
-    .papp-date-card p {
+    .appointment-date p {
         font-size: 1rem;
     }
     
-    .papp-date-card h2 {
+    .appointment-date h2 {
         font-size: 3rem;
     }
     
-    .papp-manage-button {
+    .appointment-management-button {
         width: 2em;
         height: 2em;
         font-size: 1rem;

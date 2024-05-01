@@ -24,20 +24,11 @@ Astra Health is an online platform that provides instant access to top-quality h
 ## Getting Started
 Clone this repository to your local machine:
 
-```git clone <repository_url>```
+```git clone <https://github.com/pasebukky/AstraHealth-FrontEnd.git>```
 
 Open index.html in your web browser to view the Astra Health website.
 Contributing
 Contributions to the Astra Health frontend repository are welcome! If you'd like to contribute, please follow these steps:
-
-## Fork the repository.
-- Create a new branch ```git checkout -b feature/your-feature-name```
-
-- Make your changes.
-- Commit your change ```git commit -am 'Add new feature'```
-
-- Push to the branch ```git push origin feature/your-feature-name```
-- Create a new Pull Request.
 
 ## License
 This project is licensed under the **MIT License**

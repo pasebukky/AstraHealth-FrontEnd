@@ -168,6 +168,19 @@ input::placeholder {
     height: 15em;
 }
 
+#professionalBioInput {
+    font-family: "Poppins", sans-serif;
+    border: 2px solid #F2F2F2;
+    margin-bottom: 0.25em;
+    padding: 0.25em;
+    border-radius: 0.5em;
+    font-size: 1rem;
+    resize: none;
+    width: 100%;
+    position: relative;
+    height: 15em;
+}
+
 p {
     overflow-wrap: break-word;
 }
@@ -200,6 +213,9 @@ p {
     display: none; 
 }
 
+.hidden {
+    display: none;
+}
 
 /*======================
     Buttons
@@ -222,6 +238,7 @@ p {
     color: #FFFFFF;
     border: none;
 } */
+
 
 /*======================
     Typography

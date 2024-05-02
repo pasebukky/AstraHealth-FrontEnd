@@ -62,37 +62,12 @@
     justify-content: center;
 }
 
-.appointment-information-card h3 {
-    padding: 0.25em 0 0 0;
-    margin: 0 0.5em;
-}
-
-.appointment-information-card p {
-    margin: 0 0.75em;
-    padding: 0;
-}
 
 .appointment-management {
     padding: 2em 0.5em;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.appointment-date h3 {
-    margin: 0 auto;
-    font-size: 1.25rem;
-    font-weight: 300;
-}
-
-.appointment-date p {
-    margin: 0 auto;
-    font-size: 1.125rem;
-}
-
-.appointment-date h2 {
-    margin: 0 auto;
-    font-size: 3.25rem;
 }
 
 .appointment-management-button {
@@ -104,6 +79,16 @@
     height: 2.25em;
     font-size: 1.2rem;
     margin-left: 0.5em;
+}
+
+#doctor-appointments .appointment-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#doctor-appointments .appointment-section {
+    margin-bottom: 3em;
 }
 
 /*======================
@@ -124,6 +109,33 @@
     font-weight: 300;
     margin: 10px;
 }
+
+.appointment-date h3 {
+    margin: 0 auto;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.appointment-date p {
+    margin: 0 auto;
+    font-size: 1.125rem;
+}
+
+.appointment-date h2 {
+    margin: 0 auto;
+    font-size: 3.25rem;
+}
+
+.appointment-information-card h3 {
+    padding: 0.25em 0 0 0;
+    margin: 0 0.5em;
+}
+
+.appointment-information-card p {
+    margin: 0 0.75em;
+    padding: 0;
+}
+
 
 /*======================
         Buttons
@@ -189,8 +201,7 @@
     .appointment-date {
         display: none;
     }
-    
-    
+     
     .appointment-information {
         width: 100%;
         padding: 0.1em;

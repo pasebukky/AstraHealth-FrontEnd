@@ -5,3 +5,13 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "our_doctors.html";
     });
 });
+
+function showPatientAppointments() {
+    document.getElementById('patientAppointments').classList.remove('hidden');
+    document.getElementById('doctorAppointments').classList.add('hidden');
+}
+
+function showDoctorAppointments() {
+    document.getElementById('doctorAppointments').classList.remove('hidden');
+    document.getElementById('patientAppointments').classList.add('hidden');
+}

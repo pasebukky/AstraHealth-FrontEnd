@@ -1,22 +1,21 @@
 const Form = document.getElementById("signup-form");
 const mobileForm = document.getElementById("mobile-signup-form");
 
-console.log("Register is  called");
-const getSelectedRole = (formId) => {
-  const roleButtons = document.querySelectorAll(`#${formId} button[data-role]`);
+const getSelectedRole = (FormId) => {
+  const roleButtons = document.querySelectorAll(`#${FormId} button[data-role]`);
   let role;
   roleButtons.forEach((button) => {
     if (button.classList.contains("selected")) {
       role = button.getAttribute("data-role");
     }
   });
+  console.log(role);
   return role;
 };
 
 const registerUser = (formData, role) => {
-  console.log("Im in register block", formData);
-  const patientUrl = `http://100.25.22.28:8000/v1/patient/register`;
-  const doctorUrl = `http://100.25.22.28:8000/v1/doctor/register`;
+  const patientUrl = `http://api.astrafort.tech:8000/v1/patient/register`;
+  const doctorUrl = `http://api.astrafort.tech:8000/v1/doctor/register`;
   const url = role === "patient" ? patientUrl : doctorUrl;
 
   fetch(url, {
@@ -50,10 +49,9 @@ const registerUser = (formData, role) => {
     });
 };
 
+
 mobileForm.addEventListener("submit", function (event) {
-  console.log("Im in first");
   event.preventDefault(); // Prevent the form from submitting
-  console.log("Im in");
   // Get the selected role
   const role = getSelectedRole("mobile-signup-form");
 
@@ -77,8 +75,8 @@ mobileForm.addEventListener("submit", function (event) {
     "#mobile-signup-form input[name='confirm_password']"
   ).value;
 
-  // Create a JavaScript object with the form data
-  const formData = {
+   // Create a JavaScript object with the form data
+   const formData = {
     first_name: firstName,
     last_name: lastName,
     email: email,

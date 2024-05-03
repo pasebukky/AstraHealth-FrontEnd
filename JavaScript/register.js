@@ -1,21 +1,32 @@
 const Form = document.getElementById("signup-form");
 const mobileForm = document.getElementById("mobile-signup-form");
 
+function selectRole(role) {
+  const roleButtons = document.querySelectorAll('.role-button[data-role]');
+  roleButtons.forEach(button => {
+    button.classList.remove('selected');
+    if (button.getAttribute('data-role') === role) {
+      button.classList.add('selected');
+    }
+  });
+}
+
 const getSelectedRole = (FormId) => {
   const roleButtons = document.querySelectorAll(`#${FormId} button[data-role]`);
   let role;
   roleButtons.forEach((button) => {
     if (button.classList.contains("selected")) {
+      console.log("Selected role:", role);
       role = button.getAttribute("data-role");
     }
   });
-  console.log(role);
+  console.log("Selected role:", role);
   return role;
 };
 
 const registerUser = (formData, role) => {
-  const patientUrl = `http://api.astrafort.tech:8000/v1/patient/register`;
-  const doctorUrl = `http://api.astrafort.tech:8000/v1/doctor/register`;
+  const patientUrl = `https://api.astrafort.tech/v1/patient/register`;
+  const doctorUrl = `https://api.astrafort.tech/v1/doctor/register`;
   const url = role === "patient" ? patientUrl : doctorUrl;
 
   fetch(url, {
@@ -52,8 +63,11 @@ const registerUser = (formData, role) => {
 
 mobileForm.addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent the form from submitting
+  console.log("Mobile form submitted");
   // Get the selected role
   const role = getSelectedRole("mobile-signup-form");
+  console.log("Role from mobile form:", role);
+
 
   // Get the form field values
   const firstName = document.querySelector(
@@ -94,10 +108,14 @@ mobileForm.addEventListener("submit", function (event) {
 Form.addEventListener("submit", function (event) {
   console.log("Im in first");
   event.preventDefault(); // Prevent the form from submitting
+  console.log("Desktop form submitted");
+
   console.log("Im in");
 
   // Get the selected role
   const role = getSelectedRole("signup-form");
+  console.log("Role from desktop form:", role);
+
 
   // Get the form field values
   const firstName = document.querySelector(

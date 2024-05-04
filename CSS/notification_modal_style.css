@@ -47,6 +47,7 @@
 /* Screens less than 639px */
 @media (max-width: 639px) {
     .modal-content {
+        width: 90%;
         border-radius: 15px;
         font-size: 0.75rem;
     }
@@ -59,6 +60,7 @@
 /* Screens from 640px to 843px */
 @media (min-width: 640px) and (max-width: 843px) {
     .modal-content {
+        width: 80%;
         border-radius: 20px;
         font-size: 0.825rem;
     }

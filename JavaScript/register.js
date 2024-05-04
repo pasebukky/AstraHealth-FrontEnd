@@ -38,6 +38,8 @@ const registerUser = (formData, role) => {
     .then(async (response) => {
       if (response.ok) {
         console.log("User registered successfully.\nProceed to sign in.");
+        // Display success message to the user
+        showNotificationModal("User registered successfully. Proceed to sign in.");
       } else {
         // Try to parse JSON response
         try {
@@ -46,16 +48,24 @@ const registerUser = (formData, role) => {
           if (errorData.detail) {
             const firstError = errorData.detail[0];
             console.error("Registration failed:", firstError.msg);
+            // Display error message to the user
+            showNotificationModal("Registration failed: " + firstError.msg);
           } else {
             console.error("Registration failed with unknown error");
+            // Display generic error message to the user
+            showNotificationModal("Registration failed. Please try again later.");
           }
         } catch (error) {
           console.error("Failed to parse error response:", error);
+          // Display generic error message to the user
+          showNotificationModal("Registration failed. Please try again later.");
         }
       }
     })
     .catch((error) => {
       console.error("Error registering user:", error);
+      // Display generic error message to the user
+      showNotificationModal("Error registering user. Please try again later.");
     });
 };
 
@@ -134,10 +144,7 @@ Form.addEventListener("submit", function (event) {
     email: email,
     password1: password,
     password2: confirmPassword,
-    // gender: "Male",
-    // dob: "",
     phone: phone,
-    // address: "",
   };
 
   registerUser(formData, role); // You can use this object as needed, e.g., send it to a server
@@ -145,6 +152,7 @@ Form.addEventListener("submit", function (event) {
   // Reset the form fields
   document.getElementById("signup-form").reset();
 });
+
 
 const loginUser = (formData) => {
   let searchParams = new URLSearchParams(formData);
@@ -157,37 +165,34 @@ const loginUser = (formData) => {
   })
     .then(async (response) => {
       if (response.ok) {
-        console.log("User logged in successfully");
-        // You can redirect or perform any action upon successful login
+        showNotificationModal("User logged in successfully");
       } else {
         // Handle login errors
         // Parse JSON response
         try {
           const errorData = await response.json();
-          // Check if there's a detail array with error messages
-          if (errorData.detail) {
-            const firstError = errorData.detail[0];
-            console.error("Login failed:", firstError.msg);
-          } else {
-            console.error("Login failed with unknown error");
-          }
+          showNotificationModal("Login failed:", errorData);
+          // Display error message to user
+          showNotificationModal("Login failed: " + errorData.detail);
         } catch (error) {
-          console.error("Failed to parse error response:", error);
+          showNotificationModal("Failed to parse error response:", error);
+          // Display generic error message to user
+          showNotificationModal("Login failed. Please try again later.");
         }
       }
     })
     .catch((error) => {
       console.error("Error logging in:", error);
+      // Display generic error message to user
+      showNotificationModal("Error logging in. Please try again later.");
     });
 };
 
 
-mobileSignInForm.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent the form from submitting
-  // // Get the selected role
-  // const role = getSelectedRole("mobile-signin-form");
 
-  // Get the form field values
+mobileSignInForm.addEventListener("submit", function (event) {
+  event.preventDefault(); 
+
   const email = document.querySelector(
     "#mobile-signin-form input[name='email']"
   ).value;
@@ -195,7 +200,6 @@ mobileSignInForm.addEventListener("submit", function (event) {
     "#mobile-signin-form input[name='password']"
   ).value;
 
-  // Create a JavaScript object with the form data
   const formData = {
     username: email,
     password: password,
@@ -203,17 +207,12 @@ mobileSignInForm.addEventListener("submit", function (event) {
 
   loginUser(formData);
 
-  // Reset the form fields
   document.getElementById("mobile-signin-form").reset();
 });
 
 signInForm.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent the form from submitting
+  event.preventDefault(); 
 
-  // // Get the selected role
-  // const role = getSelectedRole("signin-form");
-
-  // Get the form field values
   const email = document.querySelector(
     "#signin-form input[name='email']"
   ).value;
@@ -233,43 +232,3 @@ signInForm.addEventListener("submit", function (event) {
   // Reset the form fields
   document.getElementById("signin-form").reset();
 });
-
-
-// const loginUser = (formData, role) => {
-
-//   fetch(LogInUrl, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(formData),
-//   })
-//     .then(async (response) => {
-//       if (response.ok) {
-//         const data = await response.json();
-//         const token = data.access_token;
-//         console.log("User logged in successfully. Token:", token);
-//         // You can redirect or perform any action upon successful login
-//         // For example, you can store the token in localStorage for later use
-//         localStorage.setItem('token', token);
-//       } else {
-//         // Handle login errors
-//         // Parse JSON response
-//         try {
-//           const errorData = await response.json();
-//           // Check if there's a detail array with error messages
-//           if (errorData.detail) {
-//             const firstError = errorData.detail[0];
-//             console.error("Login failed:", firstError.msg);
-//           } else {
-//             console.error("Login failed with unknown error");
-//           }
-//         } catch (error) {
-//           console.error("Failed to parse error response:", error);
-//         }
-//       }
-//     })
-//     .catch((error) => {
-//       console.error("Error logging in:", error);
-//     });
-// };

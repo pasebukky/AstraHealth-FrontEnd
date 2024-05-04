@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/our_doctors_style.css" />
     <link rel="stylesheet" href="CSS/profile_styles.css" />
+    <link rel="stylesheet" href="CSS/error_modal_style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
 </head>
 <body>
     <div><a href="patient_profile.html"></a></div>
@@ -90,8 +91,8 @@
                         <div id="doctor_patient">
                             <!-- <button class="role-button outlined" data-role="doctor">I am a doctor</button>
                             <button class="role-button outlined" data-role="patient">I am a patient</button> -->
-                            <button class="role-button outlined" data-role="doctor" onclick="this.classList.add('selected'); getSelectedRole('signup-form')">I am a doctor</button>
-                            <button class="role-button outlined" data-role="patient" onclick="this.classList.add('selected'); document.getElementById('signup-form').querySelectorAll('.role-button.selected').forEach(btn => btn !== this && btn.classList.remove('selected')); getSelectedRole('signup-form')">I am a patient</button>
+                            <button class="role-button outlined" data-role="doctor" onclick="this.classList.add('selected'); getSelectedRole('mobile-signup-form')">I am a doctor</button>
+                            <button class="role-button outlined" data-role="patient" onclick="this.classList.add('selected'); document.getElementById('mobile-signup-form').querySelectorAll('.role-button.selected').forEach(btn => btn !== this && btn.classList.remove('selected')); getSelectedRole('mobile-signup-form')">I am a patient</button>
                         </div>
                     </div>                                                   
                     <div class="mobile-form-field">
@@ -126,19 +127,19 @@
                     <h2>Sign in</h2>
                     <div class="mobile-form-field">
                         <label for="doctor_patient">Are you a doctor or a patient?</label>
-                        <div id="doctor_patient">
-                            <!-- <button class="role-button outlined" data-role="doctor">I am a doctor</button>
-                            <button class="role-button outlined" data-role="patient">I am a patient</button> -->
-                            <button class="role-button outlined" data-role="doctor" onclick="this.classList.add('selected'); getSelectedRole('signup-form')">I am a doctor</button>
-                            <button class="role-button outlined" data-role="patient" onclick="this.classList.add('selected'); document.getElementById('signup-form').querySelectorAll('.role-button.selected').forEach(btn => btn !== this && btn.classList.remove('selected')); getSelectedRole('signup-form')">I am a patient</button>
-                        </div>
+                        <!-- <div id="doctor_patient">
+                            <button class="role-button outlined" data-role="doctor">I am a doctor</button>
+                            <button class="role-button outlined" data-role="patient">I am a patient</button>
+                            <button class="role-button outlined" data-role="doctor" onclick="this.classList.add('selected'); getSelectedRole('mobile-signin-form')">I am a doctor</button>
+                            <button class="role-button outlined" data-role="patient" onclick="this.classList.add('selected'); document.getElementById('mobile-signin-form').querySelectorAll('.role-button.selected').forEach(btn => btn !== this && btn.classList.remove('selected')); getSelectedRole('mobile-signin-form')">I am a patient</button>
+                        </div> -->
                     </div>     
                     <div class="mobile-form-field">
                         <input type="email" placeholder="Email" name="email"/>
                         <label></label>
                     </div>
                     <div class="mobile-form-field">
-                        <input type="password" placeholder="Password" />
+                        <input type="password" placeholder="Password" name="password" />
                         <label></label>
                     </div>
                     <button class="filled-button" type="submit">SIGN IN</button>
@@ -192,19 +193,19 @@
                     <h2>Sign in</h2>
                     <div class="form-field">
                         <label for="doctor_patient">Are you a doctor or a patient?</label>
-                        <div id="doctor_patient">
-                            <!-- <button class="role-button outlined" data-role="doctor">I am a doctor</button>
-                            <button class="role-button outlined" data-role="patient">I am a patient</button> -->
-                            <button class="role-button outlined" data-role="doctor" onclick="this.classList.add('selected'); getSelectedRole('signup-form')">I am a doctor</button>
-                            <button class="role-button outlined" data-role="patient" onclick="this.classList.add('selected'); document.getElementById('signup-form').querySelectorAll('.role-button.selected').forEach(btn => btn !== this && btn.classList.remove('selected')); getSelectedRole('signup-form')">I am a patient</button>
-                        </div>
+                        <!-- <div id="doctor_patient">
+                            <button class="role-button outlined" data-role="doctor">I am a doctor</button>
+                            <button class="role-button outlined" data-role="patient">I am a patient</button>
+                            <button class="role-button outlined" data-role="doctor" onclick="this.classList.add('selected'); getSelectedRole('signin-form')">I am a doctor</button>
+                            <button class="role-button outlined" data-role="patient" onclick="this.classList.add('selected'); document.getElementById('signin-form').querySelectorAll('.role-button.selected').forEach(btn => btn !== this && btn.classList.remove('selected')); getSelectedRole('signin-form')">I am a patient</button>
+                        </div> -->
                     </div>     
                     <div class="form-field">
                         <input type="email" placeholder="Email" name="email"/>
                         <label></label>
                     </div>
                     <div class="form-field">
-                        <input type="password" placeholder="Password" />
+                        <input type="password" placeholder="Password" name="password"/>
                         <label></label>
                     </div>
                     <button class="filled-button" type="submit">SIGN IN</button>
@@ -255,6 +256,12 @@
             <section class="filled-button" onclick="window.location.href = 'our_doctors.html';">DISCOVER OUR DOCTORS</section>
         </div>
     </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="error-content"></p>
+        </div>
+    </div>      
     <footer id="footer">
         <div class="dark-green-container">
             <div class="container footer-container">
@@ -298,6 +305,7 @@
     <script src="JavaScript/script.js"></script>
     <script src="JavaScript/our_doctors_script.js"></script>
     <script src="JavaScript/register.js"></script>
+    <script src="JavaScript/error_modal.js"></script>
     <!-- <script src="JavaScript/patients_profile_script.js"></script>
     <script src="JavaScript/doctors_profile_script.js"></script> -->
 </body>

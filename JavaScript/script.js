@@ -60,15 +60,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-//Function to show menu bar on mobile devices and tablets
- function showMenu() {
-    const menubar = document.querySelector('.mobile-menu')
-    menubar.style.display = 'flex'
- }
+// //Function to show menu bar on mobile devices and tablets
+//  function showMenu() {
+//     const menubar = document.querySelector('.mobile-menu')
+//     menubar.style.display = 'flex'
+//  }
 
- //Function to hide menu bar on mobile devices and tablets
- function hideMenu() {
-    const menubar = document.querySelector('.mobile-menu')
-    menubar.style.display = 'none'
- }
+//  //Function to hide menu bar on mobile devices and tablets
+//  function hideMenu() {
+//     const menubar = document.querySelector('.mobile-menu')
+//     menubar.style.display = 'none'
+//  }
 

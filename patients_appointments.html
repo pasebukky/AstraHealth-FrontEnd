@@ -28,14 +28,14 @@
                     <li onclick=hideMenu()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
                     <li class="mobile-nav-items"><a href="index.html">HOME</a></li>
                     <li class="mobile-nav-items"><a href="our_doctors.html">OUR DOCTORS</a></li>
-                    <li class="mobile-nav-items"><a href="appointments.html"  class="current-page">APPOINTMENTS</a></li>
-                    <li class="mobile-nav-items"><a href="profile.html">MY PROFILE</a></li>
+                    <li class="mobile-nav-items" id="mobile-appointments-tab" style="display: none;"><a href="#" class="current-page">APPOINTMENTS</a></li>
+                    <li class="mobile-nav-items" id="mobile-profile-tab" style="display: none;"><a href="#">MY PROFILE</a></li>
                 </ul>
                 <ul class="header-nav-bar" id="header-nav-bar">
                     <li class="header-nav-items"><a href="index.html">HOME</a></li>
                     <li class="header-nav-items"><a href="our_doctors.html">OUR DOCTORS</a></li>
-                    <li class="header-nav-items"><a href="appointments.html"  class="current-page">APPOINTMENTS</a></li>
-                    <li class="header-nav-items"><a href="profile.html">MY PROFILE</a></li>
+                    <li class="header-nav-items" id="appointments-tab" style="display: none;"><a href="#" class="current-page">APPOINTMENTS</a></li>
+                    <li class="header-nav-items" id="profile-tab" style="display: none;"><a href="#">MY PROFILE</a></li> 
                     <li class="menu-button" onclick=showMenu()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="#224750" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></i></a></li>
                 </ul>
             </nav>
@@ -123,9 +123,14 @@
     <section id="legal-information">
         <p>&copy; 2024 Astra Health. All rights reserved.</p>
     </section>    
-    <script src="JavaScript/script.js"></script>
+    <!-- <script src="JavaScript/script.js"></script> -->
     <script src="JavaScript/our_doctors_script.js"></script>
-    <script src="JavaScript/profile_script.js"></script>
     <script src="JavaScript/appointments_script.js"></script>
+    <script src="JavaScript/navigation.js"></script>
+    <script src="JavaScript/auth.js"></script>
+    <!-- <script src="JavaScript/patients_profile_script.js"></script>
+    <script src="JavaScript/doctors_profile_script.js"></script>
+    <script src="JavaScript/register.js"></script>
+    <script src="JavaScript/notification_modal.js"></script>  -->
 </body>
 </html>

@@ -148,68 +148,21 @@ document.addEventListener("DOMContentLoaded", function() {
     });    
 });
 
-const formData = {
-    first_name: firstName,
-    last_name: lastName,
-    email: email,
-    phone: phone,
-    dob: dob,
-    gender: gender,
-    height: height,
-    weight: weight,
-    emergency_name: emergencyName,
-    emergency_phone: emergencyPhone,
-    medical_history: medicalHistory,
-  };
+// const getPatientProfile = `https://api.astrafort.tech/v1/patient/profile`;
 
-const patient = `https://api.astrafort.tech/v1/patient/register`;
-window.onload = function() {
-    // Fetch user data when the page loads
-    let searchParams = new URLSearchParams(formData);
-    fetch(logInUrl, {
-        method: "GET",
-        headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: searchParams.toString(),
-    })
-    .then(response => response.json())
-    .then(data => {
-      // Populate the profile with the user's data
-      document.querySelector('.profile-full-name').textContent = data.firstName + ' ' + data.lastName;
-      document.querySelector('.profile-info .info-item p').textContent = data.email;
-      document.querySelector('.profile-info .info-item p').textContent = data.phone_number;
-      // Add other user data here...
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-  };
-  
-
-  window.onload = function() {
-    // Fetch user data when the page loads
-    let searchParams = new URLSearchParams(formData);
-    fetch(logInUrl, {
-        method: "GET",
-        headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: searchParams.toString(),
-    })
-    .then(response => response.json())
-    .then(data => {
-      // Check user role and update links accordingly
-      if(data.role === 'doctor') {
-          document.querySelector('.header-nav-items a[href="#"]').href = "doctors_profile.html";
-          document.querySelector('.mobile-nav-items a[href="#"]').href = "doctors_profile.html";
-      } else if(data.role === 'patient') {
-          document.querySelector('.header-nav-items a[href="#"]').href = "patients_profile.html";
-          document.querySelector('.mobile-nav-items a[href="#"]').href = "patients_profile.html";
-      }
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-  };
- 
+// fetch(getPatientProfile, {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       // Include the authentication token in the Authorization header
+//       'Authorization': 'Bearer ' + sessionStorage.getItem('token')
+//     }
+//   })
+//   .then(response => response.json())
+//   .then(data => {
+//     // The data object now contains the patient's profile information
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.error('Error:', error);
+//   });

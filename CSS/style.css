@@ -182,6 +182,7 @@ body {
     font-weight: 500;
 }
 
+
 /*======================
     Introduction Section
 =======================*/
@@ -579,7 +580,7 @@ h4 {
 /* Screens less than 639px */
 @media (max-width: 639px) {
     .header-nav-items{
-        display: none;
+        display: none !important;
     }
 
     .menu-button {
@@ -1005,7 +1006,7 @@ h4 {
     }
 
     .header-nav-items{
-        display: none;
+        display: none !important;
     }
 
     .menu-button {
@@ -1068,6 +1069,7 @@ h4 {
     #doctors-header h2 {
         margin-top: 0;
     }
+    
 }
 
 /* Screens from 844px to 1024px */

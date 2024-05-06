@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
 </head>
 <body>
     <div class="white-container">
@@ -27,14 +27,14 @@
                     <li onclick=hideMenu()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
                     <li class="mobile-nav-items"><a href="index.html">HOME</a></li>
                     <li class="mobile-nav-items"><a href="our_doctors.html" class="current-page">OUR DOCTORS</a></li>
-                    <li class="mobile-nav-items"><a href="appointments.html">APPOINTMENTS</a></li>
-                    <li class="mobile-nav-items"><a href="profile.html">MY PROFILE</a></li>
+                    <li class="mobile-nav-items" id="mobile-appointments-tab" style="display: none;"><a href="#">APPOINTMENTS</a></li>
+                    <li class="mobile-nav-items" id="mobile-profile-tab" style="display: none;"><a href="#">MY PROFILE</a></li>
                 </ul>
                 <ul class="header-nav-bar" id="header-nav-bar">
                     <li class="header-nav-items"><a href="index.html">HOME</a></li>
                     <li class="header-nav-items"><a href="our_doctors.html" class="current-page">OUR DOCTORS</a></li>
-                    <li class="header-nav-items"><a href="appointments.html">APPOINTMENTS</a></li>
-                    <li class="header-nav-items"><a href="profile.html">MY PROFILE</a></li>
+                    <li class="header-nav-items" id="appointments-tab" style="display: none;"><a href="#">APPOINTMENTS</a></li>
+                    <li class="header-nav-items" id="profile-tab" style="display: none;"><a href="#">MY PROFILE</a></li> 
                     <li class="menu-button" onclick=showMenu()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="#224750" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></i></a></li>
                 </ul>
             </nav>
@@ -122,7 +122,10 @@
                     <div class="our-doc-content">
                         <h3>Dr. Kola Oreye</h3>
                         <p>Dr. Kola is a dedicated general practitioner with a passion for personalized patient care. With a focus on building strong doctor-patient relationships.</p>
-                        <button class="filled-button appointment-button">VIEW SCHEDULE</button>
+                        <button class="filled-button appointment-button" id="view-schedule-button">VIEW SCHEDULE</button>
+                        <!-- Calendly inline widget begin -->
+                        <!-- <div class="calendly-inline-widget" data-url="https://calendly.com/fabulousity2012?hide_gdpr_banner=1&text_color=224750&primary_color=53afb1" style="min-width:320px;height:700px;"></div> -->
+                        <!-- Calendly inline widget end -->
                     </div>
                 </div>
             </section>
@@ -170,6 +173,9 @@
     </section>    
     <script src="JavaScript/script.js"></script>
     <script src="JavaScript/our_doctors_script.js"></script>
-    <script src="JavaScript/profile_script.js"></script>
+    <!-- <script src="JavaScript/profile_script.js"></script> -->
+    <script src="JavaScript/register.js"></script>
+    <script src="JavaScript/auth.js"></script>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

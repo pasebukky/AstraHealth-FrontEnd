@@ -5,7 +5,10 @@ const mobileSignInForm = document.getElementById("mobile-signin-form");
 const patientSignUpUrl = `https://api.astrafort.tech/v1/patient/register`;
 const doctorSignUpUrl = `https://api.astrafort.tech/v1/doctor/register`;
 const logInUrl = `https://api.astrafort.tech/v1/auth/token`;
-
+// const patientProfilePage = `patients_profile.html`;
+// const doctorProfilePage = `doctors_profile.html`;
+// const patientAppointmentPage = `patients_appointment.html`;
+// const doctorAppointmentPage = `doctors_appointment.html`;
 
 
 const getSelectedRole = (FormId) => {
@@ -165,17 +168,27 @@ const loginUser = (formData) => {
   })
     .then(async (response) => {
       if (response.ok) {
-        showNotificationModal("User logged in successfully");
+        // Parse JSON response
+        const data = await response.json();
+        // Access role from the response
+        const role = data.role;
+        sessionStorage.setItem("authenticated", "true");
+        // Redirect user based on role
+        if(role === 'doctor') {
+            window.location.href = "/doctors_appointments.html";
+        } else if(role === 'patient') {
+            window.location.href = "/patients_appointments.html";
+        } else {
+            // Handle unexpected role
+            showNotificationModal("Unexpected user role. Please contact support.");
+        }
       } else {
         // Handle login errors
-        // Parse JSON response
         try {
           const errorData = await response.json();
-          showNotificationModal("Login failed:", errorData);
           // Display error message to user
           showNotificationModal("Login failed: " + errorData.detail);
         } catch (error) {
-          showNotificationModal("Failed to parse error response:", error);
           // Display generic error message to user
           showNotificationModal("Login failed. Please try again later.");
         }
@@ -187,6 +200,7 @@ const loginUser = (formData) => {
       showNotificationModal("Error logging in. Please try again later.");
     });
 };
+
 
 
 
@@ -232,3 +246,4 @@ signInForm.addEventListener("submit", function (event) {
   // Reset the form fields
   document.getElementById("signin-form").reset();
 });
+

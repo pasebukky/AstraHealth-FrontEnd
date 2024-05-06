@@ -71,3 +71,4 @@ document.addEventListener('DOMContentLoaded', function() {
     const menubar = document.querySelector('.mobile-menu')
     menubar.style.display = 'none'
  }
+

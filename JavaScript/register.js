@@ -156,6 +156,7 @@ const loginUser = (formData) => {
   let searchParams = new URLSearchParams(formData);
   fetch(logInUrl, {
     method: "POST",
+    credentials: "include",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
@@ -171,7 +172,7 @@ const loginUser = (formData) => {
         sessionStorage.setItem("role", data.role);
         // showNotificationModal("You are successfully logged in");
         updateTabsVisibility();
-        location.reload();
+        // location.reload();
         // getPatientProfileInfo();
       } else {
         // Handle login errors

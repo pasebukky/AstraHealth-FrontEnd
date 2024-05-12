@@ -184,3 +184,48 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Fetch Error:', error);
       });
   });
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    function updateProfile(updatedData) {
+        const updatePatientProfile = `https://api.astrafort.tech/v1/patient/update_profile`;
+
+        fetch(updatePatientProfile, {
+            method: 'PATCH', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include', 
+            body: JSON.stringify(updatedData)  
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Profile updated successfully:', data);
+        })
+        .catch(error => {
+            console.error('Update Error:', error);
+        });
+    }
+    const dobField = document.getElementById('dobInput');
+    const genderField = document.getElementById('genderInput');
+    const heightField = document.getElementById('heightInput');
+    const weightField = document.getElementById('weightInput');
+    const emergencyNameField = document.getElementById('emergencyNameInput');
+    const emergencyPhoneField = document.getElementById('emergencyPhoneInput');
+    const medicalHistoryField = document.getElementById('medicalHistoryInput');
+    const updatedData = {
+        dob: dobField.value,
+        gender: genderField.value,
+        height: heightField.value,
+        weight: weightField.value,
+        SOS_fullname: emergencyNameField.value,
+        SOS_phone: emergencyPhoneField.value,
+        medical_history: medicalHistoryField.value
+    };
+    updateProfile(updatedData);
+});

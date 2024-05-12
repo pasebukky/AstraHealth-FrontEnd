@@ -159,8 +159,14 @@ document.addEventListener('DOMContentLoaded', function() {
           'Content-Type': 'application/json',
         }
       })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then(data => {
+        console.log(data);
         document.querySelector('.profile-image').src = data.image || 'Images_Assets/Images/blank-profile-photo.png'; 
         document.querySelector('.profile-full-name').textContent = `${data.first_name} ${data.last_name}`;
         document.querySelector('.email').textContent = data.email;
@@ -174,6 +180,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('medicalHistoryInfo').textContent = data.medical_history || 'No medical history information available';
       })
       .catch(error => {
-        console.error('Error:', error);
+        console.error('Fetch Error:', error);
       });
   });

@@ -170,9 +170,9 @@ const loginUser = (formData) => {
         // const role = data.role;
         sessionStorage.setItem("authenticated", "true");
         sessionStorage.setItem("role", data.role);
-        // showNotificationModal("You are successfully logged in");
+        showNotificationModal("You are successfully logged in");
         updateTabsVisibility();
-        // location.reload();
+        location.reload();
         // getPatientProfileInfo();
       } else {
         // Handle login errors

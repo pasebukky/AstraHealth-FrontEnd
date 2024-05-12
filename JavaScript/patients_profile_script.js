@@ -148,21 +148,32 @@ document.addEventListener("DOMContentLoaded", function() {
     });    
 });
 
-// const getPatientProfile = `https://api.astrafort.tech/v1/patient/profile`;
 
-// fetch(getPatientProfile, {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       // Include the authentication token in the Authorization header
-//       'Authorization': 'Bearer ' + sessionStorage.getItem('token')
-//     }
-//   })
-//   .then(response => response.json())
-//   .then(data => {
-//     // The data object now contains the patient's profile information
-//     console.log(data);
-//   })
-//   .catch((error) => {
-//     console.error('Error:', error);
-//   });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const getPatientProfile = `https://api.astrafort.tech/v1/patient/profile`;
+  
+    fetch(getPatientProfile, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.querySelector('.profile-image').src = data.image || 'Images_Assets/Images/blank-profile-photo.png'; 
+        document.querySelector('.profile-full-name').textContent = `${data.first_name} ${data.last_name}`;
+        document.querySelector('.email').textContent = data.email;
+        document.querySelector('.phone_number').textContent = data.phone;
+        document.getElementById('dobInfo').textContent = data.dob || 'nil';
+        document.getElementById('genderInfo').textContent = data.gender || 'nil';
+        document.getElementById('heightInfo').textContent = data.height || 'nil';
+        document.getElementById('weightInfo').textContent = data.weight || 'nil';
+        document.getElementById('emergencyNameInfo').textContent = data.SOS_fullname || 'nil';
+        document.getElementById('emergencyPhoneInfo').textContent = data.SOS_phone || 'nil';
+        document.getElementById('medicalHistoryInfo').textContent = data.medical_history || 'No medical history information available';
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  });

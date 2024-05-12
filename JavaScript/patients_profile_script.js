@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function validateDOB(dob) {
-        const regex = /^(0?[1-9]|[12][0-9]|3[01])-(0?[1-9]|1[0-2])-(19\d{2}|20[01]\d)$/; 
+        const regex = /^(19\d{2}|20[01]\d)-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])$/; 
         return regex.test(dob);
     }
 
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     function updateProfile(updatedData) {
         const updatePatientProfile = `https://api.astrafort.tech/v1/patient/update_profile`;
 
@@ -211,21 +211,24 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Update Error:', error);
         });
     }
-    const dobField = document.getElementById('dobInput');
-    const genderField = document.getElementById('genderInput');
-    const heightField = document.getElementById('heightInput');
-    const weightField = document.getElementById('weightInput');
-    const emergencyNameField = document.getElementById('emergencyNameInput');
-    const emergencyPhoneField = document.getElementById('emergencyPhoneInput');
-    const medicalHistoryField = document.getElementById('medicalHistoryInput');
-    const updatedData = {
-        dob: dobField.value,
-        gender: genderField.value,
-        height: heightField.value,
-        weight: weightField.value,
-        SOS_fullname: emergencyNameField.value,
-        SOS_phone: emergencyPhoneField.value,
-        medical_history: medicalHistoryField.value
-    };
-    updateProfile(updatedData);
+
+    const editProfileButton = document.querySelector(".edit-profile-button"); 
+    const medicalHistoryInput = document.getElementById('medicalHistoryInput');
+
+    editProfileButton.addEventListener("click", function() {
+        if (editProfileButton.textContent === "Save Changes" && validateProfile()) {
+            const updatedData = {
+                dob: document.getElementById("dobInput").value,
+                height: document.getElementById("heightInput").value,
+                weight: document.getElementById("weightInput").value,
+                gender: document.getElementById("genderInput").value,
+                emergencyName: document.getElementById("emergencyNameInput").value,
+                emergencyPhone: document.getElementById("emergencyPhoneInput").value,
+                medicalHistory: medicalHistoryInput.value,
+            };
+
+            updateProfile(updatedData);
+        }
+    });
 });
+

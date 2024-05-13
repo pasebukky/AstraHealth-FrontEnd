@@ -149,6 +149,10 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+function capitalizeName(name) {
+    return name.trim().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+}
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const getPatientProfile = `https://api.astrafort.tech/v1/patient/profile`;
@@ -168,8 +172,14 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(data => {
         console.log(data);
-        document.querySelector('.profile-image').src = data.image || 'Images_Assets/Images/blank-profile-photo.png'; 
-        document.querySelector('.profile-full-name').textContent = `${data.first_name} ${data.last_name}`;
+        const profileImageElement = document.querySelector('.profile-image');
+        if (data.image) {
+            profileImageElement.src = data.image; 
+        } else {
+            profileImageElement.src = 'Images_Assets/Images/blank-profile-photo.png'; 
+        }
+        // document.querySelector('.profile-image').src = data.image || 'Images_Assets/Images/blank-profile-photo.png'; 
+        document.querySelector('.profile-full-name').textContent = `${capitalizeName(data.first_name)} ${capitalizeName(data.last_name)}`;
         document.querySelector('.email').textContent = data.email;
         document.querySelector('.phone_number').textContent = data.phone;
         document.getElementById('dobInfo').textContent = data.dob || 'nil';
@@ -243,7 +253,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             throw new Error('Failed to update profile: ' + (data.message || 'Unknown error'));
                         });
                     }
-                    return response.json();  // Proceed to parse the JSON only if response is OK
+                    return response.json();
                 })
                 .then(data => {
                     showNotificationModal("Profile updated successfully!");

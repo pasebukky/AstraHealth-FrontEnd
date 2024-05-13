@@ -18,3 +18,29 @@ const updateTabsVisibility = () => {
 };
 
 document.addEventListener("DOMContentLoaded", updateTabsVisibility);
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const signUpButton = document.querySelector(".access-button.sign-up");
+
+  // Update button text based on authentication status
+  if (checkAuthentication()) {
+      signUpButton.textContent = "SIGN OUT";
+      document.querySelector(".access-button.sign-in").style.display = "none";
+  } else {
+      signUpButton.textContent = "SIGN UP";
+  }
+
+  // Add event listener to the "SIGN UP" button
+  signUpButton.addEventListener("click", function() {
+      if (checkAuthentication()) {
+          sessionStorage.clear();
+          signUpButton.textContent = "SIGN UP"; 
+          updateTabsVisibility(); 
+      } else {
+          // Handle sign in logic here
+      }
+  });
+});
+
+

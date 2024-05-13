@@ -5,6 +5,7 @@ const mobileSignInForm = document.getElementById("mobile-signin-form");
 const patientSignUpUrl = `https://api.astrafort.tech/v1/patient/register`;
 const doctorSignUpUrl = `https://api.astrafort.tech/v1/doctor/register`;
 const logInUrl = `https://api.astrafort.tech/v1/auth/token`;
+const logOutUrl = `https://api.astrafort.tech/v1/auth/logout`;
 
 const getSelectedRole = (FormId) => {
   const roleButtons = document.querySelectorAll(`#${FormId} button[data-role]`);
@@ -245,3 +246,34 @@ signInForm.addEventListener("submit", function (event) {
   document.getElementById("signin-form").reset();
 });
 
+// Select the "SIGN UP" button
+const signUpButton = document.querySelector(".access-button.sign-up");
+signUpButton.addEventListener("click", function() {
+    // Check if user is authenticated
+    if (checkAuthentication()) {
+        // Perform sign out logic
+        fetch(logOutUrl , {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(response => {
+            if (response.ok) {
+                sessionStorage.clear();
+                signUpButton.textContent = "SIGN UP";
+                updateTabsVisibility();
+                document.querySelector(".access-button.sign-in").style.display = "block";
+                showNotificationModal("You have successfully logged out.");
+            } else {
+                showNotificationModal("XXLogout failed. Please try again later.");
+            }
+        })
+        .catch(error => {
+            console.error('Logout Error:', error);
+            showNotificationModal("Logout failed. Please try again later.");
+        });
+    } else {
+    }
+});

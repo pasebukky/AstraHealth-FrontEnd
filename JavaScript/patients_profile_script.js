@@ -1,7 +1,3 @@
-function validateProfile() {
-    return true; 
-}
-
 document.addEventListener("DOMContentLoaded", function() {
     const editProfileButton = document.querySelector(".edit-profile-button"); 
     const profileInfoItems = document.querySelectorAll(".profile-info .info-item");
@@ -122,6 +118,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const regex = /^.{3,}$/; 
         return regex.test(medicalHistory);
     }
+
+    function validateProfile() {
+        return true; 
+    }    
     
     medicalHistoryInput.addEventListener('input', function() {
         const remainingChars = 270 - medicalHistoryInput.value.length;
@@ -185,109 +185,75 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const editProfileButton = document.querySelector(".edit-profile-button");
 
+    editProfileButton.addEventListener("click", function() {
+        // Debug: Log current button text to console
+        console.log("Button text on click:", editProfileButton.textContent);
 
-document.addEventListener('DOMContentLoaded', function() {
-    const editProfileButton = document.querySelector('.edit-profile-button');
+        if (editProfileButton.textContent === "Update Profile") {
+            const dob = document.getElementById('dobInput').value;
+            const gender = document.getElementById('genderInput').value;
+            const height = document.getElementById('heightInput').value;
+            const weight = document.getElementById('weightInput').value;
+            const medicalHistory = document.getElementById('medicalHistoryInput').value;
+            const SOSFullname = document.getElementById('emergencyNameInput').value;
+            const SOSPhone = document.getElementById('emergencyPhoneInput').value;
+            const profileImageInput = document.getElementById('profileImageInput');
 
-    editProfileButton.addEventListener('click', function() {
-        if (editProfileButton.textContent === 'Update Profile') {
-            let updatedData = {
-                dob: document.getElementById("dobInput").value,
-                height: document.getElementById("heightInput").value,
-                weight: document.getElementById("weightInput").value,
-                gender: document.getElementById("genderInput").value,
-                emergencyName: document.getElementById("emergencyNameInput").value,
-                emergencyPhone: document.getElementById("emergencyPhoneInput").value,
-                medicalHistory: medicalHistoryInput.value,
-            };
+            let image = '';
+            if (profileImageInput.files.length > 0) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    image = e.target.result;
+                    sendUpdateRequest(image);
+                };
+                reader.readAsDataURL(profileImageInput.files[0]);
+            } else {
+                sendUpdateRequest('');
+            }
 
-            updatePatientProfile(updatedData);
+            function sendUpdateRequest() {
+                const payload = {
+                    dob: dob,
+                    gender: gender,
+                    height: height,
+                    weight: weight,
+                    medical_history: medicalHistory,
+                    image: image,
+                    SOS_fullname: SOSFullname,
+                    SOS_phone: SOSPhone
+                };
+            
+                // Log the payload to inspect what is being sent
+                console.log("Payload being sent:", payload);
+            
+                fetch('https://api.astrafort.tech/v1/patient/update_profile', {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                    credentials: 'include'
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(data => {
+                            throw new Error('Failed to update profile: ' + (data.message || 'Unknown error'));
+                        });
+                    }
+                    return response.json();  // Proceed to parse the JSON only if response is OK
+                })
+                .then(data => {
+                    showNotificationModal("Profile updated successfully!");
+                    console.log('Profile updated successfully:', data);
+                })
+                .catch(error => {
+                    showNotificationModal("Failed to update profile: " + error.message);
+                    console.error('Failed to update profile:', error);
+                });
+            }
         }
     });
 });
-
-function updatePatientProfile(updatedData) {
-    fetch('https://api.astrafort.tech/v1/patient/update_profile', {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(updatedData),
-        credentials: 'include'
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => console.log('Profile updated successfully:', data))
-    .catch(error => console.error('An error occurred:', error));
-}
-
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     // Event listener for updating the profile
-//     const editProfileButton = document.querySelector(".edit-profile-button");
-//     const medicalHistoryInput = document.getElementById('medicalHistoryInput');
-
-//     editProfileButton.addEventListener("click", function() {
-//         console.log(editProfileButton.textContent);
-//         if (editProfileButton.textContent === "Save Changes" && validateProfile()) {
-//             const updatedData = {
-//                 dob: document.getElementById("dobInput").value,
-//                 height: document.getElementById("heightInput").value,
-//                 weight: document.getElementById("weightInput").value,
-//                 gender: document.getElementById("genderInput").value,
-//                 emergencyName: document.getElementById("emergencyNameInput").value,
-//                 emergencyPhone: document.getElementById("emergencyPhoneInput").value,
-//                 medicalHistory: medicalHistoryInput.value,
-//             };
-//             console.log('true');
-//             updateProfile(updatedData);
-//         }
-//         console.log(updatedData);
-//     });
-
-//     function updateProfile(updatedData) {
-//         const updatePatientProfile = `https://api.astrafort.tech/v1/patient/update_profile`;
-
-//         fetch(updatePatientProfile, {
-//             method: 'PATCH', 
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             credentials: 'include', 
-//             body: JSON.stringify(updatedData)  
-//         })
-//         .then(response => {
-//             if (!response.ok) {
-//                 throw new Error(`HTTP error! status: ${response.status}`);
-//             }
-//             return response.json();
-//         })
-//         .then(data => {
-//             console.log('Profile updated successfully:', data);
-//         })
-//         .catch(error => {
-//             console.error('Update Error:', error);
-//             if (error instanceof Response && error.status === 422) {
-//                 error.json().then(validationError => {
-//                     if (validationError.detail && validationError.detail.length > 0) {
-//                         const errorMessage = validationError.detail[0].msg;
-//                         console.error('Validation Error:', errorMessage);
-//                         showNotificationModal(errorMessage);
-//                     }
-//                 }).catch(parseError => {
-//                     console.error('Error parsing validation error:', parseError);
-//                 });
-//             } else {
-//                 console.error('Unhandled Error:', error);
-//                 showNotificationModal("An unexpected error occurred. Please try again later.");
-//             }
-//         });
-//     }
-// });
-
-

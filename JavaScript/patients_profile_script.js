@@ -192,6 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const medicalHistoryInput = document.getElementById('medicalHistoryInput');
 
     editProfileButton.addEventListener("click", function() {
+        console.log(editProfileButton.textContent);
         if (editProfileButton.textContent === "Save Changes" && validateProfile()) {
             const updatedData = {
                 dob: document.getElementById("dobInput").value,
@@ -202,8 +203,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 emergencyPhone: document.getElementById("emergencyPhoneInput").value,
                 medicalHistory: medicalHistoryInput.value,
             };
+            console.log('true');
             updateProfile(updatedData);
         }
+        console.log(updatedData);
     });
 
     function updateProfile(updatedData) {

@@ -19,16 +19,21 @@ const updateTabsVisibility = () => {
 
 document.addEventListener("DOMContentLoaded", updateTabsVisibility);
 
-
 document.addEventListener("DOMContentLoaded", function() {
   const signUpButton = document.querySelector(".access-button.sign-up");
 
   // Update button text based on authentication status
   if (checkAuthentication()) {
-      signUpButton.textContent = "SIGN OUT";
-      document.querySelector(".access-button.sign-in").style.display = "none";
+      const signUpButton = document.querySelector(".access-button.sign-up");
+      if (signUpButton !== null) {
+          signUpButton.textContent = "SIGN OUT";
+          document.querySelector(".access-button.sign-in").style.display = "none";
+      }
   } else {
-      signUpButton.textContent = "SIGN UP";
+      const signUpButton = document.querySelector(".access-button.sign-up");
+      if (signUpButton !== null) {
+          signUpButton.textContent = "SIGN UP";
+      }
   }
 
   // Add event listener to the "SIGN UP" button
@@ -38,9 +43,6 @@ document.addEventListener("DOMContentLoaded", function() {
           signUpButton.textContent = "SIGN UP"; 
           updateTabsVisibility(); 
       } else {
-          // Handle sign in logic here
       }
   });
 });
-
-

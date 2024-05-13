@@ -109,10 +109,11 @@ mobileForm.addEventListener("submit", function (event) {
     phone: phone,
   };
 
-  registerUser(formData, role);
-
-  // Reset the form fields
-  document.getElementById("mobile-signup-form").reset();
+  if (role) {
+    registerUser(formData, role);
+    // Reset the form fields
+    document.getElementById("mobile-signup-form").reset();
+  }
 });
 
 Form.addEventListener("submit", function (event) {
@@ -151,10 +152,11 @@ Form.addEventListener("submit", function (event) {
     phone: phone,
   };
 
-  registerUser(formData, role); // You can use this object as needed, e.g., send it to a server
-
-  // Reset the form fields
-  document.getElementById("signup-form").reset();
+  if (role) {
+    registerUser(formData, role);
+    // Reset the form fields
+    document.getElementById("signup-form").reset();
+  }
 });
 
 

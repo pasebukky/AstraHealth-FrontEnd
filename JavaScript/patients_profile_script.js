@@ -187,6 +187,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Event listener for updating the profile
+    const editProfileButton = document.querySelector(".edit-profile-button");
+    const medicalHistoryInput = document.getElementById('medicalHistoryInput');
+
+    editProfileButton.addEventListener("click", function() {
+        if (editProfileButton.textContent === "Save Changes" && validateProfile()) {
+            const updatedData = {
+                dob: document.getElementById("dobInput").value,
+                height: document.getElementById("heightInput").value,
+                weight: document.getElementById("weightInput").value,
+                gender: document.getElementById("genderInput").value,
+                emergencyName: document.getElementById("emergencyNameInput").value,
+                emergencyPhone: document.getElementById("emergencyPhoneInput").value,
+                medicalHistory: medicalHistoryInput.value,
+            };
+            updateProfile(updatedData);
+        }
+    });
+
     function updateProfile(updatedData) {
         const updatePatientProfile = `https://api.astrafort.tech/v1/patient/update_profile`;
 
@@ -225,24 +244,5 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
-    const editProfileButton = document.querySelector(".edit-profile-button"); 
-    const medicalHistoryInput = document.getElementById('medicalHistoryInput');
-
-    editProfileButton.addEventListener("click", function() {
-        if (editProfileButton.textContent === "Save Changes" && validateProfile()) {
-            const updatedData = {
-                dob: document.getElementById("dobInput").value,
-                height: document.getElementById("heightInput").value,
-                weight: document.getElementById("weightInput").value,
-                gender: document.getElementById("genderInput").value,
-                emergencyName: document.getElementById("emergencyNameInput").value,
-                emergencyPhone: document.getElementById("emergencyPhoneInput").value,
-                medicalHistory: medicalHistoryInput.value,
-            };
-
-            updateProfile(updatedData);
-        }
-    });
 });
 

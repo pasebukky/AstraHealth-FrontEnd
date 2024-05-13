@@ -1,3 +1,7 @@
+function validateProfile() {
+    return true; 
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const editProfileButton = document.querySelector(".edit-profile-button"); 
     const profileInfoItems = document.querySelectorAll(".profile-info .info-item");
@@ -118,11 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const regex = /^.{3,}$/; 
         return regex.test(medicalHistory);
     }
-
-    function validateProfile() {
-        return true; 
-    }
-
+    
     medicalHistoryInput.addEventListener('input', function() {
         const remainingChars = 270 - medicalHistoryInput.value.length;
         charCount.textContent = 'Characters remaining: ' + remainingChars;

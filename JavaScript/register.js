@@ -18,19 +18,18 @@ const getSelectedRole = (FormId) => {
       button.classList.add("selected");
     }
   });
-  console.log(role);
-  return role;
-};
-
-
-const registerUser = (formData, role) => {
   if (!role) {
     console.error("Role not selected.");
     // Display error message to the user
     showNotificationModal("Please select a role.");
     return; // Exit function
   }
+  console.log(role);
+  return role;
+};
 
+
+const registerUser = (formData, role) => {
   const url = role === "patient" ? patientSignUpUrl : doctorSignUpUrl;
 
   fetch(url, {

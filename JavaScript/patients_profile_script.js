@@ -209,6 +209,20 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('Update Error:', error);
+            if (error instanceof Response && error.status === 422) {
+                error.json().then(validationError => {
+                    if (validationError.detail && validationError.detail.length > 0) {
+                        const errorMessage = validationError.detail[0].msg;
+                        console.error('Validation Error:', errorMessage);
+                        showNotificationModal(errorMessage);
+                    }
+                }).catch(parseError => {
+                    console.error('Error parsing validation error:', parseError);
+                });
+            } else {
+                console.error('Unhandled Error:', error);
+                showNotificationModal("An unexpected error occurred. Please try again later.");
+            }
         });
     }
 

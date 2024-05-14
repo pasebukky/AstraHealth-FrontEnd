@@ -37,12 +37,14 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Add event listener to the "SIGN UP" button
-  signUpButton.addEventListener("click", function() {
+  if (signUpButton !== null) {
+    signUpButton.addEventListener("click", function() {
       if (checkAuthentication()) {
           sessionStorage.clear();
           signUpButton.textContent = "SIGN UP"; 
           updateTabsVisibility(); 
       } else {
       }
-  });
+    });
+  }
 });

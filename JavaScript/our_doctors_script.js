@@ -1,5 +1,5 @@
 // window.onload = function() {
-//     fetch('https://your-backend-api.com/doctors')
+//     fetch('https://api.astrafort.tech/v1/doctor/all')
 //     .then(response => response.json())
 //     .then(data => {
 //         let doctorsBody = document.getElementById('doctors-body');

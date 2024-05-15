@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Add event listener to "Mobile My Profile" link
     const mobileProfileTab = document.getElementById("mobile-profile-tab");
     if (mobileProfileTab) {
         mobileProfileTab.addEventListener("click", function(event) {

@@ -1,3 +1,4 @@
+//Profile validation and updating
 document.addEventListener("DOMContentLoaded", function() {
     const editProfileButton = document.querySelector(".edit-profile-button"); 
     const profileInfoItems = document.querySelectorAll(".profile-info .info-item");
@@ -156,12 +157,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
+// Function to capitalize first characters of words
 function capitalizeName(name) {
     return name.trim().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
 }
 
-
+//Retrieve doctors profile from the database
 document.addEventListener('DOMContentLoaded', function() {
     const getDoctorProfile = `https://api.astrafort.tech/v1/doctor/profile`;
   
@@ -186,7 +187,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             profileImageElement.src = 'Images_Assets/Images/blank-profile-photo.png'; 
         }
-        // document.querySelector('.profile-image').src = data.image || 'Images_Assets/Images/blank-profile-photo.png'; 
         document.querySelector('.profile-full-name').textContent = `Dr ${capitalizeName(data.first_name)} ${capitalizeName(data.last_name)}`;
         document.querySelector('.email').textContent = data.email;
         document.querySelector('.phone_number').textContent = data.phone;
@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+//Update doctors profile and save in database
 document.addEventListener("DOMContentLoaded", function() {
     const editProfileButton = document.querySelector(".edit-profile-button");
     const inputs = {
@@ -219,7 +220,6 @@ document.addEventListener("DOMContentLoaded", function() {
         profileImage: document.getElementById('profileImageInput')
     };
 
-    // Store initial values to compare changes
     const initialValues = {};
     Object.keys(inputs).forEach(key => {
         if (inputs[key].type !== 'file') {
@@ -232,24 +232,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (editProfileButton.textContent === "Update Profile") {
             let payload = {};
-
-            // Handle the profile image separately
             if (inputs.profileImage.files.length > 0) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     payload['image'] = e.target.result;
-                    collectAndSendUpdates(payload); // Collect other updates after image is loaded
+                    collectAndSendUpdates(payload); 
                 };
                 reader.readAsDataURL(inputs.profileImage.files[0]);
             } else {
-                collectAndSendUpdates(payload); // Collect updates directly if no image is updated
+                collectAndSendUpdates(payload);
             }
         }
     });
 
     function collectAndSendUpdates(payload) {
         Object.keys(inputs).forEach(key => {
-            if (key !== 'profileImage' && inputs[key].type !== 'file') { // Exclude image from this loop
+            if (key !== 'profileImage' && inputs[key].type !== 'file') { 
                 if (inputs[key].value !== initialValues[key]) {
                     payload[key] = inputs[key].value;
                 }

@@ -1,8 +1,10 @@
+//Confirm if  a user is authenticated
 const checkAuthentication = () => {
   const isAuthenticated = sessionStorage.getItem("authenticated") === "true";
   return isAuthenticated;
 };
 
+//If a user is authenticated reveal all tabs otherwise hide apointment and profile tabs
 const updateTabsVisibility = () => {
   if (checkAuthentication()) {
     document.getElementById("appointments-tab").style.display = "block";

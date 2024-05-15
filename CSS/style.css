@@ -70,17 +70,6 @@ body {
     display: flex;
 }
 
-/* .mobile-container {
-    background: linear-gradient(
-        to bottom,
-        #224750 0%,
-        #224750 60%,
-        #53AFB1 60%,
-        #53AFB1 100%
-    );
-    display: none;
-} */
-
 .mobile-container {
     background-color: #224750;
     display: none;

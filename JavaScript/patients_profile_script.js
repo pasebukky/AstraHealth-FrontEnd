@@ -195,75 +195,95 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 
+
 document.addEventListener("DOMContentLoaded", function() {
     const editProfileButton = document.querySelector(".edit-profile-button");
+    const inputs = {
+        dob: document.getElementById('dobInput'),
+        gender: document.getElementById('genderInput'),
+        height: document.getElementById('heightInput'),
+        weight: document.getElementById('weightInput'),
+        medicalHistory: document.getElementById('medicalHistoryInput'),
+        SOSFullname: document.getElementById('emergencyNameInput'),
+        SOSPhone: document.getElementById('emergencyPhoneInput'),
+        profileImage: document.getElementById('profileImageInput')
+    };
+
+    // Store initial values to compare changes
+    const initialValues = {};
+    Object.keys(inputs).forEach(key => {
+        if (inputs[key].type !== 'file') {
+            initialValues[key] = inputs[key].value;
+        }
+    });
 
     editProfileButton.addEventListener("click", function() {
-        // Debug: Log current button text to console
         console.log("Button text on click:", editProfileButton.textContent);
 
         if (editProfileButton.textContent === "Update Profile") {
-            const dob = document.getElementById('dobInput').value;
-            const gender = document.getElementById('genderInput').value;
-            const height = document.getElementById('heightInput').value;
-            const weight = document.getElementById('weightInput').value;
-            const medicalHistory = document.getElementById('medicalHistoryInput').value;
-            const SOSFullname = document.getElementById('emergencyNameInput').value;
-            const SOSPhone = document.getElementById('emergencyPhoneInput').value;
-            const profileImageInput = document.getElementById('profileImageInput');
+            let payload = {};
 
-            let image = '';
-            if (profileImageInput.files.length > 0) {
+            // Handle the profile image separately
+            if (inputs.profileImage.files.length > 0) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    image = e.target.result;
-                    sendUpdateRequest(image);
+                    payload['image'] = e.target.result;
+                    collectAndSendUpdates(payload); // Collect other updates after image is loaded
                 };
-                reader.readAsDataURL(profileImageInput.files[0]);
+                reader.readAsDataURL(inputs.profileImage.files[0]);
             } else {
-                sendUpdateRequest('');
-            }
-
-            function sendUpdateRequest() {
-                const payload = {
-                    dob: dob,
-                    gender: gender,
-                    height: height,
-                    weight: weight,
-                    medical_history: medicalHistory,
-                    image: image,
-                    SOS_fullname: SOSFullname,
-                    SOS_phone: SOSPhone
-                };
-            
-                // Log the payload to inspect what is being sent
-                console.log("Payload being sent:", payload);
-            
-                fetch('https://api.astrafort.tech/v1/patient/update_profile', {
-                    method: 'PATCH',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(payload),
-                    credentials: 'include'
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        return response.json().then(data => {
-                            throw new Error('Failed to update profile: ' + (data.message || 'Unknown error'));
-                        });
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    showNotificationModal("Profile updated successfully!");
-                    console.log('Profile updated successfully:', data);
-                })
-                .catch(error => {
-                    showNotificationModal("Failed to update profile: " + error.message);
-                    console.error('Failed to update profile:', error);
-                });
+                collectAndSendUpdates(payload); // Collect updates directly if no image is updated
             }
         }
     });
+
+    function collectAndSendUpdates(payload) {
+        Object.keys(inputs).forEach(key => {
+            if (key !== 'profileImage' && inputs[key].type !== 'file') { // Exclude image from this loop
+                if (inputs[key].value !== initialValues[key]) {
+                    payload[key] = inputs[key].value;
+                }
+            }
+        });
+
+        if (Object.keys(payload).length > 0) {
+            sendUpdateRequest(payload);
+        } else {
+            showNotificationModal("No changes detected.");
+        }
+    }
+
+    function sendUpdateRequest(payload) {
+        console.log("Payload being sent:", payload);
+
+        fetch('https://api.astrafort.tech/v1/patient/update_profile', {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+            credentials: 'include'
+        })
+        .then(response => response.json().then(data => {
+            if (!response.ok) {
+                if (data.detail && data.detail.length > 0) {
+                    const firstError = data.detail[0];
+                    const fieldName = firstError.loc[firstError.loc.length - 1];
+                    const errorMessage = firstError.msg;
+                    throw new Error(`${capitalizeName(fieldName)} ${errorMessage}`);
+                } else {
+                    throw new Error('Failed to update profile: Unknown error');
+                }
+            }
+            return data;
+        }))
+        .then(data => {
+            showNotificationModal("Profile updated successfully!");
+            console.log('Profile updated successfully:', data);
+        })
+        .catch(error => {
+            showNotificationModal("Failed to update profile: " + error.message);
+            console.error('Failed to update profile:', error);
+        });
+    }
 });

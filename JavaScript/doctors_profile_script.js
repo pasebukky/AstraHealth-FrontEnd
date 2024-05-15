@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function validateGender(gender) {
-        const regex = /^(male|female|m|f)$/i; 
+        const regex = /^(male|female)$/i; 
         return regex.test(gender);
     }
 
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function validateProfessionalBio(professionalBio) {
-        const regex = /^.{150,}$/; 
+        const regex = /^.{120,}$/; 
         return regex.test(professionalBio);
     }
 

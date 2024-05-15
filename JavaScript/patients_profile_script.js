@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function validateGender(gender) {
-        const regex = /^(male|female|m|f)$/i; 
+        const regex = /^(male|female)$/i; 
         return regex.test(gender);
     }
 

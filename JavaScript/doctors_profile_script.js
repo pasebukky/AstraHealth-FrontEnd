@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function validateDOB(dob) {
-        const regex = /^(0?[1-9]|[12][0-9]|3[01])-(0?[1-9]|1[0-2])-(19\d{2}|20[01]\d)$/; 
+        const regex = /^(19\d{2}|20[01]\d)-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])$/; 
         return regex.test(dob);
     }
 
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function validateProfessionalBio(professionalBio) {
-        const regex = /^.{200,}$/; 
+        const regex = /^.{150,}$/; 
         return regex.test(professionalBio);
     }
 
@@ -152,4 +152,148 @@ document.addEventListener("DOMContentLoaded", function() {
         reader.readAsDataURL (newImage);
         }
     });    
+});
+
+
+
+
+function capitalizeName(name) {
+    return name.trim().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const getDoctorProfile = `https://api.astrafort.tech/v1/doctor/profile`;
+  
+    fetch(getDoctorProfile, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include' 
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        const profileImageElement = document.querySelector('.profile-image');
+        if (data.image) {
+            profileImageElement.src = data.image; 
+        } else {
+            profileImageElement.src = 'Images_Assets/Images/blank-profile-photo.png'; 
+        }
+        // document.querySelector('.profile-image').src = data.image || 'Images_Assets/Images/blank-profile-photo.png'; 
+        document.querySelector('.profile-full-name').textContent = `Dr ${capitalizeName(data.first_name)} ${capitalizeName(data.last_name)}`;
+        document.querySelector('.email').textContent = data.email;
+        document.querySelector('.phone_number').textContent = data.phone;
+        document.getElementById('dobInfo').textContent = data.dob || 'nil';
+        document.getElementById('genderInfo').textContent = data.gender || 'nil';
+        document.getElementById('heightInfo').textContent = data.height || 'nil';
+        document.getElementById('weightInfo').textContent = data.weight || 'nil';
+        document.getElementById('medicalLicenceNumberInfo').textContent = data.medical_liscence || 'nil';
+        document.getElementById('resumeInfo').textContent = data.resume_link || 'nil';
+        document.getElementById('hospitalAffiliationInfo').textContent = data.hospital_affiliation || 'nil';
+        document.getElementById('professionalBio').textContent = data.bio || 'nil';
+      })
+      .catch(error => {
+        console.error('Fetch Error:', error);
+      });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const editProfileButton = document.querySelector(".edit-profile-button");
+    const inputs = {
+        dob: document.getElementById('dobInput'),
+        gender: document.getElementById('genderInput'),
+        height: document.getElementById('heightInput'),
+        weight: document.getElementById('weightInput'),
+        medicalLicense: document.getElementById('medicalLicenseNumberInput'),
+        hospitalAffiliation: document.getElementById('hospitalAffiliationInput'),
+        resumeLink: document.getElementById('resumeInput'),
+        professionalBio: document.getElementById('professionalBioInput'),
+        profileImage: document.getElementById('profileImageInput')
+    };
+
+    // Store initial values to compare changes
+    const initialValues = {};
+    Object.keys(inputs).forEach(key => {
+        if (inputs[key].type !== 'file') {
+            initialValues[key] = inputs[key].value;
+        }
+    });
+
+    editProfileButton.addEventListener("click", function() {
+        console.log("Button text on click:", editProfileButton.textContent);
+
+        if (editProfileButton.textContent === "Update Profile") {
+            let payload = {};
+
+            // Handle the profile image separately
+            if (inputs.profileImage.files.length > 0) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    payload['image'] = e.target.result;
+                    collectAndSendUpdates(payload); // Collect other updates after image is loaded
+                };
+                reader.readAsDataURL(inputs.profileImage.files[0]);
+            } else {
+                collectAndSendUpdates(payload); // Collect updates directly if no image is updated
+            }
+        }
+    });
+
+    function collectAndSendUpdates(payload) {
+        Object.keys(inputs).forEach(key => {
+            if (key !== 'profileImage' && inputs[key].type !== 'file') { // Exclude image from this loop
+                if (inputs[key].value !== initialValues[key]) {
+                    payload[key] = inputs[key].value;
+                }
+            }
+        });
+
+        if (Object.keys(payload).length > 0) {
+            sendUpdateRequest(payload);
+        } else {
+            showNotificationModal("No changes detected.");
+        }
+    }
+
+    function sendUpdateRequest(payload) {
+        console.log("Payload being sent:", payload);
+
+        fetch('https://api.astrafort.tech/v1/doctor/update_profile', {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+            credentials: 'include'
+        })
+        .then(response => response.json().then(data => {
+            if (!response.ok) {
+                if (data.detail && data.detail.length > 0) {
+                    const firstError = data.detail[0];
+                    const fieldName = firstError.loc[firstError.loc.length - 1];
+                    const errorMessage = firstError.msg;
+                    throw new Error(`${capitalizeName(fieldName)} ${errorMessage}`);
+                } else {
+                    throw new Error('Failed to update profile: Unknown error');
+                }
+            }
+            return data;
+        }))
+        .then(data => {
+            showNotificationModal("Profile updated successfully!");
+            console.log('Profile updated successfully:', data);
+        })
+        .catch(error => {
+            showNotificationModal("Failed to update profile: " + error.message);
+            console.error('Failed to update profile:', error);
+        });
+    }
 });

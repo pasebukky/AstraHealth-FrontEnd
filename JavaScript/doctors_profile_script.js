@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     genderInput: validateGender,
     medicalLicenceNumberInput: validateMedicalLicenseNumber,
     resumeInput: validateResumeLink,
+    calendarInput: validateCalendarLink,
     hospitalAffiliationInput: validateHospitalAffiliation,
     professionalBioInput: validateProfessionalBio,
   };
@@ -120,6 +121,11 @@ document.addEventListener("DOMContentLoaded", function () {
     return regex.test(resumeLink);
   }
 
+  function validateCalendarLink(calendarLink) {
+    const regex = /^(ftp|http|https):\/\/[^ "]+$/;
+    return regex.test(calendarLink);
+  }
+
   function validateHospitalAffiliation(hospitalAffiliation) {
     const regex = /^[a-zA-Z0-9]{3,}$/i;
     return regex.test(hospitalAffiliation);
@@ -212,6 +218,8 @@ document.addEventListener("DOMContentLoaded", function () {
         data.medicalLicense || "nil";
       document.getElementById("resumeInfo").textContent =
         data.resumeLink || "nil";
+      document.getElementById("calendarInfo").textContent =
+        data.calendarLink || "nil";
       document.getElementById("hospitalAffiliationInfo").textContent =
         data.hospitalAffiliation || "nil";
       document.getElementById("professionalBio").textContent =
@@ -233,6 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
     medicalLicense: document.getElementById("medicalLicenseNumberInput"),
     hospitalAffiliation: document.getElementById("hospitalAffiliationInput"),
     resumeLink: document.getElementById("resumeInput"),
+    calendarLink: document.getElementById("calendarInput"),
     professionalBio: document.getElementById("professionalBioInput"),
     profileImage: document.getElementById("profileImageInput"),
   };

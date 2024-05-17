@@ -11,7 +11,7 @@ function capitalizeName(name) {
 
 //Retrieve doctors profile from the database
 document.addEventListener("DOMContentLoaded", function () {
-  const getDoctorProfile = `https://api.astrafort.tech/v1/doctor/profile`;
+  const getDoctorProfile = `https://api.astrafort.tech/v1/doctor/schedule`;
 
   fetch(getDoctorProfile, {
     method: "GET",

@@ -2,7 +2,7 @@
      General Style
 =======================*/
 
-.profile-intro {
+.schedule-intro {
   width: 100%;
   display: flex;
   text-align: center;
@@ -10,7 +10,7 @@
   justify-content: space-between;
 }
 
-.profile-card {
+.schedule-card {
   position: relative;
   border-radius: 50%;
   width: 200px;
@@ -21,13 +21,25 @@
   background-color: #53afb1;
 }
 
-.profile-card .profile-image {
+.schedule-card .schedule-image {
   height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: 50%;
   border: 0.125em solid #ffffff;
 }
+
+/*======================
+     Calendar Style
+=======================*/
+
+.calendar {
+  margin: 6em 0;
+}
+
+/*======================
+     End Calendar Style
+=======================*/
 
 .patient-info {
   padding: 7.5em 0 1.25em 0;
@@ -39,7 +51,7 @@
   margin-bottom: 20px;
 }
 
-.profile-full-name {
+.schedule-full-name {
   color: #ffffff;
   display: flex;
   justify-content: flex-end;
@@ -57,7 +69,7 @@
   margin-top: 1.25em;
 }
 
-.profile-section {
+.schedule-section {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,11 +80,11 @@
   transition: transform 0.3s ease;
 }
 
-.profile-section:hover {
+.schedule-section:hover {
   transform: scale(1.05);
 }
 
-.profile-section h2 {
+.schedule-section h2 {
   background-color: #224750;
   color: #ffffff;
   font-size: 1.25rem;
@@ -87,12 +99,12 @@
   justify-content: center;
 }
 
-.profile-section h2 span {
+.schedule-section h2 span {
   display: flex;
   align-items: center;
 }
 
-.profile-info {
+.schedule-info {
   padding: 0.625em;
   width: 270px;
   margin: 0 auto;
@@ -145,7 +157,7 @@ input::placeholder {
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0, 0.2);
 }
 
-.profile-info input {
+.schedule-info input {
   padding-left: 0.25em;
 }
 
@@ -206,7 +218,7 @@ p {
   background-color: #ffffff;
 }
 
-#profileImageInput {
+#scheduleImageInput {
   display: none;
 }
 
@@ -218,7 +230,7 @@ p {
     Buttons
 =======================*/
 
-.edit-profile-button {
+.edit-schedule-button {
   border-radius: 30px;
   background-color: #ffffff;
   border: 3px solid #224750;
@@ -234,7 +246,7 @@ p {
     Typography
 =======================*/
 
-.profile-card h3 {
+.schedule-card h3 {
   color: #ffffff;
   font-weight: 300;
   margin: 10px;
@@ -253,7 +265,7 @@ p {
 
 /* Screens less than 639px */
 @media (max-width: 639px) {
-  .profile-card {
+  .schedule -card {
     width: 150px;
     height: 150px;
     margin-bottom: -75px;
@@ -263,12 +275,12 @@ p {
     padding-top: 40px;
   }
 
-  .profile-section {
+  .schedule -section {
     flex-direction: column;
     width: 90%;
   }
 
-  .profile-section h2 {
+  .schedule -section h2 {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 0px;
@@ -278,7 +290,7 @@ p {
     font-size: 1rem;
   }
 
-  .profile-info {
+  .schedule -info {
     width: 240px;
     margin: 0;
     text-align: left;
@@ -299,12 +311,12 @@ p {
     justify-content: flex-start;
   }
 
-  .profile-full-name {
+  .schedule -full-name {
     font-size: 1.25rem;
     margin-bottom: 0.25em;
   }
 
-  .edit-profile-button {
+  .edit-schedule -button {
     border-radius: 30px;
     background-color: #ffffff;
     border: 3px solid #224750;

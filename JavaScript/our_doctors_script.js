@@ -43,7 +43,7 @@ function capitalizeName(name) {
     .join(" ");
 }
 
-//Retrieve all doctors from db
+//Retrieve all doctors dynamically from db
 document.addEventListener("DOMContentLoaded", () => {
   const getAllDoctors = "https://api.astrafort.tech/v1/doctor/all";
 

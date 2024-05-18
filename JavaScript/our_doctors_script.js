@@ -35,7 +35,7 @@ function populateDoctors(doctors) {
         <div class="circle">
           <div class="image-box">
             <img src="${
-              doctor.image || "Images_Assets/Images/default_doc.png"
+              doctor.image || "Images_Assets/Images/blank-profile-photo.png"
             }" alt="Dr. ${capitalizeName(doctor.first_name)} ${capitalizeName(
       doctor.last_name
     )}">

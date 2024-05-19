@@ -25,6 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch((error) => console.error("Error fetching doctors:", error));
 });
 
+function viewSchedule(doctorId) {
+  window.location.href = `doctors_schedule.html?doctorId=${doctorId}`;
+}
+
 function populateDoctors(doctors) {
   const doctorsContainer = document.getElementById("our-doctors-content");
   doctorsContainer.innerHTML = ""; // Clear existing entries if any
@@ -46,8 +50,10 @@ function populateDoctors(doctors) {
       doctor.last_name
     )}</h3>
           <p>${doctor.professionalBio}</p>
-          <button class="filled-button appointment-button">BOOK CONSULTATION</button>
-        </div>
+    <button class="filled-button appointment-button" onclick="viewSchedule('${
+      doctor.id
+    }')">VIEW SCHEDULE</button>        
+    </div>
       </div>
     `;
     doctorsContainer.innerHTML += doctorCard;

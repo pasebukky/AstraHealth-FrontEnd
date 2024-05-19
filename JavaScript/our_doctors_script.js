@@ -52,7 +52,7 @@ function populateDoctors(doctors) {
           <p>${doctor.professionalBio}</p>
     <button class="filled-button appointment-button" onclick="viewSchedule('${
       doctor.id
-    }')">VIEW SCHEDULE</button>        
+    }')">Book Consultation</button>        
     </div>
       </div>
     `;

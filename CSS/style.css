@@ -3,31 +3,33 @@
 =======================*/
 
 html {
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.icon {
-    font-size: 3rem;
-    color:  #C0DF34;
+icon {
+  font-size: 3rem;
+  color: #c0df34;
 }
 
 .small-icon {
-    font-size: 1rem;
-    color:  #FFFFFF;
+  font-size: 1rem;
+  color: #ffffff;
 }
 
 .menu-button {
-    display: none;
+  display: none;
 }
 
 body {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 /*======================
@@ -35,158 +37,157 @@ body {
 =======================*/
 
 .container {
-    position: relative;
-    width: 90%;
-    max-width: 1200px; /* Ensures optimal readability */
-    margin: 0 auto;
-    display: flex;
+  position: relative;
+  width: 90%;
+  max-width: 1200px; /* Ensures optimal readability */
+  justify-content: space-evenly;
+  margin: 0 auto;
+  display: flex;
 }
 
 .white-container {
-    background-color: #FFFFFF;
-    z-index: 2;
-    position: fixed;
-    height: 150px;
-    width: 100%;
+  background-color: #ffffff;
+  z-index: 2;
+  position: fixed;
+  height: 150px;
+  width: 100%;
 }
 
 .teal-container {
-    background-color: #53AFB1;
+  background-color: #53afb1;
 }
 
 .dark-green-container {
-    background-color: #224750;
+  background-color: #224750;
 }
 
 .dual-container {
-    background: linear-gradient(
-        to left,
-        #53AFB1 0%,
-        #53AFB1 50%,
-        #224750 50%,
-        #224750 100%
-    );
-    position: relative;
-    display: flex;
+  background: linear-gradient(
+    to left,
+    #53afb1 0%,
+    #53afb1 50%,
+    #224750 50%,
+    #224750 100%
+  );
+  position: relative;
+  display: flex;
 }
 
 .mobile-container {
-    background-color: #224750;
-    display: none;
+  background-color: #224750;
+  display: none;
 }
-
 
 /*======================
     Header Styles
 =======================*/
 
 #header {
-    opacity: 1;
-    z-index: 3;
-    width: 90%;
-    position: fixed;
-    max-width: 1200px;
-    height: 150px;
-    display: flex;
-    text-align: center;
-    align-items: flex-end;
-    justify-content: space-between;
+  opacity: 1;
+  z-index: 3;
+  width: 90%;
+  position: fixed;
+  max-width: 1200px;
+  height: 150px;
+  display: flex;
+  text-align: center;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .header-nav-bar {
-    color: #224750;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: none;
-    padding: 20px 0;
-    justify-content: space-between;
-    align-items: flex-end;
+  color: #224750;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  padding: 20px 0;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 #header-nav-bar {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
 }
 
 .mobile-menu {
-    position: fixed;
-    display: none;
-    top: 0; 
-    right: 0;
-    margin: 0;
-    height: 100vh;
-    width: 240px;
-    z-index: 999;
-    background-color: #224750;
-    list-style: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    text-align: left;
-    padding: 1em 2em;
-    line-height: 3em;
-    border-radius:  2.5em 0 0 2.5em;
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  margin: 0;
+  height: 100vh;
+  width: 240px;
+  z-index: 999;
+  background-color: #224750;
+  list-style: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 1em 2em;
+  line-height: 3em;
+  border-radius: 2.5em 0 0 2.5em;
 }
 
 .mobile-nav-items a {
-    text-decoration: none;
-    color: #FFFFFF;
-    font-size: 1em;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1em;
 }
 
-.mobile-nav-items a:hover, 
+.mobile-nav-items a:hover,
 .mobile-nav-items a:focus {
-    color: #F0F0F0;
-    font-weight: 500;
+  color: #f0f0f0;
+  font-weight: 500;
 }
 
 .mobile-menu li {
-    width: 100%;
+  width: 100%;
 }
 
 .mobile-menu a {
-    width: 100%;
+  width: 100%;
 }
 
 .header-nav-items {
-    margin-left: 2em;
+  margin-left: 2em;
 }
 
 .header-nav-items a {
-    text-decoration: none;
-    color: #224750;
-    padding: .25em 0;
+  text-decoration: none;
+  color: #224750;
+  padding: 0.25em 0;
 }
 
-.header-nav-items a:hover, 
+.header-nav-items a:hover,
 .header-nav-items a:focus {
-    color: #53AFB1;
-    font-weight: 500;
+  color: #53afb1;
+  font-weight: 500;
 }
 
 .current-page {
-    border-bottom: 2px solid #53AFB1;
-    color: #53AFB1;
-    font-weight: 500;
+  border-bottom: 2px solid #53afb1;
+  color: #53afb1;
+  font-weight: 500;
 }
-
 
 /*======================
     Introduction Section
 =======================*/
 
 #intro {
-    min-height: 600px;
-    height: auto;
-    padding: 170px 0 20px 0;
+  min-height: 600px;
+  height: auto;
+  padding: 170px 0 20px 0;
 }
 
 #intro-content {
-    padding-top: 0px;
-    width: 60%;
-    align-items: center;
-    color: #FFFFFF;
+  padding-top: 0px;
+  width: 60%;
+  align-items: center;
+  color: #ffffff;
 }
 
 /*======================
@@ -194,217 +195,221 @@ body {
 =======================*/
 
 #key-benefits {
-    background-color: #FFFFFF;
-    padding: 3em 0 3em 0;
+  background-color: #ffffff;
+  padding: 3em 0 3em 0;
 }
 
 #benefits-header {
-    text-align: center;
-    color: #224750;
+  text-align: center;
+  color: #224750;
 }
 
 #benefits-body {
-    display: flex;
-    flex-wrap: wrap;
-    color: #224750;
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  color: #224750;
+  display: flex;
+  justify-content: space-between;
 }
 
 .benefit {
-    width: calc(33.333% - 2.25em);
-    padding: 15px;
-    text-align: center;
-    margin-bottom: 30px; 
+  width: calc(33.333% - 2.25em);
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 /*======================
     Sign Up/ Sign In
 =======================*/
 
-.signup-section, .signin-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #224750;
-    padding: 3em 0;
+.signup-section,
+.signin-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #224750;
+  padding: 3em 0;
 }
 
-
 .signup-section {
-    left: 0;
-    z-index: 1; 
+  left: 0;
+  z-index: 1;
 }
 
 .signin-section {
-    right: 0;
+  right: 0;
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .overlay-panel {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #53AFB1;
-    padding: 3em 0;
-    height: 691.97px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #53afb1;
+  padding: 3em 0;
+  height: 691.97px;
 }
 
-#welcome-prompt, #welcome-back-prompt {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-    height: 100%;
-    width: 100%;
+#welcome-prompt,
+#welcome-back-prompt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  height: 100%;
+  width: 100%;
 }
 
 .form-field {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .form-field input {
-    width: 360px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    box-sizing: border-box;
+  width: 360px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  box-sizing: border-box;
 }
 
 .form-field label {
-    display: none;
+  display: none;
 }
 
 #access-buttons {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .role-button {
-    padding: 10px 20px;
-    margin-right: 10px;
-    background-color: transparent; 
-    border: 2px solid #FFFFFF;
-    color: #FFFFFF;
-    border-radius: 30px;
-    cursor: pointer;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
 .role-button.filled {
-    background-color: #53AFB1;
-    color: white;
+  background-color: #53afb1;
+  color: white;
 }
 
 .role-button:hover {
-    background-color: #53AFB1; 
-    color: white;
+  background-color: #53afb1;
+  color: white;
 }
 
 .role-button:focus {
-    outline: none;
+  outline: none;
 }
 
 .form-field label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-    color: #FFFFFF; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #ffffff;
 }
 
 .outlined-button {
-    color: #C0DF34;
-    background-color: #FFFFFF;
-    border: 2px solid #C0DF34;
+  color: #c0df34;
+  background-color: #ffffff;
+  border: 2px solid #c0df34;
 }
 
-#signup-form button.filled-button, #signin-form button.filled-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    position: relative;
-    left: 45%;
-    transform: translateX(-50%);
+#signup-form button.filled-button,
+#signin-form button.filled-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+  left: 45%;
+  transform: translateX(-50%);
 }
 
-.overlay-panel h2, .overlay-panel p, .overlay-panel button {
-    color: #FFFFFF;
+.overlay-panel h2,
+.overlay-panel p,
+.overlay-panel button {
+  color: #ffffff;
 }
 
 .overlay-panel button {
-    padding: 0.625em;
+  padding: 0.625em;
 }
 /*======================
     Our Doctors Section
 =======================*/
 
 #our-doctors {
-    background-color: #FFFFFF;
-    padding: 3em 0 3em 0;
+  background-color: #ffffff;
+  padding: 3em 0 3em 0;
 }
 
 #doctors-header {
-    width: 100%;
-    text-align: center;
-    color: #224750;
+  width: 100%;
+  text-align: center;
+  color: #224750;
 }
 
 #doctors-body {
-    color: #224750;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  color: #224750;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .doctors {
-    width: calc(33.333% - 2.25em);
-    padding: 15px;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 2.25em;
-    box-sizing: border-box;
+  width: calc(33.333% - 2.25em);
+  padding: 15px;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2.25em;
+  box-sizing: border-box;
 }
 
 .doctors img {
-    border-radius: 50%;
-    max-width: 100%;
+  border-radius: 50%;
+  max-width: 100%;
 }
 
 #our-doctors .filled-button {
-    text-align: center;
-    padding: 0.625em 1.25em;
-    background-color: #C0DF34;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    width: 100%;
-    max-width: 240px;
-    margin: 0 auto;
-    display: block;
+  text-align: center;
+  padding: 0.625em 1.25em;
+  background-color: #c0df34;
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+  display: block;
 }
 
 #doctor_patient {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 /*======================
@@ -412,24 +417,24 @@ body {
 =======================*/
 
 #footer {
-    background-color: #224750;
-    color: white;
+  background-color: #224750;
+  color: white;
 }
 
 #footer h4 {
-    margin-bottom: .5em;
-    font-weight: 500;
+  margin-bottom: 0.5em;
+  font-weight: 500;
 }
 
 #footer .small-icon {
-    margin-right: 1em;
+  margin-right: 1em;
 }
 
 .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 2em 0 2em 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2em 0 2em 0;
 }
 
 #footer .instagram,
@@ -437,33 +442,33 @@ body {
 #footer .twitter,
 #footer .e-mail,
 #footer .phone-number {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #footer p {
-    margin: .5em 0;
-    font-weight: 300;
+  margin: 0.5em 0;
+  font-weight: 300;
 }
 
 #our-services h4 {
-    padding-bottom: .375em;
+  padding-bottom: 0.375em;
 }
 
 #our-services p {
-    padding-bottom: .5em;
+  padding-bottom: 0.5em;
 }
 
 #legal-information {
-    background-color: #FFFFFF;
-    padding: .5em;
-    text-align: center;
+  background-color: #ffffff;
+  padding: 0.5em;
+  text-align: center;
 }
 
 #legal-information p {
-    margin: .5em 0;
-    font-size: .75rem;
-    color: #777;
+  margin: 0.5em 0;
+  font-size: 0.75rem;
+  color: #777;
 }
 
 /*======================
@@ -471,28 +476,31 @@ body {
 =======================*/
 
 button {
-    border-radius: 30px;
-    font-size: 1rem;
-    cursor: pointer;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.filled-button, .outlined-button {
-    min-width: 120px;
-    margin-left: 1em;
-    padding: .5em 1.25em;
+.filled-button,
+.outlined-button {
+  min-width: 120px;
+  margin-left: 1em;
+  padding: 0.5em 1.25em;
 }
 
-.filled-button, .filled-button-large, .filler-button {
-    color: #FFFFFF;
-    background-color: #C0DF34;
-    border: none;
+.filled-button,
+.filled-button-large,
+.filler-button {
+  color: #ffffff;
+  background-color: #c0df34;
+  border: none;
 }
 
 .filled-button-large {
-    min-width: 180px;
-    font-size: 1.125rem;
-    padding: .5em 1.25em;
-    margin: 1.5em 0;
+  min-width: 180px;
+  font-size: 1.125rem;
+  padding: 0.5em 1.25em;
+  margin: 1.5em 0;
 }
 
 /*======================
@@ -500,60 +508,61 @@ button {
 =======================*/
 
 #intro-content h1 {
-    color: #FFFFFF;
-    font-size: 6.5rem;
-    font-weight: normal;
-    line-height: 7.5rem;
-    margin: 0.25em 0 0 0;
+  color: #ffffff;
+  font-size: 6.5rem;
+  font-weight: normal;
+  line-height: 7.5rem;
+  margin: 0.25em 0 0 0;
 }
 
 #benefits-header h2 {
-    margin: 0 0 .75em 0;
+  margin: 0 0 0.75em 0;
 }
 
 .benefit h3 {
-    margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 h2 {
-    font-size: 2.5rem;
-    font-weight: 500;
+  font-size: 2.5rem;
+  font-weight: 500;
 }
 
 h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 #intro-content h4 {
-    color: #FFFFFF;
-    font-size: 1.25rem;
-    font-weight: 300;
-    margin: 10px;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: 10px;
 }
 
 h4 {
-    font-size: 1.25rem;
-    font-weight: 400;
-    font-style: normal;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
 }
 
-#signup-form h2, #signin-form h2 {
-    text-align: center;
-    color: #FFFFFF;
-    margin-top: 0px;
+#signup-form h2,
+#signin-form h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-top: 0px;
 }
 
-.overlay-panel h2{
-    margin-bottom: 0px;
+.overlay-panel h2 {
+  margin-bottom: 0px;
 }
 
 .doctors h3 {
-    margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 #doctors-header h2 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 /*======================
@@ -561,517 +570,536 @@ h4 {
 =======================*/
 
 @media (max-width: 450px) {
-    .mobile-menu {
-        width: 100%;
-    }
+  .mobile-menu {
+    width: 100%;
+  }
 }
 
 /* Screens less than 639px */
 @media (max-width: 639px) {
-    .header-nav-items{
-        display: none !important;
-    }
+  .header-nav-items {
+    display: none !important;
+  }
 
-    .menu-button {
-        display: block;
-    }
+  .menu-button {
+    display: block;
+  }
 
-    .astra-health-logo {
-        width: 6em;
-    }
+  .astra-health-logo {
+    width: 6em;
+  }
 
-    #intro-content {
-        padding-top: 1.5em;
-        width: 100%;
-        text-align: left;
-    }
+  #intro-content {
+    padding-top: 1.5em;
+    width: 100%;
+    text-align: left;
+  }
 
-    #intro h1 {
-        font-size: 4rem;
-        line-height: 5rem;
-    }
+  #intro h1 {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
 
-    #intro h4 {
-        font-size: 1rem;
-    }
+  #intro h4 {
+    font-size: 1rem;
+  }
 
-    .filled-button-large {
-        margin-top: 1em;
-    }
+  .filled-button-large {
+    margin-top: 1em;
+  }
 
-    .benefit, .doctors {
-        width: 100%;
-        margin-bottom: 1.25em;
-    }
+  .benefit,
+  .doctors {
+    width: 100%;
+    margin-bottom: 1.25em;
+  }
 
-    .doctors {
-        width: 100%;
-    }
+  .doctors {
+    width: 100%;
+  }
 
-    #footer .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
+  #footer .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    #footer p {
-        font-size: 0.85rem;
-        text-align: center;
-    }
+  #footer p {
+    font-size: 0.85rem;
+    text-align: center;
+  }
 
-    #footer .instagram,
-    #footer .facebook,
-    #footer .twitter,
-    #footer .e-mail,
-    #footer .phone-number {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+  #footer .instagram,
+  #footer .facebook,
+  #footer .twitter,
+  #footer .e-mail,
+  #footer .phone-number {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    #social-media, #contact-us, #our-services {
-        text-align: center;
-    }
+  #social-media,
+  #contact-us,
+  #our-services {
+    text-align: center;
+  }
 
-    .footer-container h4 {
-        padding-bottom: 0.75em;
-    }
+  .footer-container h4 {
+    padding-bottom: 0.75em;
+  }
 
-    .benefit, .doctors {
-        width: 100%;
-        margin-bottom: 20px; 
-    }
+  .benefit,
+  .doctors {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-    .mobile-signup-section, .mobile-signin-section {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        background-color: #224750;
-        padding: 3em 0;
-    }
+  .mobile-signup-section,
+  .mobile-signin-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #224750;
+    padding: 3em 0;
+  }
 
-    .mobile-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-    }
+  .mobile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    #mobile-signup-form h2, #mobile-signin-form h2 {
-        text-align: center;
-        color: #FFFFFF;
-        margin-top: 0px;
-    }
-    
-    .mobile-form-field {
-        margin-bottom: 15px;
-    }
-    
-    .mobile-signin-section {
-        bottom: 0; 
-    }
+  #mobile-signup-form h2,
+  #mobile-signin-form h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 0px;
+  }
 
-    .mobile-form-container {
-        position: relative; 
-    }
+  .mobile-form-field {
+    margin-bottom: 15px;
+  }
 
-    .mobile-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: column; 
-        justify-content: space-between; 
-        align-items: center;
-    }
-    
-    .mobile-overlay-panel {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background-color: #53AFB1;
-        z-index: -1;
-       }
+  .mobile-signin-section {
+    bottom: 0;
+  }
 
-    .mobile-overlay-section{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .mobile-overlay-top {
-        position: absolute;
-        height: 678.196px;
-        padding-top: 48px;
-        padding-bottom: 48px;
-    }
+  .mobile-form-container {
+    position: relative;
+  }
 
-    .mobile-overlay-bottom {
-        position: absolute;
-        height: 453.911px;
-        padding-top: 48px;
-        padding-bottom: 48px;
-        margin-top: 678.196px;
-    }
-    
-    #mobile-welcome-prompt, #mobile-welcome-back-prompt {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 0 20px;
-    }
-    
-    .mobile-form-field {
-        margin-bottom: 20px;
-    }
-    
-    .mobile-form-field input {
-        width: 300px;
-        padding: 12px;
-        border: 1px solid #CCCCCC;
-        border-radius: 30px;
-        box-sizing: border-box;
-    }
-    
-    .mobile-form-field label {
-        display: none;
-    }
-    
-    #access-buttons {
-        display: flex;
-        justify-content: flex-end;
-    }
-    
-    .role-button {
-        padding: 10px 20px;
-        margin-right: 10px;
-        background-color: transparent; 
-        border: 2px solid #FFFFFF;
-        color: #FFFFFF;
-        border-radius: 30px;
-        cursor: pointer;
-    }
-    
-    .role-button.filled {
-        background-color: #53AFB1;
-        color: white;
-    }
-    
-    .role-button:hover {
-        background-color: #53AFB1; 
-        color: white;
-    }
-    
-    .role-button:focus {
-        outline: none;
-    }
-    
-    .mobile-form-field label {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 10px;
-        color: #FFFFFF; 
-    }
-    
-    .outlined-button {
-        color: #C0DF34;
-        background-color: #FFFFFF;
-        border: 2px solid #C0DF34;
-    }
-    
-    #mobile-signup-form button.filled-button, #mobile-signin-form button.filled-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        position: relative;
-        left: 45%;
-        transform: translateX(-50%);
-    }
-    
-    .mobile-overlay-panel h2, .mobile-overlay-panel p, .mobile-overlay-panel button {
-        color: #FFFFFF;
-    }
-    
-    .mobile-overlay-panel button {
-        padding: 0.625em;
-    }
-    .dual-container {
-        display: none;
-    }
+  .mobile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 
+  .mobile-overlay-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #53afb1;
+    z-index: -1;
+  }
+
+  .mobile-overlay-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mobile-overlay-top {
+    position: absolute;
+    height: 678.196px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .mobile-overlay-bottom {
+    position: absolute;
+    height: 453.911px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    margin-top: 678.196px;
+  }
+
+  #mobile-welcome-prompt,
+  #mobile-welcome-back-prompt {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .mobile-form-field {
+    margin-bottom: 20px;
+  }
+
+  .mobile-form-field input {
+    width: 300px;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+  }
+
+  .mobile-form-field label {
+    display: none;
+  }
+
+  #access-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .role-button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  .role-button.filled {
+    background-color: #53afb1;
+    color: white;
+  }
+
+  .role-button:hover {
+    background-color: #53afb1;
+    color: white;
+  }
+
+  .role-button:focus {
+    outline: none;
+  }
+
+  .mobile-form-field label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+
+  .outlined-button {
+    color: #c0df34;
+    background-color: #ffffff;
+    border: 2px solid #c0df34;
+  }
+
+  #mobile-signup-form button.filled-button,
+  #mobile-signin-form button.filled-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    left: 45%;
+    transform: translateX(-50%);
+  }
+
+  .mobile-overlay-panel h2,
+  .mobile-overlay-panel p,
+  .mobile-overlay-panel button {
+    color: #ffffff;
+  }
+
+  .mobile-overlay-panel button {
+    padding: 0.625em;
+  }
+  .dual-container {
+    display: none;
+  }
 }
 
 /* Screens from 640px to 843px */
 @media (min-width: 640px) and (max-width: 843px) {
-    .dual-container {
-        display: none;
-    }
+  .dual-container {
+    display: none;
+  }
 
-    .mobile-signup-section, .mobile-signin-section {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        background-color: #224750;
-        padding: 3em 0;
-    }
+  .mobile-signup-section,
+  .mobile-signin-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #224750;
+    padding: 3em 0;
+  }
 
-    .mobile-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-    }
+  .mobile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    #mobile-signup-form h2, #mobile-signin-form h2 {
-        text-align: center;
-        color: #FFFFFF;
-        margin-top: 0px;
-    }
-    
-    .mobile-form-field {
-        margin-bottom: 15px;
-    }
-    
-    .mobile-signin-section {
-        bottom: 0; 
-    }
+  #mobile-signup-form h2,
+  #mobile-signin-form h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 0px;
+  }
 
-    .mobile-form-container {
-        position: relative; 
-    }
+  .mobile-form-field {
+    margin-bottom: 15px;
+  }
 
-    .mobile-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: column; 
-        justify-content: space-between; 
-        align-items: center;
-    }
-    
-    .mobile-overlay-panel {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background-color: #53AFB1;
-        z-index: -1;
-       }
+  .mobile-signin-section {
+    bottom: 0;
+  }
 
-    .mobile-overlay-section{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .mobile-overlay-top {
-        position: absolute;
-        height: 678.196px;
-        padding-top: 48px;
-        padding-bottom: 48px;
-    }
+  .mobile-form-container {
+    position: relative;
+  }
 
-    .mobile-overlay-bottom {
-        position: absolute;
-        height: 453.911px;
-        padding-top: 48px;
-        padding-bottom: 48px;
-        margin-top: 678.196px;
-    }
-    
-    #mobile-welcome-prompt, #mobile-welcome-back-prompt {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 0 20px;
-    }
-    
-    .mobile-form-field {
-        margin-bottom: 20px;
-    }
-    
-    .mobile-form-field input {
-        width: 300px;
-        padding: 12px;
-        border: 1px solid #CCCCCC;
-        border-radius: 30px;
-        box-sizing: border-box;
-    }
-    
-    .mobile-form-field label {
-        display: none;
-    }
-    
-    #access-buttons {
-        display: flex;
-        justify-content: flex-end;
-    }
-    
-    .role-button {
-        padding: 10px 20px;
-        margin-right: 10px;
-        background-color: transparent; 
-        border: 2px solid #FFFFFF;
-        color: #FFFFFF;
-        border-radius: 30px;
-        cursor: pointer;
-    }
-    
-    .role-button.filled {
-        background-color: #53AFB1;
-        color: white;
-    }
-    
-    .role-button:hover {
-        background-color: #53AFB1; 
-        color: white;
-    }
-    
-    .role-button:focus {
-        outline: none;
-    }
-    
-    .mobile-form-field label {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 10px;
-        color: #FFFFFF; 
-    }
-    
-    .outlined-button {
-        color: #C0DF34;
-        background-color: #FFFFFF;
-        border: 2px solid #C0DF34;
-    }
-    
-    #mobile-signup-form button.filled-button, #mobile-signin-form button.filled-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        position: relative;
-        left: 45%;
-        transform: translateX(-50%);
-    }
-    
-    .mobile-overlay-panel h2, .mobile-overlay-panel p, .mobile-overlay-panel button {
-        color: #FFFFFF;
-    }
-    
-    .mobile-overlay-panel button {
-        padding: 0.625em;
-    }
+  .mobile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .header-nav-items{
-        display: none !important;
-    }
+  .mobile-overlay-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #53afb1;
+    z-index: -1;
+  }
 
-    .menu-button {
-        display: block;
-    }
+  .mobile-overlay-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 
-    .benefit, .doctors {
-        width: calc(50% - 1.25em);
-        margin-bottom: 1.25; 
-    }
+  .mobile-overlay-top {
+    position: absolute;
+    height: 678.196px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
 
-    #benefits-body, #doctors-body {
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
+  .mobile-overlay-bottom {
+    position: absolute;
+    height: 453.911px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    margin-top: 678.196px;
+  }
 
-    #benefits-body, #doctors-body {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+  #mobile-welcome-prompt,
+  #mobile-welcome-back-prompt {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
 
-    #intro-content h1 {
-        font-size: 5rem;
-        line-height: 6rem;
-    }
+  .mobile-form-field {
+    margin-bottom: 20px;
+  }
 
-    #benefits-header h2 {
-        font-size: 2rem;
-        margin-bottom: 0.5em;
-    }
+  .mobile-form-field input {
+    width: 300px;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+  }
 
-    .benefit h3 {
-        font-size: 1.25rem;
-        margin-bottom: 0.25em;
-    }
+  .mobile-form-field label {
+    display: none;
+  }
 
-    h2 {
-        font-size: 2rem;
-    }
+  #access-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
 
-    h3 {
-        font-size: 1.25rem;
-    }
+  .role-button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    border-radius: 30px;
+    cursor: pointer;
+  }
 
-    #intro-content h4 {
-        font-size: 1rem;
-        margin: 5px 0;
-    }
+  .role-button.filled {
+    background-color: #53afb1;
+    color: white;
+  }
 
-    h4 {
-        font-size: 1rem;
-    }
+  .role-button:hover {
+    background-color: #53afb1;
+    color: white;
+  }
 
-    .doctors h3 {
-        font-size: 1.25rem;
-        margin-bottom: 0.5em;
-    }
+  .role-button:focus {
+    outline: none;
+  }
 
-    #doctors-header h2 {
-        margin-top: 0;
-    }
-    
+  .mobile-form-field label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+
+  .outlined-button {
+    color: #c0df34;
+    background-color: #ffffff;
+    border: 2px solid #c0df34;
+  }
+
+  #mobile-signup-form button.filled-button,
+  #mobile-signin-form button.filled-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    left: 45%;
+    transform: translateX(-50%);
+  }
+
+  .mobile-overlay-panel h2,
+  .mobile-overlay-panel p,
+  .mobile-overlay-panel button {
+    color: #ffffff;
+  }
+
+  .mobile-overlay-panel button {
+    padding: 0.625em;
+  }
+
+  .header-nav-items {
+    display: none !important;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .benefit,
+  .doctors {
+    width: calc(50% - 1.25em);
+    margin-bottom: 1.25;
+  }
+
+  #benefits-body,
+  #doctors-body {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  #benefits-body,
+  #doctors-body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #intro-content h1 {
+    font-size: 5rem;
+    line-height: 6rem;
+  }
+
+  #benefits-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+  }
+
+  .benefit h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25em;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  #intro-content h4 {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  .doctors h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5em;
+  }
+
+  #doctors-header h2 {
+    margin-top: 0;
+  }
 }
 
 /* Screens from 844px to 1024px */
 @media (min-width: 844px) and (max-width: 1024px) {
-    .header-nav-bar {
-        display: flex;
-    }
+  .header-nav-bar {
+    display: flex;
+  }
 
-    #benefits-body, #doctors-body {
-        justify-content: center;
-    }
+  #benefits-body,
+  #doctors-body {
+    justify-content: center;
+  }
 
-    .benefit, .doctors {
-        width: calc(50% - 2.25em);
-    }
+  .benefit,
+  .doctors {
+    width: calc(50% - 2.25em);
+  }
 }

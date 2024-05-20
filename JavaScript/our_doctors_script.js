@@ -9,6 +9,18 @@ function capitalizeName(name) {
 //Retrieve all doctors dynamically from db
 document.addEventListener("DOMContentLoaded", () => {
   const getAllDoctors = "https://api.astrafort.tech/v1/doctor/all";
+  const loadingIcon = document.getElementById("loadingIcon");
+
+  function showLoading() {
+    loadingIcon.style.display = "block";
+  }
+
+  function hideLoading() {
+    loadingIcon.style.display = "none";
+    loadingContainer.style.display = "none";
+  }
+
+  showLoading(); // Show the loading icon before fetching data
 
   fetch(getAllDoctors, {
     method: "GET",
@@ -18,11 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
   })
     .then((response) => response.json())
     .then((data) => {
+      hideLoading(); // Hide the loading icon after fetching data
       if (data && data.length > 0) {
         populateDoctors(data);
       }
     })
-    .catch((error) => console.error("Error fetching doctors:", error));
+    .catch((error) => {
+      hideLoading(); // Hide the loading icon if there's an error
+      console.error("Error fetching doctors:", error);
+    });
 });
 
 function viewSchedule(doctorId) {

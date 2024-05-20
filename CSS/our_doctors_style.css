@@ -104,9 +104,9 @@
 
 .loading-icon {
   position: relative;
-  top: 50%;
-  left: 50%;
-  /* transform: translate(-50%, -50%); */
+  top: 100%;
+  /* left: 50%; */
+  transform: translate(-50%, -50%);
   z-index: 1000;
   font-size: 3rem;
   color: #53afb1;

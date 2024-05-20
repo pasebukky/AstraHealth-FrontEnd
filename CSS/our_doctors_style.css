@@ -98,18 +98,18 @@
   padding: 20px 30px;
 }
 
-#loadingContainer{
+#loadingContainer {
   height: 200px;
 }
 
 .loading-icon {
-  position: fixed;
+  position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000; 
-  font-size: 3rem; 
-  color: #53afb1; 
+  /* transform: translate(-50%, -50%); */
+  z-index: 1000;
+  font-size: 3rem;
+  color: #53afb1;
 }
 
 /*======================

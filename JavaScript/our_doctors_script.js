@@ -41,8 +41,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
 function viewSchedule(doctorId) {
-  window.location.href = `doctors_schedule.html?doctorId=${doctorId}`;
+  if (checkAuthentication()) {
+    window.location.href = `doctors_schedule.html?doctorId=${doctorId}`;
+  } else {
+    showNotificationModal("Please sign in to book a consultation.");
+    setTimeout(() => {
+      closeNotificationModal();
+      window.location.href = "index.html"; // Redirect to the login page after 10 seconds
+    }, 2000); // 2 seconds
+  }
 }
 
 function populateDoctors(doctors) {

@@ -179,17 +179,26 @@ const loginUser = (formData) => {
         sessionStorage.setItem("authenticated", "true");
         sessionStorage.setItem("role", data.role);
         showNotificationModal("You are successfully logged in");
-        updateTabsVisibility();
-        location.reload();
+        setTimeout(() => {
+          closeNotificationModal();
+          updateTabsVisibility();
+          location.reload();
+        }, 3000); // 3 seconds
       } else {
         // Handle login errors
         try {
           const errorData = await response.json();
           // Display error message to user
           showNotificationModal("Login failed: " + errorData.detail);
+          setTimeout(() => {
+            closeNotificationModal();
+          }, 3000); // 3 seconds
         } catch (error) {
           // Display generic error message to user
           showNotificationModal("Login failed. Please try again later.");
+          setTimeout(() => {
+            closeNotificationModal();
+          }, 2000); // 2 seconds
         }
       }
     })
@@ -197,6 +206,9 @@ const loginUser = (formData) => {
       console.error("Error logging in:", error);
       // Display generic error message to user
       showNotificationModal("Error logging in. Please try again later.");
+      setTimeout(() => {
+        closeNotificationModal();
+      }, 3000); // 3 seconds
     });
 };
 
